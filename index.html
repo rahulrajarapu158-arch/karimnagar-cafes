@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karimnagar Cafes — The Complete Guide to 20 Verified Cafes & Menus</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Karimnagar Cafes — The Premier Guide to 20 Verified Cafes & Menus</title>
     <meta name="description" content="Discover 20 top cafes in Karimnagar, Telangana. Browse verified menus with exact pricing, direct WhatsApp ordering, real Google reviews, and operating hours.">
     
     <!-- Open Graph -->
@@ -14,20 +14,24 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --primary: #d97706;
-            --primary-dark: #b45309;
+            --primary: #f59e0b;
+            --primary-dark: #d97706;
+            --primary-glow: rgba(245, 158, 11, 0.4);
+            --grad-primary: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
+            --grad-accent: linear-gradient(135deg, #f43f5e 0%, #fbbf24 100%);
             --bg: #090d16;
             --surface: #0f172a;
             --surface-card: #1e293b;
             --border: #334155;
+            --border-glow: rgba(245, 158, 11, 0.3);
             --text: #f8fafc;
             --text-muted: #94a3b8;
             --radius-md: 16px;
-            --radius-lg: 24px;
+            --radius-lg: 26px;
         }
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -38,15 +42,73 @@
             color: var(--text);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            position: relative;
         }
         
         a { text-decoration: none; color: inherit; }
+        
+        /* Motion Graphics: Floating Mesh Background */
+        .ambient-mesh {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.28;
+            will-change: transform;
+        }
+        .orb-1 {
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, #f59e0b 0%, transparent 70%);
+            top: -200px;
+            left: -150px;
+            animation: floatGlow1 20s infinite alternate ease-in-out;
+        }
+        .orb-2 {
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, #ec4899 0%, transparent 70%);
+            top: 40%;
+            right: -250px;
+            animation: floatGlow2 24s infinite alternate ease-in-out;
+        }
+        .orb-3 {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, #3b82f6 0%, transparent 70%);
+            bottom: -100px;
+            left: 20%;
+            animation: floatGlow1 18s infinite alternate-reverse ease-in-out;
+        }
+        
+        @keyframes floatGlow1 {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(80px, 90px) scale(1.15); }
+            100% { transform: translate(-50px, 130px) scale(0.95); }
+        }
+        @keyframes floatGlow2 {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(-100px, -70px) scale(1.18); }
+            100% { transform: translate(60px, 80px) scale(0.92); }
+        }
         
         .container {
             width: 100%;
             max-width: 1240px;
             margin: 0 auto;
             padding: 0 24px;
+            position: relative;
+            z-index: 1;
         }
         
         /* Navbar */
@@ -54,8 +116,8 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: rgba(9, 13, 22, 0.92);
-            backdrop-filter: blur(16px);
+            background: rgba(9, 13, 22, 0.88);
+            backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
             padding: 16px 0;
         }
@@ -71,55 +133,59 @@
             color: #ffffff;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+        }
+        .hub-logo-icon {
+            color: var(--primary);
+            display: flex;
         }
         .hub-logo span.tag {
             font-size: 0.72rem;
-            background: var(--primary);
-            color: white;
-            padding: 2px 8px;
+            background: var(--grad-primary);
+            color: #1e1e24;
+            padding: 3px 10px;
             border-radius: 20px;
             text-transform: uppercase;
-            font-weight: 700;
-            letter-spacing: 0.5px;
+            font-weight: 800;
+            letter-spacing: 0.6px;
         }
         
         /* Hero */
         .hub-hero {
-            padding: 90px 0 60px;
+            padding: 95px 0 65px;
             text-align: center;
             position: relative;
-            background: radial-gradient(circle at 50% 20%, rgba(217, 119, 6, 0.15) 0%, transparent 60%);
         }
         .hero-pill {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(217, 119, 6, 0.15);
-            border: 1px solid rgba(217, 119, 6, 0.35);
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(244, 63, 94, 0.15) 100%);
+            border: 1px solid rgba(245, 158, 11, 0.4);
             color: #fbbf24;
-            padding: 6px 16px;
+            padding: 7px 18px;
             border-radius: 30px;
             font-size: 0.85rem;
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 24px;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.2);
         }
         .hub-title {
             font-family: 'Outfit', sans-serif;
-            font-size: 3.6rem;
-            font-weight: 800;
+            font-size: clamp(2.4rem, 5vw, 4.2rem);
+            font-weight: 900;
             line-height: 1.15;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+            margin-bottom: 22px;
+            background: linear-gradient(135deg, #ffffff 40%, #cbd5e1 75%, #f59e0b 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         .hub-subtitle {
-            font-size: 1.2rem;
+            font-size: clamp(1rem, 2vw, 1.25rem);
             color: var(--text-muted);
-            max-width: 720px;
-            margin: 0 auto 40px;
-            line-height: 1.6;
+            max-width: 740px;
+            margin: 0 auto 45px;
+            line-height: 1.65;
         }
         
         /* Stats Bar */
@@ -127,39 +193,48 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
-            max-width: 860px;
+            max-width: 900px;
             margin: 0 auto;
         }
         .stat-item {
-            background: var(--surface);
+            background: linear-gradient(145deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.8) 100%);
             border: 1px solid var(--border);
             border-radius: var(--radius-md);
-            padding: 20px 16px;
+            padding: 22px 18px;
             text-align: center;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+        .stat-item:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary);
         }
         .stat-val {
             font-family: 'Outfit', sans-serif;
-            font-size: 2.2rem;
+            font-size: 2.3rem;
             font-weight: 800;
-            color: var(--primary);
+            background: var(--grad-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         .stat-lbl {
             font-size: 0.82rem;
             color: var(--text-muted);
             text-transform: uppercase;
-            font-weight: 600;
-            letter-spacing: 0.5px;
+            font-weight: 700;
+            letter-spacing: 0.8px;
             margin-top: 4px;
         }
         
-        /* Filter & Search Bar */
+        /* Filter & Search Bar (Sticky & Phone Friendly) */
         .controls-section {
-            padding: 30px 0;
+            padding: 26px 0;
             position: sticky;
-            top: 65px;
+            top: 68px;
             z-index: 900;
-            background: rgba(9, 13, 22, 0.95);
-            backdrop-filter: blur(12px);
+            background: rgba(9, 13, 22, 0.94);
+            backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
         }
         .controls-wrap {
@@ -177,7 +252,7 @@
         }
         .search-input {
             width: 100%;
-            padding: 12px 18px 12px 42px;
+            padding: 13px 20px 13px 44px;
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: 30px;
@@ -185,11 +260,11 @@
             font-size: 0.92rem;
             font-family: inherit;
             outline: none;
-            transition: all 0.2s ease;
+            transition: all 0.25s ease;
         }
         .search-input:focus {
             border-color: var(--primary);
-            box-shadow: 0 0 16px rgba(217, 119, 6, 0.25);
+            box-shadow: 0 0 20px var(--primary-glow);
         }
         .search-icon-svg {
             position: absolute;
@@ -197,59 +272,70 @@
             top: 50%;
             transform: translateY(-50%);
             color: var(--text-muted);
+            display: flex;
         }
         .filter-pills {
             display: flex;
             align-items: center;
             gap: 8px;
             flex-wrap: wrap;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 4px;
         }
         .filter-btn {
-            padding: 8px 16px;
-            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 9px 18px;
+            border-radius: 25px;
             background: var(--surface);
             border: 1px solid var(--border);
             color: var(--text-muted);
-            font-size: 0.85rem;
+            font-size: 0.86rem;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.2s ease;
+            transition: all 0.25s ease;
+            white-space: nowrap;
         }
         .filter-btn:hover {
             color: white;
             border-color: var(--primary);
         }
         .filter-btn.active {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
+            background: var(--grad-primary);
+            color: #1e1e24;
+            border-color: transparent;
+            font-weight: 800;
+            box-shadow: 0 4px 18px var(--primary-glow);
         }
         
         /* Cafes Grid */
         .cafes-section {
-            padding: 50px 0 90px;
+            padding: 55px 0 95px;
         }
         .cafes-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-            gap: 28px;
+            gap: 30px;
         }
         .cafe-card {
-            background: var(--surface);
+            background: linear-gradient(145deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.9) 100%);
             border: 1px solid var(--border);
             border-radius: var(--radius-lg);
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            transition: all 0.25s ease;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            backdrop-filter: blur(14px);
         }
         .cafe-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-7px) scale(1.01);
             border-color: var(--primary);
-            box-shadow: 0 12px 32px rgba(0,0,0,0.5);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.6);
         }
         .card-img-wrap {
-            height: 220px;
+            height: 230px;
             position: relative;
             overflow: hidden;
         }
@@ -257,129 +343,147 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.4s ease;
+            transition: transform 0.5s ease;
         }
         .cafe-card:hover .card-img-wrap img {
-            transform: scale(1.05);
+            transform: scale(1.08);
         }
         .card-badge {
             position: absolute;
             top: 14px;
             left: 14px;
             color: white;
-            padding: 4px 12px;
+            padding: 5px 14px;
             border-radius: 20px;
             font-size: 0.75rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+            letter-spacing: 0.6px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
         }
         .card-rating-tag {
             position: absolute;
             top: 14px;
             right: 14px;
-            background: rgba(15, 23, 42, 0.9);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255,255,255,0.15);
-            color: #fbbf24;
-            padding: 4px 10px;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.18);
+            color: #ffffff;
+            padding: 5px 12px;
             border-radius: 20px;
             font-size: 0.85rem;
             font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
         .card-body {
-            padding: 24px;
+            padding: 26px;
             display: flex;
             flex-direction: column;
             flex: 1;
         }
         .card-title {
             font-family: 'Outfit', sans-serif;
-            font-size: 1.38rem;
-            font-weight: 700;
-            margin-bottom: 6px;
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 8px;
             color: #ffffff;
         }
         .card-tagline {
             color: var(--text-muted);
-            font-size: 0.9rem;
-            line-height: 1.5;
-            margin-bottom: 16px;
+            font-size: 0.92rem;
+            line-height: 1.55;
+            margin-bottom: 18px;
             flex: 1;
         }
         .card-chips {
             display: flex;
             gap: 6px;
             flex-wrap: wrap;
-            margin-bottom: 16px;
+            margin-bottom: 18px;
         }
         .card-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
             background: rgba(255,255,255,0.06);
             border: 1px solid rgba(255,255,255,0.08);
             color: #cbd5e1;
             font-size: 0.75rem;
             font-weight: 600;
             padding: 4px 10px;
-            border-radius: 12px;
+            border-radius: 14px;
         }
-        .card-loc {
+        .chip-svg {
+            color: var(--primary);
+            display: flex;
+        }
+        .card-loc, .card-phone {
+            display: flex;
+            align-items: center;
+            gap: 8px;
             font-size: 0.85rem;
             color: #94a3b8;
             margin-bottom: 6px;
         }
-        .card-phone {
-            font-size: 0.85rem;
-            color: #94a3b8;
-            margin-bottom: 20px;
-        }
+        .card-phone { margin-bottom: 22px; }
         .card-phone a:hover { color: var(--primary); }
+        .card-svg-icon {
+            color: var(--primary);
+            display: flex;
+        }
+        
         .card-actions {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
         .btn-card-visit {
             flex: 1;
-            padding: 12px;
+            padding: 13px;
             border-radius: 30px;
             color: white;
             font-weight: 700;
-            font-size: 0.9rem;
+            font-size: 0.92rem;
             text-align: center;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
-            transition: all 0.2s ease;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+            transition: all 0.25s ease;
         }
         .btn-card-visit:hover {
-            filter: brightness(1.1);
+            filter: brightness(1.15);
             transform: translateY(-2px);
+            box-shadow: 0 8px 25px var(--primary-glow);
         }
         .btn-card-wa {
-            width: 44px;
-            height: 44px;
+            width: 46px;
+            height: 46px;
             border-radius: 50%;
-            background: #25d366;
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
             color: white;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
             flex-shrink: 0;
-            transition: all 0.2s ease;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.35);
+            transition: all 0.25s ease;
         }
         .btn-card-wa:hover {
-            background: #1eb757;
-            transform: scale(1.08);
+            transform: scale(1.1);
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.55);
         }
         
         /* Editorial Section */
         .editorial-section {
-            padding: 80px 0;
-            background: var(--surface);
+            padding: 85px 0;
+            background: linear-gradient(180deg, var(--surface) 0%, #0b1120 100%);
             border-top: 1px solid var(--border);
+            position: relative;
+            z-index: 1;
         }
         .ed-content {
             max-width: 820px;
@@ -387,9 +491,9 @@
         }
         .ed-title {
             font-family: 'Outfit', sans-serif;
-            font-size: 2.2rem;
+            font-size: clamp(2rem, 3.5vw, 2.5rem);
             font-weight: 800;
-            margin-bottom: 20px;
+            margin-bottom: 22px;
             color: #ffffff;
         }
         .ed-content p {
@@ -401,11 +505,13 @@
         
         /* Footer */
         .hub-footer {
-            padding: 50px 0 30px;
+            padding: 50px 0 35px;
             border-top: 1px solid var(--border);
             text-align: center;
             font-size: 0.9rem;
             color: #64748b;
+            position: relative;
+            z-index: 1;
         }
         
         @media (max-width: 900px) {
@@ -417,15 +523,24 @@
 </head>
 <body>
 
+    <!-- Ambient Gradient Mesh Motion Graphic -->
+    <div class="ambient-mesh">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
     <!-- Hub Header -->
     <nav class="hub-nav">
         <div class="container hub-nav-content">
             <a href="index.html" class="hub-logo">
-                <span>☕ Karimnagar Cafes</span>
+                <span class="hub-logo-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"></path><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"></path><line x1="6" y1="2" x2="6" y2="4"></line><line x1="10" y1="2" x2="10" y2="4"></line><line x1="14" y1="2" x2="14" y2="4"></line></svg></span>
+                <span>Karimnagar Cafes</span>
                 <span class="tag">2026 Directory</span>
             </a>
-            <div style="font-size: 0.9rem; color: var(--text-muted);">
-                20 Verified Eateries • Live Menus
+            <div style="font-size: 0.9rem; color: var(--text-muted); display: flex; align-items: center; gap: 8px;">
+                <span style="color:var(--primary);"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>
+                <span>20 Verified Eateries • Live Menus</span>
             </div>
         </div>
     </nav>
@@ -433,7 +548,10 @@
     <!-- Hub Hero -->
     <header class="hub-hero">
         <div class="container">
-            <div class="hero-pill">✨ The Ultimate Food & Cafe Guide</div>
+            <div class="hero-pill">
+                <span><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>
+                <span>The Ultimate Food & Cafe Guide</span>
+            </div>
             <h1 class="hub-title">Karimnagar's Finest Cafes,<br>Menus & Online Ordering</h1>
             <p class="hub-subtitle">From late-night 24/7 artisanal chocolate dessert bars to third-wave V60 specialty roasteries, weekend ramen, and heritage Irani chai houses.</p>
             
@@ -462,7 +580,7 @@
     <section class="controls-section">
         <div class="container controls-wrap">
             <div class="search-box">
-                <span class="search-icon-svg">🔍</span>
+                <span class="search-icon-svg"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></span>
                 <input type="text" id="globalSearch" class="search-input" placeholder="Search cafes, dishes (kunafa, ramen, burger, boba)..." oninput="applyFilters()">
             </div>
             <div class="filter-pills">
@@ -484,24 +602,34 @@
         <div class="cafe-card" data-id="the-odd-fellow-s-cafe" data-rating="4.7" data-borough="islampura, ashoknagar" data-24h="true" data-category="artisan cafe & gourmet desserts">
             <div class="card-img-wrap">
                 <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLcRWnEBInHZUoWrkKum7hhEjKjpYG_r1B61PYdzgpoA6FJStpA6VJ8lS-hk-9o6mt4NK9oN1gPugz7f48wQNU7Ii_ek7hj7hm7y8BpyaoqmiqYVqS126RfOXc17ZNTM275s9wVQS3aSYhk=w800-h600-k-no" alt="The Odd Fellow's Cafe" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1600&q=80';">
-                <div class="card-badge" style="background: #d97706;">Artisan Cafe</div>
-                <div class="card-rating-tag">★ 4.7 <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(49)</span></div>
+                <div class="card-badge" style="background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);">Artisan Cafe</div>
+                <div class="card-rating-tag">
+                    <span style="color:#fbbf24; display:flex;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></span>
+                    <span>4.7</span>
+                    <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(49)</span>
+                </div>
             </div>
             <div class="card-body">
                 <h3 class="card-title">The Odd Fellow's Cafe</h3>
                 <p class="card-tagline">Curated Brews, Viral Desserts & Eccentric Culinary Art</p>
                 <div class="card-chips">
-                    <span class="card-chip">Open 24/7 All Week</span><span class="card-chip">Viral Dubai Kunafa Bars</span><span class="card-chip">Artisanal Brews</span>
+                    <span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Open 24/7 All Week</span><span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Viral Dubai Kunafa Bars</span><span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Artisanal Brews</span>
                 </div>
-                <div class="card-loc">📍 Gandhi Rd, Islampura, Ashoknagar, Karimnagar</div>
-                <div class="card-phone">📞 <a href="tel:+91 73370 13142">+91 73370 13142</a></div>
+                <div class="card-loc">
+                    <span class="card-svg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
+                    <span>Gandhi Rd, Islampura, Ashoknagar, Karimnagar</span>
+                </div>
+                <div class="card-phone">
+                    <span class="card-svg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
+                    <a href="tel:+91 73370 13142">+91 73370 13142</a>
+                </div>
                 <div class="card-actions">
-                    <a href="the-odd-fellow-s-cafe.html" class="btn-card-visit" style="background: #d97706;">
+                    <a href="the-odd-fellow-s-cafe.html" class="btn-card-visit" style="background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);">
                         <span>Visit Website & Menu</span>
-                        <span>→</span>
+                        <span style="display:flex;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
                     </a>
                     <a href="https://wa.me/917337013142?text=Hello%20The Odd Fellow's Cafe,%20I'd%20like%20to%20view%20your%20menu" target="_blank" class="btn-card-wa" title="Quick WhatsApp Order">
-                        <span>💬</span>
+                        <span style="display:flex;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.04 7.58C8.88 7.58 8.62 7.64 8.4 7.88C8.18 8.12 7.56 8.7 7.56 9.87C7.56 11.04 8.42 12.16 8.53 12.32C8.65 12.47 10.18 14.83 12.54 15.85C13.1 16.09 13.54 16.24 13.88 16.35C14.44 16.53 14.95 16.5 15.35 16.44C15.8 16.37 16.73 15.87 16.92 15.33C17.11 14.79 17.11 14.33 17.05 14.23C17 14.13 16.84 14.07 16.6 13.95C16.36 13.83 15.17 13.25 14.95 13.17C14.73 13.09 14.57 13.05 14.41 13.29C14.25 13.53 13.79 14.07 13.65 14.23C13.51 14.39 13.37 14.41 13.13 14.29C12.89 14.17 11.88 13.84 10.68 12.77C9.75 11.94 9.12 10.91 8.96 10.63C8.8 10.35 8.94 10.2 9.06 10.08C9.17 9.97 9.31 9.79 9.44 9.64C9.57 9.49 9.61 9.38 9.7 9.21C9.79 9.04 9.74 8.9 9.68 8.78C9.62 8.66 9.16 7.52 8.96 7.05C8.77 6.58 8.58 6.65 8.44 6.64L8.06 6.64C7.9 6.64 7.64 6.7 7.42 6.94C7.2 7.18 6.58 7.76 6.58 8.93C6.58 10.1 7.44 11.22 7.55 11.38L9.04 7.58Z"/></svg></span>
                     </a>
                 </div>
             </div>
@@ -510,24 +638,34 @@
         <div class="cafe-card" data-id="charlie-cafe-lounge" data-rating="4.7" data-borough="jyothinagar" data-24h="false" data-category="lounge & multi-cuisine diner">
             <div class="card-img-wrap">
                 <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLcLkRgZMktFYbB0sg-jRl7VveeRpzN6ebTyULBxaj2FUsH67Fq3nuyz0LROFB-eUZfj1lWapsZPHlc54CbDrJtp6_t7ysx8lZUJN7UF6G9m0yIF4bsNsEGtsaPK7Kt6MKXkA3k=w800-h600-k-no" alt="Charlie Cafe & Lounge" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80';">
-                <div class="card-badge" style="background: #e11d48;">Lounge</div>
-                <div class="card-rating-tag">★ 4.7 <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(732)</span></div>
+                <div class="card-badge" style="background: linear-gradient(135deg, #e11d48 0%, #fb7185 100%);">Lounge</div>
+                <div class="card-rating-tag">
+                    <span style="color:#fbbf24; display:flex;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></span>
+                    <span>4.7</span>
+                    <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(732)</span>
+                </div>
             </div>
             <div class="card-body">
                 <h3 class="card-title">Charlie Cafe & Lounge</h3>
                 <p class="card-tagline">Upscale Dining, Global Starters & Premium Mocktail Lounge</p>
                 <div class="card-chips">
-                    <span class="card-chip">Premium Lounge Ambience</span><span class="card-chip">700+ 5-Star Reviews</span><span class="card-chip">Multi-Cuisine Menu</span>
+                    <span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Premium Lounge Ambience</span><span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>700+ 5-Star Reviews</span><span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Multi-Cuisine Menu</span>
                 </div>
-                <div class="card-loc">📍 1st Floor, Above La'Delicious, Jyothinagar, Karimnagar</div>
-                <div class="card-phone">📞 <a href="tel:+91 63059 75616">+91 63059 75616</a></div>
+                <div class="card-loc">
+                    <span class="card-svg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
+                    <span>1st Floor, Above La'Delicious, Jyothinagar, Karimnagar</span>
+                </div>
+                <div class="card-phone">
+                    <span class="card-svg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
+                    <a href="tel:+91 63059 75616">+91 63059 75616</a>
+                </div>
                 <div class="card-actions">
-                    <a href="charlie-cafe-lounge.html" class="btn-card-visit" style="background: #e11d48;">
+                    <a href="charlie-cafe-lounge.html" class="btn-card-visit" style="background: linear-gradient(135deg, #e11d48 0%, #fb7185 100%);">
                         <span>Visit Website & Menu</span>
-                        <span>→</span>
+                        <span style="display:flex;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
                     </a>
                     <a href="https://wa.me/916305975616?text=Hello%20Charlie Cafe & Lounge,%20I'd%20like%20to%20view%20your%20menu" target="_blank" class="btn-card-wa" title="Quick WhatsApp Order">
-                        <span>💬</span>
+                        <span style="display:flex;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.04 7.58C8.88 7.58 8.62 7.64 8.4 7.88C8.18 8.12 7.56 8.7 7.56 9.87C7.56 11.04 8.42 12.16 8.53 12.32C8.65 12.47 10.18 14.83 12.54 15.85C13.1 16.09 13.54 16.24 13.88 16.35C14.44 16.53 14.95 16.5 15.35 16.44C15.8 16.37 16.73 15.87 16.92 15.33C17.11 14.79 17.11 14.33 17.05 14.23C17 14.13 16.84 14.07 16.6 13.95C16.36 13.83 15.17 13.25 14.95 13.17C14.73 13.09 14.57 13.05 14.41 13.29C14.25 13.53 13.79 14.07 13.65 14.23C13.51 14.39 13.37 14.41 13.13 14.29C12.89 14.17 11.88 13.84 10.68 12.77C9.75 11.94 9.12 10.91 8.96 10.63C8.8 10.35 8.94 10.2 9.06 10.08C9.17 9.97 9.31 9.79 9.44 9.64C9.57 9.49 9.61 9.38 9.7 9.21C9.79 9.04 9.74 8.9 9.68 8.78C9.62 8.66 9.16 7.52 8.96 7.05C8.77 6.58 8.58 6.65 8.44 6.64L8.06 6.64C7.9 6.64 7.64 6.7 7.42 6.94C7.2 7.18 6.58 7.76 6.58 8.93C6.58 10.1 7.44 11.22 7.55 11.38L9.04 7.58Z"/></svg></span>
                     </a>
                 </div>
             </div>
@@ -536,24 +674,34 @@
         <div class="cafe-card" data-id="cafe-yashoda" data-rating="4.7" data-borough="vavilalapally" data-24h="false" data-category="youth cultural cafe & fast food">
             <div class="card-img-wrap">
                 <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLdPp2rRmwqBW-pPQDFErWq6rYXUJ9H_HhgZ11osauB2LoATJ7OfsRi1l0s2VeWUk9YPBUwVMTQAriM0nwLAIIVZf3ypn09DWxQ8OzAA3-A0tQ_JWt9oxoBdj2974FLn_JeH7A7EIMETprDQ=w800-h600-k-no" alt="Cafe Yashoda" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1600&q=80';">
-                <div class="card-badge" style="background: #ea580c;">Youth Cultural Cafe</div>
-                <div class="card-rating-tag">★ 4.7 <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(47)</span></div>
+                <div class="card-badge" style="background: linear-gradient(135deg, #ea580c 0%, #f97316 100%);">Youth Cultural Cafe</div>
+                <div class="card-rating-tag">
+                    <span style="color:#fbbf24; display:flex;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></span>
+                    <span>4.7</span>
+                    <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(47)</span>
+                </div>
             </div>
             <div class="card-body">
                 <h3 class="card-title">Cafe Yashoda</h3>
                 <p class="card-tagline">Youth Cultural Hub, Acoustic Nights & Vibrant Street Cafe</p>
                 <div class="card-chips">
-                    <span class="card-chip">Acoustic & Open-Mic Events</span><span class="card-chip">Digital QR Ordering</span><span class="card-chip">Outdoor & Indoor Seating</span>
+                    <span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Acoustic & Open-Mic Events</span><span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Digital QR Ordering</span><span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Outdoor & Indoor Seating</span>
                 </div>
-                <div class="card-loc">📍 3-1-546, Near KEA Hospital, Vavilalapally, Karimnagar</div>
-                <div class="card-phone">📞 <a href="tel:+91 99668 18131">+91 99668 18131</a></div>
+                <div class="card-loc">
+                    <span class="card-svg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
+                    <span>3-1-546, Near KEA Hospital, Vavilalapally, Karimnagar</span>
+                </div>
+                <div class="card-phone">
+                    <span class="card-svg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
+                    <a href="tel:+91 99668 18131">+91 99668 18131</a>
+                </div>
                 <div class="card-actions">
-                    <a href="cafe-yashoda.html" class="btn-card-visit" style="background: #ea580c;">
+                    <a href="cafe-yashoda.html" class="btn-card-visit" style="background: linear-gradient(135deg, #ea580c 0%, #f97316 100%);">
                         <span>Visit Website & Menu</span>
-                        <span>→</span>
+                        <span style="display:flex;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
                     </a>
                     <a href="https://wa.me/919966818131?text=Hello%20Cafe Yashoda,%20I'd%20like%20to%20view%20your%20menu" target="_blank" class="btn-card-wa" title="Quick WhatsApp Order">
-                        <span>💬</span>
+                        <span style="display:flex;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.04 7.58C8.88 7.58 8.62 7.64 8.4 7.88C8.18 8.12 7.56 8.7 7.56 9.87C7.56 11.04 8.42 12.16 8.53 12.32C8.65 12.47 10.18 14.83 12.54 15.85C13.1 16.09 13.54 16.24 13.88 16.35C14.44 16.53 14.95 16.5 15.35 16.44C15.8 16.37 16.73 15.87 16.92 15.33C17.11 14.79 17.11 14.33 17.05 14.23C17 14.13 16.84 14.07 16.6 13.95C16.36 13.83 15.17 13.25 14.95 13.17C14.73 13.09 14.57 13.05 14.41 13.29C14.25 13.53 13.79 14.07 13.65 14.23C13.51 14.39 13.37 14.41 13.13 14.29C12.89 14.17 11.88 13.84 10.68 12.77C9.75 11.94 9.12 10.91 8.96 10.63C8.8 10.35 8.94 10.2 9.06 10.08C9.17 9.97 9.31 9.79 9.44 9.64C9.57 9.49 9.61 9.38 9.7 9.21C9.79 9.04 9.74 8.9 9.68 8.78C9.62 8.66 9.16 7.52 8.96 7.05C8.77 6.58 8.58 6.65 8.44 6.64L8.06 6.64C7.9 6.64 7.64 6.7 7.42 6.94C7.2 7.18 6.58 7.76 6.58 8.93C6.58 10.1 7.44 11.22 7.55 11.38L9.04 7.58Z"/></svg></span>
                     </a>
                 </div>
             </div>
@@ -562,24 +710,34 @@
         <div class="cafe-card" data-id="hungry-birds" data-rating="4.8" data-borough="mukarampura" data-24h="false" data-category="crispy chicken & fast-bites cafe">
             <div class="card-img-wrap">
                 <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLd0x24QLmoNS6cP13soc-tWewBH1Tknl-Wp6zcNrXvCnWb4ruY0tX-FsRAqtyKS0ehNf_Udz2rZWdj3cklYq_uBS0dKk8SWC20LQvu8qxMQPTTVNRwGYuoLCyummdEKiAFoyaHjJd5kuIWM=w800-h600-k-no" alt="Hungry Birds" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1600&q=80';">
-                <div class="card-badge" style="background: #f97316;">Crispy Chicken</div>
-                <div class="card-rating-tag">★ 4.8 <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(17)</span></div>
+                <div class="card-badge" style="background: linear-gradient(135deg, #f97316 0%, #facc15 100%);">Crispy Chicken</div>
+                <div class="card-rating-tag">
+                    <span style="color:#fbbf24; display:flex;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></span>
+                    <span>4.8</span>
+                    <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(17)</span>
+                </div>
             </div>
             <div class="card-body">
                 <h3 class="card-title">Hungry Birds</h3>
                 <p class="card-tagline">Early Morning Brews, Golden Fried Chicken & Late Night Cravings</p>
                 <div class="card-chips">
-                    <span class="card-chip">Beside Mamatha Theatre</span><span class="card-chip">Crispy Broasted Chicken</span><span class="card-chip">Early 6:30 AM Opening</span>
+                    <span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Beside Mamatha Theatre</span><span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Crispy Broasted Chicken</span><span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Early 6:30 AM Opening</span>
                 </div>
-                <div class="card-loc">📍 Collector Office Rd, Beside Mamatha Theatre, Mukarampura, Karimnagar</div>
-                <div class="card-phone">📞 <a href="tel:+91 98493 43257">+91 98493 43257</a></div>
+                <div class="card-loc">
+                    <span class="card-svg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
+                    <span>Collector Office Rd, Beside Mamatha Theatre, Mukarampura, Karimnagar</span>
+                </div>
+                <div class="card-phone">
+                    <span class="card-svg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
+                    <a href="tel:+91 98493 43257">+91 98493 43257</a>
+                </div>
                 <div class="card-actions">
-                    <a href="hungry-birds.html" class="btn-card-visit" style="background: #f97316;">
+                    <a href="hungry-birds.html" class="btn-card-visit" style="background: linear-gradient(135deg, #f97316 0%, #facc15 100%);">
                         <span>Visit Website & Menu</span>
-                        <span>→</span>
+                        <span style="display:flex;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
                     </a>
                     <a href="https://wa.me/919849343257?text=Hello%20Hungry Birds,%20I'd%20like%20to%20view%20your%20menu" target="_blank" class="btn-card-wa" title="Quick WhatsApp Order">
-                        <span>💬</span>
+                        <span style="display:flex;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.04 7.58C8.88 7.58 8.62 7.64 8.4 7.88C8.18 8.12 7.56 8.7 7.56 9.87C7.56 11.04 8.42 12.16 8.53 12.32C8.65 12.47 10.18 14.83 12.54 15.85C13.1 16.09 13.54 16.24 13.88 16.35C14.44 16.53 14.95 16.5 15.35 16.44C15.8 16.37 16.73 15.87 16.92 15.33C17.11 14.79 17.11 14.33 17.05 14.23C17 14.13 16.84 14.07 16.6 13.95C16.36 13.83 15.17 13.25 14.95 13.17C14.73 13.09 14.57 13.05 14.41 13.29C14.25 13.53 13.79 14.07 13.65 14.23C13.51 14.39 13.37 14.41 13.13 14.29C12.89 14.17 11.88 13.84 10.68 12.77C9.75 11.94 9.12 10.91 8.96 10.63C8.8 10.35 8.94 10.2 9.06 10.08C9.17 9.97 9.31 9.79 9.44 9.64C9.57 9.49 9.61 9.38 9.7 9.21C9.79 9.04 9.74 8.9 9.68 8.78C9.62 8.66 9.16 7.52 8.96 7.05C8.77 6.58 8.58 6.65 8.44 6.64L8.06 6.64C7.9 6.64 7.64 6.7 7.42 6.94C7.2 7.18 6.58 7.76 6.58 8.93C6.58 10.1 7.44 11.22 7.55 11.38L9.04 7.58Z"/></svg></span>
                     </a>
                 </div>
             </div>
@@ -588,24 +746,34 @@
         <div class="cafe-card" data-id="cafe-moments" data-rating="4.1" data-borough="mukarampura" data-24h="false" data-category="continental & casual bistro">
             <div class="card-img-wrap">
                 <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLeoA6tJgKEcXHEcK3G9gEY4FUackjumxnTCUlfSneEfO4LTiq3-n64UM3lNDslktsCjjz2gRwzfKcszpDW0OugBV2j2DP-fyy4oHEgJlEoXUwYDtjCvzq3mZOmGKoX61Wl6O7Xd=w800-h600-k-no" alt="Cafe Moments" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1507133750040-4a8f57021571?auto=format&fit=crop&w=1600&q=80';">
-                <div class="card-badge" style="background: #b45309;">Continental</div>
-                <div class="card-rating-tag">★ 4.1 <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(94)</span></div>
+                <div class="card-badge" style="background: linear-gradient(135deg, #b45309 0%, #f59e0b 100%);">Continental</div>
+                <div class="card-rating-tag">
+                    <span style="color:#fbbf24; display:flex;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></span>
+                    <span>4.1</span>
+                    <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(94)</span>
+                </div>
             </div>
             <div class="card-body">
                 <h3 class="card-title">Cafe Moments</h3>
                 <p class="card-tagline">Cherished Conversations, Classic Wraps & Irani Chai</p>
                 <div class="card-chips">
-                    <span class="card-chip">Classic Maska Bun & Irani Chai</span><span class="card-chip">Special Chicken Wraps</span><span class="card-chip">Early 6 AM Openings</span>
+                    <span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Classic Maska Bun & Irani Chai</span><span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Special Chicken Wraps</span><span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Early 6 AM Openings</span>
                 </div>
-                <div class="card-loc">📍 9-14/5/A3/3, Mukarampura, Karimnagar</div>
-                <div class="card-phone">📞 <a href="tel:+91 98493 43257">+91 98493 43257</a></div>
+                <div class="card-loc">
+                    <span class="card-svg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
+                    <span>9-14/5/A3/3, Mukarampura, Karimnagar</span>
+                </div>
+                <div class="card-phone">
+                    <span class="card-svg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
+                    <a href="tel:+91 98493 43257">+91 98493 43257</a>
+                </div>
                 <div class="card-actions">
-                    <a href="cafe-moments.html" class="btn-card-visit" style="background: #b45309;">
+                    <a href="cafe-moments.html" class="btn-card-visit" style="background: linear-gradient(135deg, #b45309 0%, #f59e0b 100%);">
                         <span>Visit Website & Menu</span>
-                        <span>→</span>
+                        <span style="display:flex;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
                     </a>
                     <a href="https://wa.me/919849343257?text=Hello%20Cafe Moments,%20I'd%20like%20to%20view%20your%20menu" target="_blank" class="btn-card-wa" title="Quick WhatsApp Order">
-                        <span>💬</span>
+                        <span style="display:flex;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.04 7.58C8.88 7.58 8.62 7.64 8.4 7.88C8.18 8.12 7.56 8.7 7.56 9.87C7.56 11.04 8.42 12.16 8.53 12.32C8.65 12.47 10.18 14.83 12.54 15.85C13.1 16.09 13.54 16.24 13.88 16.35C14.44 16.53 14.95 16.5 15.35 16.44C15.8 16.37 16.73 15.87 16.92 15.33C17.11 14.79 17.11 14.33 17.05 14.23C17 14.13 16.84 14.07 16.6 13.95C16.36 13.83 15.17 13.25 14.95 13.17C14.73 13.09 14.57 13.05 14.41 13.29C14.25 13.53 13.79 14.07 13.65 14.23C13.51 14.39 13.37 14.41 13.13 14.29C12.89 14.17 11.88 13.84 10.68 12.77C9.75 11.94 9.12 10.91 8.96 10.63C8.8 10.35 8.94 10.2 9.06 10.08C9.17 9.97 9.31 9.79 9.44 9.64C9.57 9.49 9.61 9.38 9.7 9.21C9.79 9.04 9.74 8.9 9.68 8.78C9.62 8.66 9.16 7.52 8.96 7.05C8.77 6.58 8.58 6.65 8.44 6.64L8.06 6.64C7.9 6.64 7.64 6.7 7.42 6.94C7.2 7.18 6.58 7.76 6.58 8.93C6.58 10.1 7.44 11.22 7.55 11.38L9.04 7.58Z"/></svg></span>
                     </a>
                 </div>
             </div>
@@ -614,24 +782,34 @@
         <div class="cafe-card" data-id="hangout-cafe" data-rating="5.0" data-borough="ashoknagar" data-24h="true" data-category="late-night social lounge & fast food">
             <div class="card-img-wrap">
                 <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLdIpnkY3a_CR-tnAzGCNvahahP-iScdvXnXHQBQHJ94f20p2qeE8Etzs3VopKfZDIj-OlDOgPt6Zh5rbwtX_t1BAvj8WNjXjTpBfwDDb7Cp6Ezj-JN3Y5LxnZ-kkPPV6cGCBJ2ZXVDbbQs=w800-h600-k-no" alt="Hangout cafe" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=1600&q=80';">
-                <div class="card-badge" style="background: #06b6d4;">Late-Night Social Lounge</div>
-                <div class="card-rating-tag">★ 5.0 <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(21)</span></div>
+                <div class="card-badge" style="background: linear-gradient(135deg, #06b6d4 0%, #22d3ee 100%);">Late-Night Social Lounge</div>
+                <div class="card-rating-tag">
+                    <span style="color:#fbbf24; display:flex;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></span>
+                    <span>5.0</span>
+                    <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(21)</span>
+                </div>
             </div>
             <div class="card-body">
                 <h3 class="card-title">Hangout cafe</h3>
                 <p class="card-tagline">Karimnagar's 5-Star Social Spot, Karak Chai & Midnight Bites</p>
                 <div class="card-chips">
-                    <span class="card-chip">Flawless 5.0 Star Rating</span><span class="card-chip">Open 24/7</span><span class="card-chip">Beside ABR Cinemas</span>
+                    <span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Flawless 5.0 Star Rating</span><span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Open 24/7</span><span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Beside ABR Cinemas</span>
                 </div>
-                <div class="card-loc">📍 Kaman Cir, Beside ABR Cinemas, Ashoknagar, Karimnagar</div>
-                <div class="card-phone">📞 <a href="tel:+91 86392 61623">+91 86392 61623</a></div>
+                <div class="card-loc">
+                    <span class="card-svg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
+                    <span>Kaman Cir, Beside ABR Cinemas, Ashoknagar, Karimnagar</span>
+                </div>
+                <div class="card-phone">
+                    <span class="card-svg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
+                    <a href="tel:+91 86392 61623">+91 86392 61623</a>
+                </div>
                 <div class="card-actions">
-                    <a href="hangout-cafe.html" class="btn-card-visit" style="background: #06b6d4;">
+                    <a href="hangout-cafe.html" class="btn-card-visit" style="background: linear-gradient(135deg, #06b6d4 0%, #22d3ee 100%);">
                         <span>Visit Website & Menu</span>
-                        <span>→</span>
+                        <span style="display:flex;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
                     </a>
                     <a href="https://wa.me/918639261623?text=Hello%20Hangout cafe,%20I'd%20like%20to%20view%20your%20menu" target="_blank" class="btn-card-wa" title="Quick WhatsApp Order">
-                        <span>💬</span>
+                        <span style="display:flex;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.04 7.58C8.88 7.58 8.62 7.64 8.4 7.88C8.18 8.12 7.56 8.7 7.56 9.87C7.56 11.04 8.42 12.16 8.53 12.32C8.65 12.47 10.18 14.83 12.54 15.85C13.1 16.09 13.54 16.24 13.88 16.35C14.44 16.53 14.95 16.5 15.35 16.44C15.8 16.37 16.73 15.87 16.92 15.33C17.11 14.79 17.11 14.33 17.05 14.23C17 14.13 16.84 14.07 16.6 13.95C16.36 13.83 15.17 13.25 14.95 13.17C14.73 13.09 14.57 13.05 14.41 13.29C14.25 13.53 13.79 14.07 13.65 14.23C13.51 14.39 13.37 14.41 13.13 14.29C12.89 14.17 11.88 13.84 10.68 12.77C9.75 11.94 9.12 10.91 8.96 10.63C8.8 10.35 8.94 10.2 9.06 10.08C9.17 9.97 9.31 9.79 9.44 9.64C9.57 9.49 9.61 9.38 9.7 9.21C9.79 9.04 9.74 8.9 9.68 8.78C9.62 8.66 9.16 7.52 8.96 7.05C8.77 6.58 8.58 6.65 8.44 6.64L8.06 6.64C7.9 6.64 7.64 6.7 7.42 6.94C7.2 7.18 6.58 7.76 6.58 8.93C6.58 10.1 7.44 11.22 7.55 11.38L9.04 7.58Z"/></svg></span>
                     </a>
                 </div>
             </div>
@@ -640,24 +818,34 @@
         <div class="cafe-card" data-id="ostrich-the-kafenio" data-rating="4.6" data-borough="vavilalapally" data-24h="false" data-category="european garden cafe & bistro">
             <div class="card-img-wrap">
                 <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLcnr4IgLJUD0of1SVUOWaNogT-tcndt7MtMBuSOVETKcs95RBn3oonR6UKYPUupg7dLFIT86b2ZeUY0by0t4ZQ9XLVudfsG3ZOyGRJzw-WTgwqU_hwZ0qHmMNRHWDMQx6XzGM10Cg_TCE0g=w800-h600-k-no" alt="Ostrich The Kafenio" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1600&q=80';">
-                <div class="card-badge" style="background: #15803d;">European Garden Cafe</div>
-                <div class="card-rating-tag">★ 4.6 <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(574)</span></div>
+                <div class="card-badge" style="background: linear-gradient(135deg, #15803d 0%, #4ade80 100%);">European Garden Cafe</div>
+                <div class="card-rating-tag">
+                    <span style="color:#fbbf24; display:flex;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></span>
+                    <span>4.6</span>
+                    <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(574)</span>
+                </div>
             </div>
             <div class="card-body">
                 <h3 class="card-title">Ostrich The Kafenio</h3>
                 <p class="card-tagline">Botanical Garden Cafe, Handcrafted Pastas & European Escapes</p>
                 <div class="card-chips">
-                    <span class="card-chip">Lush Botanical Atmosphere</span><span class="card-chip">Artisanal Italian Pastas</span><span class="card-chip">570+ Verified Reviews</span>
+                    <span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Lush Botanical Atmosphere</span><span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Artisanal Italian Pastas</span><span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>570+ Verified Reviews</span>
                 </div>
-                <div class="card-loc">📍 3, 1-672, Vavilalapally Rd, Karimnagar</div>
-                <div class="card-phone">📞 <a href="tel:+91 95050 01099">+91 95050 01099</a></div>
+                <div class="card-loc">
+                    <span class="card-svg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
+                    <span>3, 1-672, Vavilalapally Rd, Karimnagar</span>
+                </div>
+                <div class="card-phone">
+                    <span class="card-svg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
+                    <a href="tel:+91 95050 01099">+91 95050 01099</a>
+                </div>
                 <div class="card-actions">
-                    <a href="ostrich-the-kafenio.html" class="btn-card-visit" style="background: #15803d;">
+                    <a href="ostrich-the-kafenio.html" class="btn-card-visit" style="background: linear-gradient(135deg, #15803d 0%, #4ade80 100%);">
                         <span>Visit Website & Menu</span>
-                        <span>→</span>
+                        <span style="display:flex;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
                     </a>
                     <a href="https://wa.me/919505001099?text=Hello%20Ostrich The Kafenio,%20I'd%20like%20to%20view%20your%20menu" target="_blank" class="btn-card-wa" title="Quick WhatsApp Order">
-                        <span>💬</span>
+                        <span style="display:flex;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.04 7.58C8.88 7.58 8.62 7.64 8.4 7.88C8.18 8.12 7.56 8.7 7.56 9.87C7.56 11.04 8.42 12.16 8.53 12.32C8.65 12.47 10.18 14.83 12.54 15.85C13.1 16.09 13.54 16.24 13.88 16.35C14.44 16.53 14.95 16.5 15.35 16.44C15.8 16.37 16.73 15.87 16.92 15.33C17.11 14.79 17.11 14.33 17.05 14.23C17 14.13 16.84 14.07 16.6 13.95C16.36 13.83 15.17 13.25 14.95 13.17C14.73 13.09 14.57 13.05 14.41 13.29C14.25 13.53 13.79 14.07 13.65 14.23C13.51 14.39 13.37 14.41 13.13 14.29C12.89 14.17 11.88 13.84 10.68 12.77C9.75 11.94 9.12 10.91 8.96 10.63C8.8 10.35 8.94 10.2 9.06 10.08C9.17 9.97 9.31 9.79 9.44 9.64C9.57 9.49 9.61 9.38 9.7 9.21C9.79 9.04 9.74 8.9 9.68 8.78C9.62 8.66 9.16 7.52 8.96 7.05C8.77 6.58 8.58 6.65 8.44 6.64L8.06 6.64C7.9 6.64 7.64 6.7 7.42 6.94C7.2 7.18 6.58 7.76 6.58 8.93C6.58 10.1 7.44 11.22 7.55 11.38L9.04 7.58Z"/></svg></span>
                     </a>
                 </div>
             </div>
@@ -666,24 +854,34 @@
         <div class="cafe-card" data-id="praneeth-cafe" data-rating="4.9" data-borough="subhash nagar" data-24h="false" data-category="heritage tea & coffee house">
             <div class="card-img-wrap">
                 <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLcbegQjjNkxwPny8uSXSen7DzFfTtPE8tX_dcaEFp26exSyHum497pY-9gcIet9cF0qPu3qheuXmD2aljRRaESO2xqhozJCy0kW0cqxjaUsRktiKMO0LPKxQOIjze40qqd4QCBM5Q=w800-h600-k-no" alt="Praneeth cafe" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=1600&q=80';">
-                <div class="card-badge" style="background: #d97706;">Heritage Tea</div>
-                <div class="card-rating-tag">★ 4.9 <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(19)</span></div>
+                <div class="card-badge" style="background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);">Heritage Tea</div>
+                <div class="card-rating-tag">
+                    <span style="color:#fbbf24; display:flex;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></span>
+                    <span>4.9</span>
+                    <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(19)</span>
+                </div>
             </div>
             <div class="card-body">
                 <h3 class="card-title">Praneeth cafe</h3>
                 <p class="card-tagline">Heritage Tea House, Telangana Brews & Morning Refreshments</p>
                 <div class="card-chips">
-                    <span class="card-chip">4.9-Star Community Favorite</span><span class="card-chip">Authentic Irani Chai</span><span class="card-chip">Traditional Filter Kaapi</span>
+                    <span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>4.9-Star Community Favorite</span><span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Authentic Irani Chai</span><span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Traditional Filter Kaapi</span>
                 </div>
-                <div class="card-loc">📍 Beside Rohan Hospital, Subhash Nagar, Karimnagar</div>
-                <div class="card-phone">📞 <a href="tel:+91 96766 49284">+91 96766 49284</a></div>
+                <div class="card-loc">
+                    <span class="card-svg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
+                    <span>Beside Rohan Hospital, Subhash Nagar, Karimnagar</span>
+                </div>
+                <div class="card-phone">
+                    <span class="card-svg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
+                    <a href="tel:+91 96766 49284">+91 96766 49284</a>
+                </div>
                 <div class="card-actions">
-                    <a href="praneeth-cafe.html" class="btn-card-visit" style="background: #d97706;">
+                    <a href="praneeth-cafe.html" class="btn-card-visit" style="background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);">
                         <span>Visit Website & Menu</span>
-                        <span>→</span>
+                        <span style="display:flex;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
                     </a>
                     <a href="https://wa.me/919676649284?text=Hello%20Praneeth cafe,%20I'd%20like%20to%20view%20your%20menu" target="_blank" class="btn-card-wa" title="Quick WhatsApp Order">
-                        <span>💬</span>
+                        <span style="display:flex;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.04 7.58C8.88 7.58 8.62 7.64 8.4 7.88C8.18 8.12 7.56 8.7 7.56 9.87C7.56 11.04 8.42 12.16 8.53 12.32C8.65 12.47 10.18 14.83 12.54 15.85C13.1 16.09 13.54 16.24 13.88 16.35C14.44 16.53 14.95 16.5 15.35 16.44C15.8 16.37 16.73 15.87 16.92 15.33C17.11 14.79 17.11 14.33 17.05 14.23C17 14.13 16.84 14.07 16.6 13.95C16.36 13.83 15.17 13.25 14.95 13.17C14.73 13.09 14.57 13.05 14.41 13.29C14.25 13.53 13.79 14.07 13.65 14.23C13.51 14.39 13.37 14.41 13.13 14.29C12.89 14.17 11.88 13.84 10.68 12.77C9.75 11.94 9.12 10.91 8.96 10.63C8.8 10.35 8.94 10.2 9.06 10.08C9.17 9.97 9.31 9.79 9.44 9.64C9.57 9.49 9.61 9.38 9.7 9.21C9.79 9.04 9.74 8.9 9.68 8.78C9.62 8.66 9.16 7.52 8.96 7.05C8.77 6.58 8.58 6.65 8.44 6.64L8.06 6.64C7.9 6.64 7.64 6.7 7.42 6.94C7.2 7.18 6.58 7.76 6.58 8.93C6.58 10.1 7.44 11.22 7.55 11.38L9.04 7.58Z"/></svg></span>
                     </a>
                 </div>
             </div>
@@ -692,24 +890,34 @@
         <div class="cafe-card" data-id="london-cafe" data-rating="4.9" data-borough="vidyanagar" data-24h="false" data-category="british themed fast-casual bistro">
             <div class="card-img-wrap">
                 <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLcQHsa9HH7das0Ps1VSoNvI9r8E1dyoSvJ1eV_d9L_wMT1Pqa2Sr4nRzvW-kSdFvU-wTpHsPhpg_J-rpEMfBfXe-8ZjUp9xcrMOAriKU-tBkQ7Ca5EKboW2K1kx_UFAhC9wB9mWxOegvELh=w800-h600-k-no" alt="London Cafe" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1600&q=80';">
-                <div class="card-badge" style="background: #1d4ed8;">British Themed Fast-Casual Bistro</div>
-                <div class="card-rating-tag">★ 4.9 <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(39)</span></div>
+                <div class="card-badge" style="background: linear-gradient(135deg, #1d4ed8 0%, #ef4444 100%);">British Themed Fast-Casual Bistro</div>
+                <div class="card-rating-tag">
+                    <span style="color:#fbbf24; display:flex;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></span>
+                    <span>4.9</span>
+                    <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(39)</span>
+                </div>
             </div>
             <div class="card-body">
                 <h3 class="card-title">London Cafe</h3>
                 <p class="card-tagline">British Metropolitan Vibes, In-House Brioche & Artisan Shakes</p>
                 <div class="card-chips">
-                    <span class="card-chip">In-House Crafted Buns & Dough</span><span class="card-chip">4.9-Star Customer Rating</span><span class="card-chip">Opposite Vijayalaxmi Conventions</span>
+                    <span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>In-House Crafted Buns & Dough</span><span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>4.9-Star Customer Rating</span><span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Opposite Vijayalaxmi Conventions</span>
                 </div>
-                <div class="card-loc">📍 Malkapur Rd, Opp. Vijayalaxmi Conventions, Vidyanagar, Karimnagar</div>
-                <div class="card-phone">📞 <a href="tel:+91 97050 68072">+91 97050 68072</a></div>
+                <div class="card-loc">
+                    <span class="card-svg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
+                    <span>Malkapur Rd, Opp. Vijayalaxmi Conventions, Vidyanagar, Karimnagar</span>
+                </div>
+                <div class="card-phone">
+                    <span class="card-svg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
+                    <a href="tel:+91 97050 68072">+91 97050 68072</a>
+                </div>
                 <div class="card-actions">
-                    <a href="london-cafe.html" class="btn-card-visit" style="background: #1d4ed8;">
+                    <a href="london-cafe.html" class="btn-card-visit" style="background: linear-gradient(135deg, #1d4ed8 0%, #ef4444 100%);">
                         <span>Visit Website & Menu</span>
-                        <span>→</span>
+                        <span style="display:flex;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
                     </a>
                     <a href="https://wa.me/919705068072?text=Hello%20London Cafe,%20I'd%20like%20to%20view%20your%20menu" target="_blank" class="btn-card-wa" title="Quick WhatsApp Order">
-                        <span>💬</span>
+                        <span style="display:flex;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.04 7.58C8.88 7.58 8.62 7.64 8.4 7.88C8.18 8.12 7.56 8.7 7.56 9.87C7.56 11.04 8.42 12.16 8.53 12.32C8.65 12.47 10.18 14.83 12.54 15.85C13.1 16.09 13.54 16.24 13.88 16.35C14.44 16.53 14.95 16.5 15.35 16.44C15.8 16.37 16.73 15.87 16.92 15.33C17.11 14.79 17.11 14.33 17.05 14.23C17 14.13 16.84 14.07 16.6 13.95C16.36 13.83 15.17 13.25 14.95 13.17C14.73 13.09 14.57 13.05 14.41 13.29C14.25 13.53 13.79 14.07 13.65 14.23C13.51 14.39 13.37 14.41 13.13 14.29C12.89 14.17 11.88 13.84 10.68 12.77C9.75 11.94 9.12 10.91 8.96 10.63C8.8 10.35 8.94 10.2 9.06 10.08C9.17 9.97 9.31 9.79 9.44 9.64C9.57 9.49 9.61 9.38 9.7 9.21C9.79 9.04 9.74 8.9 9.68 8.78C9.62 8.66 9.16 7.52 8.96 7.05C8.77 6.58 8.58 6.65 8.44 6.64L8.06 6.64C7.9 6.64 7.64 6.7 7.42 6.94C7.2 7.18 6.58 7.76 6.58 8.93C6.58 10.1 7.44 11.22 7.55 11.38L9.04 7.58Z"/></svg></span>
                     </a>
                 </div>
             </div>
@@ -718,24 +926,34 @@
         <div class="cafe-card" data-id="dosofy" data-rating="4.8" data-borough="christian colony" data-24h="false" data-category="artisan specialty roastery & dessert bar">
             <div class="card-img-wrap">
                 <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLcPLqxq9oAqx7hXEyxm0AevtA37nP97LmtUy2CCvKkZdUTytk6sKbtmpw39OHKr_Mdtn1d4NxjQ0aMUPSLGVV5-Sospu67F9MCsz-abKUEg8OcnN_IDrJFyAIHlGmscPyObaWCin9eJ_XeV=w800-h600-k-no" alt="Dosofy" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1600&q=80';">
-                <div class="card-badge" style="background: #a21caf;">Artisan Specialty Roastery</div>
-                <div class="card-rating-tag">★ 4.8 <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(154)</span></div>
+                <div class="card-badge" style="background: linear-gradient(135deg, #a21caf 0%, #ec4899 100%);">Artisan Specialty Roastery</div>
+                <div class="card-rating-tag">
+                    <span style="color:#fbbf24; display:flex;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></span>
+                    <span>4.8</span>
+                    <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(154)</span>
+                </div>
             </div>
             <div class="card-body">
                 <h3 class="card-title">Dosofy</h3>
                 <p class="card-tagline">Artisanal Specialty Coffee, V60 Pour-Overs & Gourmet Desserts</p>
                 <div class="card-chips">
-                    <span class="card-chip">Third-Wave V60 Pour-Overs</span><span class="card-chip">Lotus Biscoff Desserts</span><span class="card-chip">150+ 4.8-Star Reviews</span>
+                    <span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Third-Wave V60 Pour-Overs</span><span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Lotus Biscoff Desserts</span><span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>150+ 4.8-Star Reviews</span>
                 </div>
-                <div class="card-loc">📍 Court Circle, Christian Colony, Karimnagar</div>
-                <div class="card-phone">📞 <a href="tel:+91 99492 78620">+91 99492 78620</a></div>
+                <div class="card-loc">
+                    <span class="card-svg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
+                    <span>Court Circle, Christian Colony, Karimnagar</span>
+                </div>
+                <div class="card-phone">
+                    <span class="card-svg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
+                    <a href="tel:+91 99492 78620">+91 99492 78620</a>
+                </div>
                 <div class="card-actions">
-                    <a href="dosofy.html" class="btn-card-visit" style="background: #a21caf;">
+                    <a href="dosofy.html" class="btn-card-visit" style="background: linear-gradient(135deg, #a21caf 0%, #ec4899 100%);">
                         <span>Visit Website & Menu</span>
-                        <span>→</span>
+                        <span style="display:flex;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
                     </a>
                     <a href="https://wa.me/919949278620?text=Hello%20Dosofy,%20I'd%20like%20to%20view%20your%20menu" target="_blank" class="btn-card-wa" title="Quick WhatsApp Order">
-                        <span>💬</span>
+                        <span style="display:flex;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.04 7.58C8.88 7.58 8.62 7.64 8.4 7.88C8.18 8.12 7.56 8.7 7.56 9.87C7.56 11.04 8.42 12.16 8.53 12.32C8.65 12.47 10.18 14.83 12.54 15.85C13.1 16.09 13.54 16.24 13.88 16.35C14.44 16.53 14.95 16.5 15.35 16.44C15.8 16.37 16.73 15.87 16.92 15.33C17.11 14.79 17.11 14.33 17.05 14.23C17 14.13 16.84 14.07 16.6 13.95C16.36 13.83 15.17 13.25 14.95 13.17C14.73 13.09 14.57 13.05 14.41 13.29C14.25 13.53 13.79 14.07 13.65 14.23C13.51 14.39 13.37 14.41 13.13 14.29C12.89 14.17 11.88 13.84 10.68 12.77C9.75 11.94 9.12 10.91 8.96 10.63C8.8 10.35 8.94 10.2 9.06 10.08C9.17 9.97 9.31 9.79 9.44 9.64C9.57 9.49 9.61 9.38 9.7 9.21C9.79 9.04 9.74 8.9 9.68 8.78C9.62 8.66 9.16 7.52 8.96 7.05C8.77 6.58 8.58 6.65 8.44 6.64L8.06 6.64C7.9 6.64 7.64 6.7 7.42 6.94C7.2 7.18 6.58 7.76 6.58 8.93C6.58 10.1 7.44 11.22 7.55 11.38L9.04 7.58Z"/></svg></span>
                     </a>
                 </div>
             </div>
@@ -744,24 +962,34 @@
         <div class="cafe-card" data-id="yellow-caf" data-rating="4.4" data-borough="mukarampura" data-24h="false" data-category="casual sunlit cafe & chai bar">
             <div class="card-img-wrap">
                 <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLdZH3pXde0zGrBAWMP64nAcEUoWCuCPaGls9q2TR9oPGKjlvhTcXTyLY7tuhXwvNQ_j4OsT4ZS71pDwuw0PS78mjk4MSvwfXji7QdetxB5qW2qcV8CEligm_g0KaWzcg8Rn8HfI=w800-h600-k-no" alt="Yellow Café" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1600&q=80';">
-                <div class="card-badge" style="background: #eab308;">Casual Sunlit Cafe</div>
-                <div class="card-rating-tag">★ 4.4 <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(86)</span></div>
+                <div class="card-badge" style="background: linear-gradient(135deg, #eab308 0%, #fde047 100%);">Casual Sunlit Cafe</div>
+                <div class="card-rating-tag">
+                    <span style="color:#fbbf24; display:flex;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></span>
+                    <span>4.4</span>
+                    <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(86)</span>
+                </div>
             </div>
             <div class="card-body">
                 <h3 class="card-title">Yellow Café</h3>
                 <p class="card-tagline">Sunlit Street Vibe, Signature Zafrani Chai & Quick Bites</p>
                 <div class="card-chips">
-                    <span class="card-chip">Aromatic Zafrani Chai</span><span class="card-chip">Fluffy Bun Omelettes</span><span class="card-chip">Sunny Cheerful Decor</span>
+                    <span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Aromatic Zafrani Chai</span><span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Fluffy Bun Omelettes</span><span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Sunny Cheerful Decor</span>
                 </div>
-                <div class="card-loc">📍 Bagathnagar Rd, Mukarampura, Karimnagar</div>
-                <div class="card-phone">📞 <a href="tel:+91 85209 81610">+91 85209 81610</a></div>
+                <div class="card-loc">
+                    <span class="card-svg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
+                    <span>Bagathnagar Rd, Mukarampura, Karimnagar</span>
+                </div>
+                <div class="card-phone">
+                    <span class="card-svg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
+                    <a href="tel:+91 85209 81610">+91 85209 81610</a>
+                </div>
                 <div class="card-actions">
-                    <a href="yellow-caf.html" class="btn-card-visit" style="background: #eab308;">
+                    <a href="yellow-caf.html" class="btn-card-visit" style="background: linear-gradient(135deg, #eab308 0%, #fde047 100%);">
                         <span>Visit Website & Menu</span>
-                        <span>→</span>
+                        <span style="display:flex;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
                     </a>
                     <a href="https://wa.me/918520981610?text=Hello%20Yellow Café,%20I'd%20like%20to%20view%20your%20menu" target="_blank" class="btn-card-wa" title="Quick WhatsApp Order">
-                        <span>💬</span>
+                        <span style="display:flex;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.04 7.58C8.88 7.58 8.62 7.64 8.4 7.88C8.18 8.12 7.56 8.7 7.56 9.87C7.56 11.04 8.42 12.16 8.53 12.32C8.65 12.47 10.18 14.83 12.54 15.85C13.1 16.09 13.54 16.24 13.88 16.35C14.44 16.53 14.95 16.5 15.35 16.44C15.8 16.37 16.73 15.87 16.92 15.33C17.11 14.79 17.11 14.33 17.05 14.23C17 14.13 16.84 14.07 16.6 13.95C16.36 13.83 15.17 13.25 14.95 13.17C14.73 13.09 14.57 13.05 14.41 13.29C14.25 13.53 13.79 14.07 13.65 14.23C13.51 14.39 13.37 14.41 13.13 14.29C12.89 14.17 11.88 13.84 10.68 12.77C9.75 11.94 9.12 10.91 8.96 10.63C8.8 10.35 8.94 10.2 9.06 10.08C9.17 9.97 9.31 9.79 9.44 9.64C9.57 9.49 9.61 9.38 9.7 9.21C9.79 9.04 9.74 8.9 9.68 8.78C9.62 8.66 9.16 7.52 8.96 7.05C8.77 6.58 8.58 6.65 8.44 6.64L8.06 6.64C7.9 6.64 7.64 6.7 7.42 6.94C7.2 7.18 6.58 7.76 6.58 8.93C6.58 10.1 7.44 11.22 7.55 11.38L9.04 7.58Z"/></svg></span>
                     </a>
                 </div>
             </div>
@@ -770,24 +998,34 @@
         <div class="cafe-card" data-id="d-b-cafe" data-rating="4.9" data-borough="kothapally / jagitial highway" data-24h="false" data-category="highway specialty cafe & grills">
             <div class="card-img-wrap">
                 <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLeyTg-YYrlBuYU5vOPmGpFJ7Dj8dPxJ5ZZzRf73zJ2EkgZrzRTu-K5BxR_95M4samejc9irh2HpnSH3i_Ss0k-HoCh71hLPFIH-3Ftbt-idawTK5Qkg4W9KfNSoGXL0DUbuu7vL3nBQQSmT=w800-h600-k-no" alt="D&B Cafe" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=1600&q=80';">
-                <div class="card-badge" style="background: #f97316;">Highway Specialty Cafe</div>
-                <div class="card-rating-tag">★ 4.9 <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(41)</span></div>
+                <div class="card-badge" style="background: linear-gradient(135deg, #f97316 0%, #0284c7 100%);">Highway Specialty Cafe</div>
+                <div class="card-rating-tag">
+                    <span style="color:#fbbf24; display:flex;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></span>
+                    <span>4.9</span>
+                    <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(41)</span>
+                </div>
             </div>
             <div class="card-body">
                 <h3 class="card-title">D&B Cafe</h3>
                 <p class="card-tagline">Highway Modern Roastery, Butterfly Pea Brews & Gourmet Grills</p>
                 <div class="card-chips">
-                    <span class="card-chip">Highway Destination with Parking</span><span class="card-chip">Exotic Butterfly Pea Teas</span><span class="card-chip">4.9-Star Rating</span>
+                    <span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Highway Destination with Parking</span><span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Exotic Butterfly Pea Teas</span><span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>4.9-Star Rating</span>
                 </div>
-                <div class="card-loc">📍 Kothapally Rd, Jagitial Highway, Karimnagar</div>
-                <div class="card-phone">📞 <a href="tel:+91 99593 12026">+91 99593 12026</a></div>
+                <div class="card-loc">
+                    <span class="card-svg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
+                    <span>Kothapally Rd, Jagitial Highway, Karimnagar</span>
+                </div>
+                <div class="card-phone">
+                    <span class="card-svg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
+                    <a href="tel:+91 99593 12026">+91 99593 12026</a>
+                </div>
                 <div class="card-actions">
-                    <a href="d-b-cafe.html" class="btn-card-visit" style="background: #f97316;">
+                    <a href="d-b-cafe.html" class="btn-card-visit" style="background: linear-gradient(135deg, #f97316 0%, #0284c7 100%);">
                         <span>Visit Website & Menu</span>
-                        <span>→</span>
+                        <span style="display:flex;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
                     </a>
                     <a href="https://wa.me/919959312026?text=Hello%20D&B Cafe,%20I'd%20like%20to%20view%20your%20menu" target="_blank" class="btn-card-wa" title="Quick WhatsApp Order">
-                        <span>💬</span>
+                        <span style="display:flex;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.04 7.58C8.88 7.58 8.62 7.64 8.4 7.88C8.18 8.12 7.56 8.7 7.56 9.87C7.56 11.04 8.42 12.16 8.53 12.32C8.65 12.47 10.18 14.83 12.54 15.85C13.1 16.09 13.54 16.24 13.88 16.35C14.44 16.53 14.95 16.5 15.35 16.44C15.8 16.37 16.73 15.87 16.92 15.33C17.11 14.79 17.11 14.33 17.05 14.23C17 14.13 16.84 14.07 16.6 13.95C16.36 13.83 15.17 13.25 14.95 13.17C14.73 13.09 14.57 13.05 14.41 13.29C14.25 13.53 13.79 14.07 13.65 14.23C13.51 14.39 13.37 14.41 13.13 14.29C12.89 14.17 11.88 13.84 10.68 12.77C9.75 11.94 9.12 10.91 8.96 10.63C8.8 10.35 8.94 10.2 9.06 10.08C9.17 9.97 9.31 9.79 9.44 9.64C9.57 9.49 9.61 9.38 9.7 9.21C9.79 9.04 9.74 8.9 9.68 8.78C9.62 8.66 9.16 7.52 8.96 7.05C8.77 6.58 8.58 6.65 8.44 6.64L8.06 6.64C7.9 6.64 7.64 6.7 7.42 6.94C7.2 7.18 6.58 7.76 6.58 8.93C6.58 10.1 7.44 11.22 7.55 11.38L9.04 7.58Z"/></svg></span>
                     </a>
                 </div>
             </div>
@@ -796,24 +1034,34 @@
         <div class="cafe-card" data-id="bite-and-sip-the-cafe" data-rating="5.0" data-borough="mukarampura" data-24h="false" data-category="bubble tea & snacking bar">
             <div class="card-img-wrap">
                 <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLf4vo9mPjYeCHCDAkxdhZ-E4EgC9PermAZ-qXpEU_jM0ildl_DY1Hxvp-18H-FO7vsjlP8J5ryNfOE2IwZFxoikTXMsc2VXY1wotBZfsgxQ7h5mHYbPoHXRWTL9EDGiQ2LUKe-tsFjw53k=w800-h600-k-no" alt="BITE AND SIP THE CAFE" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1558857563-b37df2dd5f76?auto=format&fit=crop&w=1600&q=80';">
-                <div class="card-badge" style="background: #0d9488;">Bubble Tea</div>
-                <div class="card-rating-tag">★ 5.0 <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(12)</span></div>
+                <div class="card-badge" style="background: linear-gradient(135deg, #0d9488 0%, #f43f5e 100%);">Bubble Tea</div>
+                <div class="card-rating-tag">
+                    <span style="color:#fbbf24; display:flex;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></span>
+                    <span>5.0</span>
+                    <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(12)</span>
+                </div>
             </div>
             <div class="card-body">
                 <h3 class="card-title">BITE AND SIP THE CAFE</h3>
                 <p class="card-tagline">Authentic Boba Tea, Crisp Golden Finger-Foods & Gen-Z Hangouts</p>
                 <div class="card-chips">
-                    <span class="card-chip">Flawless 5.0-Star Rating</span><span class="card-chip">Real Taiwanese Boba Pearls</span><span class="card-chip">Crispy Chicken Popcorn</span>
+                    <span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Flawless 5.0-Star Rating</span><span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Real Taiwanese Boba Pearls</span><span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Crispy Chicken Popcorn</span>
                 </div>
-                <div class="card-loc">📍 Opp. Town Police Station 2, Near Jyothismathi Girls Hostel, Karimnagar</div>
-                <div class="card-phone">📞 <a href="tel:+91 70936 93918">+91 70936 93918</a></div>
+                <div class="card-loc">
+                    <span class="card-svg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
+                    <span>Opp. Town Police Station 2, Near Jyothismathi Girls Hostel, Karimnagar</span>
+                </div>
+                <div class="card-phone">
+                    <span class="card-svg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
+                    <a href="tel:+91 70936 93918">+91 70936 93918</a>
+                </div>
                 <div class="card-actions">
-                    <a href="bite-and-sip-the-cafe.html" class="btn-card-visit" style="background: #0d9488;">
+                    <a href="bite-and-sip-the-cafe.html" class="btn-card-visit" style="background: linear-gradient(135deg, #0d9488 0%, #f43f5e 100%);">
                         <span>Visit Website & Menu</span>
-                        <span>→</span>
+                        <span style="display:flex;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
                     </a>
                     <a href="https://wa.me/917093693918?text=Hello%20BITE AND SIP THE CAFE,%20I'd%20like%20to%20view%20your%20menu" target="_blank" class="btn-card-wa" title="Quick WhatsApp Order">
-                        <span>💬</span>
+                        <span style="display:flex;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.04 7.58C8.88 7.58 8.62 7.64 8.4 7.88C8.18 8.12 7.56 8.7 7.56 9.87C7.56 11.04 8.42 12.16 8.53 12.32C8.65 12.47 10.18 14.83 12.54 15.85C13.1 16.09 13.54 16.24 13.88 16.35C14.44 16.53 14.95 16.5 15.35 16.44C15.8 16.37 16.73 15.87 16.92 15.33C17.11 14.79 17.11 14.33 17.05 14.23C17 14.13 16.84 14.07 16.6 13.95C16.36 13.83 15.17 13.25 14.95 13.17C14.73 13.09 14.57 13.05 14.41 13.29C14.25 13.53 13.79 14.07 13.65 14.23C13.51 14.39 13.37 14.41 13.13 14.29C12.89 14.17 11.88 13.84 10.68 12.77C9.75 11.94 9.12 10.91 8.96 10.63C8.8 10.35 8.94 10.2 9.06 10.08C9.17 9.97 9.31 9.79 9.44 9.64C9.57 9.49 9.61 9.38 9.7 9.21C9.79 9.04 9.74 8.9 9.68 8.78C9.62 8.66 9.16 7.52 8.96 7.05C8.77 6.58 8.58 6.65 8.44 6.64L8.06 6.64C7.9 6.64 7.64 6.7 7.42 6.94C7.2 7.18 6.58 7.76 6.58 8.93C6.58 10.1 7.44 11.22 7.55 11.38L9.04 7.58Z"/></svg></span>
                     </a>
                 </div>
             </div>
@@ -822,24 +1070,34 @@
         <div class="cafe-card" data-id="krost-cafe" data-rating="4.2" data-borough="mukarampura" data-24h="false" data-category="italian trattoria & broasted chicken">
             <div class="card-img-wrap">
                 <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLcODFPPAL-MWoJR-zFfbBrRmm7LFqlwv0MWIWCPPTlenK1OtYE6086jNhEBbYitISterl0CMYr8THZdVDJ4W4J6jnIFuVgO9JizqIa4zYVz1A8EHin4gH2QYvLxvtNZRe5Vo8SvUJN5H8vj=w800-h600-k-no" alt="KROST CAFE" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1600&q=80';">
-                <div class="card-badge" style="background: #b91c1c;">Italian Trattoria</div>
-                <div class="card-rating-tag">★ 4.2 <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(18)</span></div>
+                <div class="card-badge" style="background: linear-gradient(135deg, #b91c1c 0%, #15803d 100%);">Italian Trattoria</div>
+                <div class="card-rating-tag">
+                    <span style="color:#fbbf24; display:flex;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></span>
+                    <span>4.2</span>
+                    <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(18)</span>
+                </div>
             </div>
             <div class="card-body">
                 <h3 class="card-title">KROST CAFE</h3>
                 <p class="card-tagline">Authentic Italian Pastas, Broasted Buckets & Stone-Oven Pizzas</p>
                 <div class="card-chips">
-                    <span class="card-chip">Opposite Arts College</span><span class="card-chip">Crunchy Broasted Chicken Boxes</span><span class="card-chip">Authentic Mac & Cheese Pasta</span>
+                    <span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Opposite Arts College</span><span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Crunchy Broasted Chicken Boxes</span><span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Authentic Mac & Cheese Pasta</span>
                 </div>
-                <div class="card-loc">📍 Bilal Complex, Opp. Arts College, Mukarampura, Karimnagar</div>
-                <div class="card-phone">📞 <a href="tel:+91 86392 61623">+91 86392 61623</a></div>
+                <div class="card-loc">
+                    <span class="card-svg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
+                    <span>Bilal Complex, Opp. Arts College, Mukarampura, Karimnagar</span>
+                </div>
+                <div class="card-phone">
+                    <span class="card-svg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
+                    <a href="tel:+91 86392 61623">+91 86392 61623</a>
+                </div>
                 <div class="card-actions">
-                    <a href="krost-cafe.html" class="btn-card-visit" style="background: #b91c1c;">
+                    <a href="krost-cafe.html" class="btn-card-visit" style="background: linear-gradient(135deg, #b91c1c 0%, #15803d 100%);">
                         <span>Visit Website & Menu</span>
-                        <span>→</span>
+                        <span style="display:flex;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
                     </a>
                     <a href="https://wa.me/918639261623?text=Hello%20KROST CAFE,%20I'd%20like%20to%20view%20your%20menu" target="_blank" class="btn-card-wa" title="Quick WhatsApp Order">
-                        <span>💬</span>
+                        <span style="display:flex;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.04 7.58C8.88 7.58 8.62 7.64 8.4 7.88C8.18 8.12 7.56 8.7 7.56 9.87C7.56 11.04 8.42 12.16 8.53 12.32C8.65 12.47 10.18 14.83 12.54 15.85C13.1 16.09 13.54 16.24 13.88 16.35C14.44 16.53 14.95 16.5 15.35 16.44C15.8 16.37 16.73 15.87 16.92 15.33C17.11 14.79 17.11 14.33 17.05 14.23C17 14.13 16.84 14.07 16.6 13.95C16.36 13.83 15.17 13.25 14.95 13.17C14.73 13.09 14.57 13.05 14.41 13.29C14.25 13.53 13.79 14.07 13.65 14.23C13.51 14.39 13.37 14.41 13.13 14.29C12.89 14.17 11.88 13.84 10.68 12.77C9.75 11.94 9.12 10.91 8.96 10.63C8.8 10.35 8.94 10.2 9.06 10.08C9.17 9.97 9.31 9.79 9.44 9.64C9.57 9.49 9.61 9.38 9.7 9.21C9.79 9.04 9.74 8.9 9.68 8.78C9.62 8.66 9.16 7.52 8.96 7.05C8.77 6.58 8.58 6.65 8.44 6.64L8.06 6.64C7.9 6.64 7.64 6.7 7.42 6.94C7.2 7.18 6.58 7.76 6.58 8.93C6.58 10.1 7.44 11.22 7.55 11.38L9.04 7.58Z"/></svg></span>
                     </a>
                 </div>
             </div>
@@ -848,24 +1106,34 @@
         <div class="cafe-card" data-id="abhi-s-cafe" data-rating="4.4" data-borough="vavilalapally" data-24h="false" data-category="cozy neighborhood cafe & ramen bar">
             <div class="card-img-wrap">
                 <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLfTuXPlb6y2lN67s6M8CETrvPIV73JH0yvNWtF1DVBhRjni3-jW4n0PytXxZN3R1NvcKqCrwYVIj4u9f6VVW-cTyDC_Xj6ss3ooA_50Go553M_G2pp3pM52gVylM0_uGWJECV8-=w800-h600-k-no" alt="Abhi's cafe" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=1600&q=80';">
-                <div class="card-badge" style="background: #4f46e5;">Cozy Neighborhood Cafe</div>
-                <div class="card-rating-tag">★ 4.4 <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(42)</span></div>
+                <div class="card-badge" style="background: linear-gradient(135deg, #4f46e5 0%, #818cf8 100%);">Cozy Neighborhood Cafe</div>
+                <div class="card-rating-tag">
+                    <span style="color:#fbbf24; display:flex;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></span>
+                    <span>4.4</span>
+                    <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(42)</span>
+                </div>
             </div>
             <div class="card-body">
                 <h3 class="card-title">Abhi's cafe</h3>
                 <p class="card-tagline">Weekend Halal Ramen, Steamed Momos & Cozy Vavilalapally Nook</p>
                 <div class="card-chips">
-                    <span class="card-chip">Weekend Authentic Halal Ramen</span><span class="card-chip">Handcrafted Steamed Momos</span><span class="card-chip">Warm Minimalist Vibe</span>
+                    <span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Weekend Authentic Halal Ramen</span><span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Handcrafted Steamed Momos</span><span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Warm Minimalist Vibe</span>
                 </div>
-                <div class="card-loc">📍 3-7-491/A, Near Chaitanyapuri, Vavilalapally, Karimnagar</div>
-                <div class="card-phone">📞 <a href="tel:+91 99668 18131">+91 99668 18131</a></div>
+                <div class="card-loc">
+                    <span class="card-svg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
+                    <span>3-7-491/A, Near Chaitanyapuri, Vavilalapally, Karimnagar</span>
+                </div>
+                <div class="card-phone">
+                    <span class="card-svg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
+                    <a href="tel:+91 99668 18131">+91 99668 18131</a>
+                </div>
                 <div class="card-actions">
-                    <a href="abhi-s-cafe.html" class="btn-card-visit" style="background: #4f46e5;">
+                    <a href="abhi-s-cafe.html" class="btn-card-visit" style="background: linear-gradient(135deg, #4f46e5 0%, #818cf8 100%);">
                         <span>Visit Website & Menu</span>
-                        <span>→</span>
+                        <span style="display:flex;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
                     </a>
                     <a href="https://wa.me/919966818131?text=Hello%20Abhi's cafe,%20I'd%20like%20to%20view%20your%20menu" target="_blank" class="btn-card-wa" title="Quick WhatsApp Order">
-                        <span>💬</span>
+                        <span style="display:flex;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.04 7.58C8.88 7.58 8.62 7.64 8.4 7.88C8.18 8.12 7.56 8.7 7.56 9.87C7.56 11.04 8.42 12.16 8.53 12.32C8.65 12.47 10.18 14.83 12.54 15.85C13.1 16.09 13.54 16.24 13.88 16.35C14.44 16.53 14.95 16.5 15.35 16.44C15.8 16.37 16.73 15.87 16.92 15.33C17.11 14.79 17.11 14.33 17.05 14.23C17 14.13 16.84 14.07 16.6 13.95C16.36 13.83 15.17 13.25 14.95 13.17C14.73 13.09 14.57 13.05 14.41 13.29C14.25 13.53 13.79 14.07 13.65 14.23C13.51 14.39 13.37 14.41 13.13 14.29C12.89 14.17 11.88 13.84 10.68 12.77C9.75 11.94 9.12 10.91 8.96 10.63C8.8 10.35 8.94 10.2 9.06 10.08C9.17 9.97 9.31 9.79 9.44 9.64C9.57 9.49 9.61 9.38 9.7 9.21C9.79 9.04 9.74 8.9 9.68 8.78C9.62 8.66 9.16 7.52 8.96 7.05C8.77 6.58 8.58 6.65 8.44 6.64L8.06 6.64C7.9 6.64 7.64 6.7 7.42 6.94C7.2 7.18 6.58 7.76 6.58 8.93C6.58 10.1 7.44 11.22 7.55 11.38L9.04 7.58Z"/></svg></span>
                     </a>
                 </div>
             </div>
@@ -874,24 +1142,34 @@
         <div class="cafe-card" data-id="la-delicious-bakery-and-cafe" data-rating="4.2" data-borough="jyothinagar" data-24h="false" data-category="luxury bakery & european cafe">
             <div class="card-img-wrap">
                 <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLes1LiNPDlLayRDBdnZKUKm9Fi2LgHRYB87pM5tUZLFFaDWTtfXYZQtUR9y03oAUt8VsNfpmR2BsmenEAaXiEh2w8ITf-yblPnFv8ITAv0Pb99axqQh8qhpeYgedBdLbri-Api5=w800-h600-k-no" alt="La'Delicious Bakery and Cafe" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1600&q=80';">
-                <div class="card-badge" style="background: #7e22ce;">Luxury Bakery</div>
-                <div class="card-rating-tag">★ 4.2 <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(2057)</span></div>
+                <div class="card-badge" style="background: linear-gradient(135deg, #7e22ce 0%, #c084fc 100%);">Luxury Bakery</div>
+                <div class="card-rating-tag">
+                    <span style="color:#fbbf24; display:flex;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></span>
+                    <span>4.2</span>
+                    <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(2057)</span>
+                </div>
             </div>
             <div class="card-body">
                 <h3 class="card-title">La'Delicious Bakery and Cafe</h3>
                 <p class="card-tagline">Grand Parisian Patisserie, Artisan Cakes & Continental Dining</p>
                 <div class="card-chips">
-                    <span class="card-chip">Karimnagar's Most Reviewed Bakery (2000+ Reviews)</span><span class="card-chip">Eggless Celebration Cakes</span><span class="card-chip">Luxury French Opera Pastries</span>
+                    <span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Karimnagar's Most Reviewed Bakery (2000+ Reviews)</span><span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Eggless Celebration Cakes</span><span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Luxury French Opera Pastries</span>
                 </div>
-                <div class="card-loc">📍 Shiva Theater Rd, Jyothinagar, Karimnagar</div>
-                <div class="card-phone">📞 <a href="tel:+91 97043 03881">+91 97043 03881</a></div>
+                <div class="card-loc">
+                    <span class="card-svg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
+                    <span>Shiva Theater Rd, Jyothinagar, Karimnagar</span>
+                </div>
+                <div class="card-phone">
+                    <span class="card-svg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
+                    <a href="tel:+91 97043 03881">+91 97043 03881</a>
+                </div>
                 <div class="card-actions">
-                    <a href="la-delicious-bakery-and-cafe.html" class="btn-card-visit" style="background: #7e22ce;">
+                    <a href="la-delicious-bakery-and-cafe.html" class="btn-card-visit" style="background: linear-gradient(135deg, #7e22ce 0%, #c084fc 100%);">
                         <span>Visit Website & Menu</span>
-                        <span>→</span>
+                        <span style="display:flex;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
                     </a>
                     <a href="https://wa.me/919704303881?text=Hello%20La'Delicious Bakery and Cafe,%20I'd%20like%20to%20view%20your%20menu" target="_blank" class="btn-card-wa" title="Quick WhatsApp Order">
-                        <span>💬</span>
+                        <span style="display:flex;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.04 7.58C8.88 7.58 8.62 7.64 8.4 7.88C8.18 8.12 7.56 8.7 7.56 9.87C7.56 11.04 8.42 12.16 8.53 12.32C8.65 12.47 10.18 14.83 12.54 15.85C13.1 16.09 13.54 16.24 13.88 16.35C14.44 16.53 14.95 16.5 15.35 16.44C15.8 16.37 16.73 15.87 16.92 15.33C17.11 14.79 17.11 14.33 17.05 14.23C17 14.13 16.84 14.07 16.6 13.95C16.36 13.83 15.17 13.25 14.95 13.17C14.73 13.09 14.57 13.05 14.41 13.29C14.25 13.53 13.79 14.07 13.65 14.23C13.51 14.39 13.37 14.41 13.13 14.29C12.89 14.17 11.88 13.84 10.68 12.77C9.75 11.94 9.12 10.91 8.96 10.63C8.8 10.35 8.94 10.2 9.06 10.08C9.17 9.97 9.31 9.79 9.44 9.64C9.57 9.49 9.61 9.38 9.7 9.21C9.79 9.04 9.74 8.9 9.68 8.78C9.62 8.66 9.16 7.52 8.96 7.05C8.77 6.58 8.58 6.65 8.44 6.64L8.06 6.64C7.9 6.64 7.64 6.7 7.42 6.94C7.2 7.18 6.58 7.76 6.58 8.93C6.58 10.1 7.44 11.22 7.55 11.38L9.04 7.58Z"/></svg></span>
                     </a>
                 </div>
             </div>
@@ -900,24 +1178,34 @@
         <div class="cafe-card" data-id="amruth-cafe-lounge" data-rating="4.2" data-borough="mankamma thota" data-24h="false" data-category="south indian heritage & casual lounge">
             <div class="card-img-wrap">
                 <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLdmzV39jYiYPa-fvPQIWVvV-tqIywO9RBbyUpAKi2ch9Wpm7dVx67wODGPZvSvNFXrs_aUvO9JD8aJU9MP7tI9COSLim9lUAKVvNSsA-glwlE-ebJ2p2RuAuXsjkeI1SVEXWmGnWg=w800-h600-k-no" alt="Amruth Cafe & Lounge" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=1600&q=80';">
-                <div class="card-badge" style="background: #c2410c;">South Indian Heritage</div>
-                <div class="card-rating-tag">★ 4.2 <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(131)</span></div>
+                <div class="card-badge" style="background: linear-gradient(135deg, #c2410c 0%, #f59e0b 100%);">South Indian Heritage</div>
+                <div class="card-rating-tag">
+                    <span style="color:#fbbf24; display:flex;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></span>
+                    <span>4.2</span>
+                    <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(131)</span>
+                </div>
             </div>
             <div class="card-body">
                 <h3 class="card-title">Amruth Cafe & Lounge</h3>
                 <p class="card-tagline">South Indian Heritage, Crispy Ghee Dosas & Evening Bakes</p>
                 <div class="card-chips">
-                    <span class="card-chip">Golden Ghee Roast Dosas</span><span class="card-chip">Piping Hot Mysore Bondas</span><span class="card-chip">Traditional Filter Kaapi</span>
+                    <span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Golden Ghee Roast Dosas</span><span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Piping Hot Mysore Bondas</span><span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Traditional Filter Kaapi</span>
                 </div>
-                <div class="card-loc">📍 Opp. Adepu Jairam Hospital, Mankamma Thota, Karimnagar</div>
-                <div class="card-phone">📞 <a href="tel:+91 98496 16087">+91 98496 16087</a></div>
+                <div class="card-loc">
+                    <span class="card-svg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
+                    <span>Opp. Adepu Jairam Hospital, Mankamma Thota, Karimnagar</span>
+                </div>
+                <div class="card-phone">
+                    <span class="card-svg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
+                    <a href="tel:+91 98496 16087">+91 98496 16087</a>
+                </div>
                 <div class="card-actions">
-                    <a href="amruth-cafe-lounge.html" class="btn-card-visit" style="background: #c2410c;">
+                    <a href="amruth-cafe-lounge.html" class="btn-card-visit" style="background: linear-gradient(135deg, #c2410c 0%, #f59e0b 100%);">
                         <span>Visit Website & Menu</span>
-                        <span>→</span>
+                        <span style="display:flex;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
                     </a>
                     <a href="https://wa.me/919849616087?text=Hello%20Amruth Cafe & Lounge,%20I'd%20like%20to%20view%20your%20menu" target="_blank" class="btn-card-wa" title="Quick WhatsApp Order">
-                        <span>💬</span>
+                        <span style="display:flex;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.04 7.58C8.88 7.58 8.62 7.64 8.4 7.88C8.18 8.12 7.56 8.7 7.56 9.87C7.56 11.04 8.42 12.16 8.53 12.32C8.65 12.47 10.18 14.83 12.54 15.85C13.1 16.09 13.54 16.24 13.88 16.35C14.44 16.53 14.95 16.5 15.35 16.44C15.8 16.37 16.73 15.87 16.92 15.33C17.11 14.79 17.11 14.33 17.05 14.23C17 14.13 16.84 14.07 16.6 13.95C16.36 13.83 15.17 13.25 14.95 13.17C14.73 13.09 14.57 13.05 14.41 13.29C14.25 13.53 13.79 14.07 13.65 14.23C13.51 14.39 13.37 14.41 13.13 14.29C12.89 14.17 11.88 13.84 10.68 12.77C9.75 11.94 9.12 10.91 8.96 10.63C8.8 10.35 8.94 10.2 9.06 10.08C9.17 9.97 9.31 9.79 9.44 9.64C9.57 9.49 9.61 9.38 9.7 9.21C9.79 9.04 9.74 8.9 9.68 8.78C9.62 8.66 9.16 7.52 8.96 7.05C8.77 6.58 8.58 6.65 8.44 6.64L8.06 6.64C7.9 6.64 7.64 6.7 7.42 6.94C7.2 7.18 6.58 7.76 6.58 8.93C6.58 10.1 7.44 11.22 7.55 11.38L9.04 7.58Z"/></svg></span>
                     </a>
                 </div>
             </div>
@@ -926,24 +1214,34 @@
         <div class="cafe-card" data-id="knrs-cakes-and-coffee-shop" data-rating="4.3" data-borough="ganesh nagar" data-24h="false" data-category="cakes studio & casual family cafe">
             <div class="card-img-wrap">
                 <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLfjdQtSxR8ma1aAjnc1lbJDV9Ta70lBtbTi3nV_Dc3JEW3HLsSPi9avK27qBKriPqH2sXRzJFMVwJrNjO4ex8dl5Ad08REkxj4046qQJfUynWTnWAZQkhPTmrJJLSAcSrFzoKjx=w800-h600-k-no" alt="KNRS CAKES AND COFFEE SHOP" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1535141192574-5d4897c13136?auto=format&fit=crop&w=1600&q=80';">
-                <div class="card-badge" style="background: #be123c;">Cakes Studio</div>
-                <div class="card-rating-tag">★ 4.3 <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(367)</span></div>
+                <div class="card-badge" style="background: linear-gradient(135deg, #be123c 0%, #fb7185 100%);">Cakes Studio</div>
+                <div class="card-rating-tag">
+                    <span style="color:#fbbf24; display:flex;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></span>
+                    <span>4.3</span>
+                    <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(367)</span>
+                </div>
             </div>
             <div class="card-body">
                 <h3 class="card-title">KNRS CAKES AND COFFEE SHOP</h3>
                 <p class="card-tagline">Handcrafted Celebration Cakes, Sizzling Brownies & Gourmet Pizzas</p>
                 <div class="card-chips">
-                    <span class="card-chip">Signature Celebration Cakes</span><span class="card-chip">Sizzling Hot Brownies</span><span class="card-chip">Near Kaman Landmark</span>
+                    <span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Signature Celebration Cakes</span><span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Sizzling Hot Brownies</span><span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Near Kaman Landmark</span>
                 </div>
-                <div class="card-loc">📍 Near Kaman, Opp. IDBI Bank, Ganesh Nagar, Karimnagar</div>
-                <div class="card-phone">📞 <a href="tel:+91 73962 35353">+91 73962 35353</a></div>
+                <div class="card-loc">
+                    <span class="card-svg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
+                    <span>Near Kaman, Opp. IDBI Bank, Ganesh Nagar, Karimnagar</span>
+                </div>
+                <div class="card-phone">
+                    <span class="card-svg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
+                    <a href="tel:+91 73962 35353">+91 73962 35353</a>
+                </div>
                 <div class="card-actions">
-                    <a href="knrs-cakes-and-coffee-shop.html" class="btn-card-visit" style="background: #be123c;">
+                    <a href="knrs-cakes-and-coffee-shop.html" class="btn-card-visit" style="background: linear-gradient(135deg, #be123c 0%, #fb7185 100%);">
                         <span>Visit Website & Menu</span>
-                        <span>→</span>
+                        <span style="display:flex;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
                     </a>
                     <a href="https://wa.me/917396235353?text=Hello%20KNRS CAKES AND COFFEE SHOP,%20I'd%20like%20to%20view%20your%20menu" target="_blank" class="btn-card-wa" title="Quick WhatsApp Order">
-                        <span>💬</span>
+                        <span style="display:flex;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.04 7.58C8.88 7.58 8.62 7.64 8.4 7.88C8.18 8.12 7.56 8.7 7.56 9.87C7.56 11.04 8.42 12.16 8.53 12.32C8.65 12.47 10.18 14.83 12.54 15.85C13.1 16.09 13.54 16.24 13.88 16.35C14.44 16.53 14.95 16.5 15.35 16.44C15.8 16.37 16.73 15.87 16.92 15.33C17.11 14.79 17.11 14.33 17.05 14.23C17 14.13 16.84 14.07 16.6 13.95C16.36 13.83 15.17 13.25 14.95 13.17C14.73 13.09 14.57 13.05 14.41 13.29C14.25 13.53 13.79 14.07 13.65 14.23C13.51 14.39 13.37 14.41 13.13 14.29C12.89 14.17 11.88 13.84 10.68 12.77C9.75 11.94 9.12 10.91 8.96 10.63C8.8 10.35 8.94 10.2 9.06 10.08C9.17 9.97 9.31 9.79 9.44 9.64C9.57 9.49 9.61 9.38 9.7 9.21C9.79 9.04 9.74 8.9 9.68 8.78C9.62 8.66 9.16 7.52 8.96 7.05C8.77 6.58 8.58 6.65 8.44 6.64L8.06 6.64C7.9 6.64 7.64 6.7 7.42 6.94C7.2 7.18 6.58 7.76 6.58 8.93C6.58 10.1 7.44 11.22 7.55 11.38L9.04 7.58Z"/></svg></span>
                     </a>
                 </div>
             </div>
@@ -952,24 +1250,34 @@
         <div class="cafe-card" data-id="lara-cafe" data-rating="4.8" data-borough="mukarampura / bhagathnagar" data-24h="false" data-category="cinema-front street food & shakes">
             <div class="card-img-wrap">
                 <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLeg-d-yUuO1LrXZVr1gvlX0Kl0nWG_31gekRHd5YQfkJhd-P9n8CgSdGBsBTLFVeWRlBwQgYfqJCk9QdImYIla-PFgYG1a2z-G5_pzZc-Cd2WWQ7upxp2lwL4xiLNUcUVLyhTHfEA=w800-h600-k-no" alt="LaRa Cafe" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80';">
-                <div class="card-badge" style="background: #dc2626;">Cinema-Front Street Food</div>
-                <div class="card-rating-tag">★ 4.8 <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(33)</span></div>
+                <div class="card-badge" style="background: linear-gradient(135deg, #dc2626 0%, #f59e0b 100%);">Cinema-Front Street Food</div>
+                <div class="card-rating-tag">
+                    <span style="color:#fbbf24; display:flex;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></span>
+                    <span>4.8</span>
+                    <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(33)</span>
+                </div>
             </div>
             <div class="card-body">
                 <h3 class="card-title">LaRa Cafe</h3>
                 <p class="card-tagline">Cinema-Front Hangout, Show-Time Combos & Midnight Refreshers</p>
                 <div class="card-chips">
-                    <span class="card-chip">Directly Opp. Pratima Multiplex</span><span class="card-chip">Show-Time Value Combos</span><span class="card-chip">4.8-Star Rating</span>
+                    <span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Directly Opp. Pratima Multiplex</span><span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Show-Time Value Combos</span><span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>4.8-Star Rating</span>
                 </div>
-                <div class="card-loc">📍 Opp. Pratima Multiplex, Collector Office Rd, Karimnagar</div>
-                <div class="card-phone">📞 <a href="tel:+91 98498 11373">+91 98498 11373</a></div>
+                <div class="card-loc">
+                    <span class="card-svg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
+                    <span>Opp. Pratima Multiplex, Collector Office Rd, Karimnagar</span>
+                </div>
+                <div class="card-phone">
+                    <span class="card-svg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
+                    <a href="tel:+91 98498 11373">+91 98498 11373</a>
+                </div>
                 <div class="card-actions">
-                    <a href="lara-cafe.html" class="btn-card-visit" style="background: #dc2626;">
+                    <a href="lara-cafe.html" class="btn-card-visit" style="background: linear-gradient(135deg, #dc2626 0%, #f59e0b 100%);">
                         <span>Visit Website & Menu</span>
-                        <span>→</span>
+                        <span style="display:flex;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
                     </a>
                     <a href="https://wa.me/919849811373?text=Hello%20LaRa Cafe,%20I'd%20like%20to%20view%20your%20menu" target="_blank" class="btn-card-wa" title="Quick WhatsApp Order">
-                        <span>💬</span>
+                        <span style="display:flex;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.04 7.58C8.88 7.58 8.62 7.64 8.4 7.88C8.18 8.12 7.56 8.7 7.56 9.87C7.56 11.04 8.42 12.16 8.53 12.32C8.65 12.47 10.18 14.83 12.54 15.85C13.1 16.09 13.54 16.24 13.88 16.35C14.44 16.53 14.95 16.5 15.35 16.44C15.8 16.37 16.73 15.87 16.92 15.33C17.11 14.79 17.11 14.33 17.05 14.23C17 14.13 16.84 14.07 16.6 13.95C16.36 13.83 15.17 13.25 14.95 13.17C14.73 13.09 14.57 13.05 14.41 13.29C14.25 13.53 13.79 14.07 13.65 14.23C13.51 14.39 13.37 14.41 13.13 14.29C12.89 14.17 11.88 13.84 10.68 12.77C9.75 11.94 9.12 10.91 8.96 10.63C8.8 10.35 8.94 10.2 9.06 10.08C9.17 9.97 9.31 9.79 9.44 9.64C9.57 9.49 9.61 9.38 9.7 9.21C9.79 9.04 9.74 8.9 9.68 8.78C9.62 8.66 9.16 7.52 8.96 7.05C8.77 6.58 8.58 6.65 8.44 6.64L8.06 6.64C7.9 6.64 7.64 6.7 7.42 6.94C7.2 7.18 6.58 7.76 6.58 8.93C6.58 10.1 7.44 11.22 7.55 11.38L9.04 7.58Z"/></svg></span>
                     </a>
                 </div>
             </div>
@@ -978,24 +1286,34 @@
         <div class="cafe-card" data-id="delight-cafe" data-rating="4.5" data-borough="sapthagiri colony" data-24h="false" data-category="neighborhood specialty coffee & toasties">
             <div class="card-img-wrap">
                 <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLe5wOOeSw0lH2uyk2x0qeihRINQaK4nQ64v8D9uKInlKIyW0PvpA7eRRSuJ3Jn-l7Nw27t84ElQpVUqC6fU3Kv_8mISqvNjp4HDwX1SSLT_rfXy3gPGeFGJ--g9qlZLP-R2F4nM=w800-h600-k-no" alt="Delight Cafe" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1507133750040-4a8f57021571?auto=format&fit=crop&w=1600&q=80';">
-                <div class="card-badge" style="background: #0f766e;">Neighborhood Specialty Coffee</div>
-                <div class="card-rating-tag">★ 4.5 <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(31)</span></div>
+                <div class="card-badge" style="background: linear-gradient(135deg, #0f766e 0%, #f59e0b 100%);">Neighborhood Specialty Coffee</div>
+                <div class="card-rating-tag">
+                    <span style="color:#fbbf24; display:flex;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></span>
+                    <span>4.5</span>
+                    <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(31)</span>
+                </div>
             </div>
             <div class="card-body">
                 <h3 class="card-title">Delight Cafe</h3>
                 <p class="card-tagline">Artisanal Cold Brews, Gourmet Toasties & Sundae Delights</p>
                 <div class="card-chips">
-                    <span class="card-chip">Slow-Steeped Cold Brews</span><span class="card-chip">Crispy Golden Toasties</span><span class="card-chip">Peaceful Residential Vibe</span>
+                    <span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Slow-Steeped Cold Brews</span><span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Crispy Golden Toasties</span><span class="card-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Peaceful Residential Vibe</span>
                 </div>
-                <div class="card-loc">📍 311, Rd Number 8, Sapthagiri Colony, Karimnagar</div>
-                <div class="card-phone">📞 <a href="tel:+91 98498 11373">+91 98498 11373</a></div>
+                <div class="card-loc">
+                    <span class="card-svg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
+                    <span>311, Rd Number 8, Sapthagiri Colony, Karimnagar</span>
+                </div>
+                <div class="card-phone">
+                    <span class="card-svg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
+                    <a href="tel:+91 98498 11373">+91 98498 11373</a>
+                </div>
                 <div class="card-actions">
-                    <a href="delight-cafe.html" class="btn-card-visit" style="background: #0f766e;">
+                    <a href="delight-cafe.html" class="btn-card-visit" style="background: linear-gradient(135deg, #0f766e 0%, #f59e0b 100%);">
                         <span>Visit Website & Menu</span>
-                        <span>→</span>
+                        <span style="display:flex;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
                     </a>
                     <a href="https://wa.me/919849811373?text=Hello%20Delight Cafe,%20I'd%20like%20to%20view%20your%20menu" target="_blank" class="btn-card-wa" title="Quick WhatsApp Order">
-                        <span>💬</span>
+                        <span style="display:flex;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.04 7.58C8.88 7.58 8.62 7.64 8.4 7.88C8.18 8.12 7.56 8.7 7.56 9.87C7.56 11.04 8.42 12.16 8.53 12.32C8.65 12.47 10.18 14.83 12.54 15.85C13.1 16.09 13.54 16.24 13.88 16.35C14.44 16.53 14.95 16.5 15.35 16.44C15.8 16.37 16.73 15.87 16.92 15.33C17.11 14.79 17.11 14.33 17.05 14.23C17 14.13 16.84 14.07 16.6 13.95C16.36 13.83 15.17 13.25 14.95 13.17C14.73 13.09 14.57 13.05 14.41 13.29C14.25 13.53 13.79 14.07 13.65 14.23C13.51 14.39 13.37 14.41 13.13 14.29C12.89 14.17 11.88 13.84 10.68 12.77C9.75 11.94 9.12 10.91 8.96 10.63C8.8 10.35 8.94 10.2 9.06 10.08C9.17 9.97 9.31 9.79 9.44 9.64C9.57 9.49 9.61 9.38 9.7 9.21C9.79 9.04 9.74 8.9 9.68 8.78C9.62 8.66 9.16 7.52 8.96 7.05C8.77 6.58 8.58 6.65 8.44 6.64L8.06 6.64C7.9 6.64 7.64 6.7 7.42 6.94C7.2 7.18 6.58 7.76 6.58 8.93C6.58 10.1 7.44 11.22 7.55 11.38L9.04 7.58Z"/></svg></span>
                     </a>
                 </div>
             </div>

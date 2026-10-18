@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dosofy — Artisan Specialty Roastery & Dessert Bar in Karimnagar</title>
-    <meta name="description" content="Dosofy in Christian Colony, Karimnagar. Artisanal Specialty Coffee, V60 Pour-Overs & Gourmet Desserts. Rated 4.8/5 with 154 reviews. View menu, online WhatsApp orders, and hours.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Dosofy — Artisan Specialty Roastery & Dessert Bar | Karimnagar</title>
+    <meta name="description" content="Dosofy in Christian Colony, Karimnagar. Artisanal Specialty Coffee, V60 Pour-Overs & Gourmet Desserts. Rated 4.8/5 with 154 reviews. View real menu, online WhatsApp orders, and hours.">
     
     <!-- Open Graph -->
     <meta property="og:title" content="Dosofy — Artisan Specialty Roastery & Dessert Bar in Karimnagar">
-    <meta property="og:description" content="Artisanal Specialty Coffee, V60 Pour-Overs & Gourmet Desserts. Menu, timings, location, and WhatsApp ordering.">
+    <meta property="og:description" content="Artisanal Specialty Coffee, V60 Pour-Overs & Gourmet Desserts. Verified menu, timings, and direct WhatsApp order.">
     <meta property="og:image" content="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1600&q=80">
     
     <!-- Google Fonts -->
@@ -52,6 +52,12 @@
             --primary-hover: #86198f;
             --secondary: #701a75;
             --accent: #ec4899;
+            --grad-primary: linear-gradient(135deg, #ec4899 0%, #a21caf 55%, #701a75 100%);
+            --grad-accent: linear-gradient(135deg, #f43f5e 0%, #a21caf 100%);
+            --grad-surface: linear-gradient(145deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.9) 100%);
+            --grad-card: linear-gradient(145deg, #ffffff 0%, #fcfdff 100%);
+            --grad-card-hover: linear-gradient(145deg, #ffffff 0%, #f8faff 100%);
+            --glow-primary: rgba(162, 28, 175, 0.35);
             --bg: #fdf4ff;
             --surface: #ffffff;
             --surface-card: #ffffff;
@@ -60,12 +66,12 @@
             --text-muted: #6b7280;
             --font-heading: 'Playfair Display', serif;
             --font-body: 'Plus Jakarta Sans', sans-serif;
-            --radius-sm: 8px;
-            --radius-md: 14px;
-            --radius-lg: 24px;
-            --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
-            --shadow-md: 0 8px 24px rgba(0,0,0,0.08);
-            --shadow-lg: 0 16px 40px rgba(0,0,0,0.12);
+            --radius-sm: 10px;
+            --radius-md: 16px;
+            --radius-lg: 28px;
+            --shadow-sm: 0 4px 12px rgba(0,0,0,0.05);
+            --shadow-md: 0 10px 30px rgba(0,0,0,0.08);
+            --shadow-glow: 0 0 35px var(--glow-primary);
         }
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -76,10 +82,66 @@
             color: var(--text);
             line-height: 1.65;
             -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            position: relative;
         }
         
         a { color: inherit; text-decoration: none; }
         button { cursor: pointer; border: none; font-family: inherit; }
+        
+        /* Motion Graphics: Ambient Gradient Orbs */
+        .ambient-mesh {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.22;
+            will-change: transform;
+        }
+        .orb-1 {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, #a21caf 0%, transparent 70%);
+            top: -150px;
+            left: -100px;
+            animation: floatOrb1 18s ease-in-out infinite alternate;
+        }
+        .orb-2 {
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, #ec4899 0%, transparent 70%);
+            top: 35%;
+            right: -200px;
+            animation: floatOrb2 22s ease-in-out infinite alternate;
+        }
+        .orb-3 {
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, #701a75 0%, transparent 70%);
+            bottom: 5%;
+            left: 20%;
+            animation: floatOrb1 20s ease-in-out infinite alternate-reverse;
+        }
+        
+        @keyframes floatOrb1 {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(60px, 80px) scale(1.1); }
+            100% { transform: translate(-40px, 120px) scale(0.95); }
+        }
+        @keyframes floatOrb2 {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(-80px, -60px) scale(1.15); }
+            100% { transform: translate(40px, 70px) scale(0.9); }
+        }
         
         /* Container */
         .container {
@@ -87,6 +149,8 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 24px;
+            position: relative;
+            z-index: 1;
         }
         
         /* Header / Navbar */
@@ -96,8 +160,8 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(16px);
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
             padding: 14px 0;
             transition: all 0.3s ease;
@@ -115,14 +179,12 @@
             font-size: 1.35rem;
             font-weight: 700;
             color: var(--text);
-            letter-spacing: -0.5px;
+            letter-spacing: -0.3px;
         }
-        .brand-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: var(--primary);
-            box-shadow: 0 0 10px var(--primary);
+        .logo-icon-svg {
+            color: var(--primary);
+            display: flex;
+            align-items: center;
         }
         .nav-links {
             display: flex;
@@ -131,190 +193,221 @@
         }
         .nav-link {
             font-size: 0.92rem;
-            font-weight: 500;
+            font-weight: 600;
             color: var(--text-muted);
-            transition: color 0.2s ease;
+            transition: all 0.2s ease;
+            position: relative;
         }
-        .nav-link:hover { color: var(--primary); }
+        .nav-link:hover {
+            color: var(--primary);
+        }
         .nav-actions {
             display: flex;
             align-items: center;
             gap: 12px;
         }
+        
+        /* Motion Pulse Status */
         .btn-live-status {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
             font-size: 0.82rem;
-            font-weight: 600;
+            font-weight: 700;
             padding: 6px 14px;
             border-radius: 30px;
             background: rgba(34, 197, 94, 0.12);
             color: #22c55e;
-            border: 1px solid rgba(34, 197, 94, 0.3);
+            border: 1px solid rgba(34, 197, 94, 0.35);
         }
-        .pulse-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
+        .radar-box {
+            position: relative;
+            width: 10px;
+            height: 10px;
+        }
+        .radar-dot {
+            width: 10px;
+            height: 10px;
             background: #22c55e;
-            box-shadow: 0 0 8px #22c55e;
-            animation: pulse 2s infinite;
+            border-radius: 50%;
+            position: absolute;
         }
-        @keyframes pulse {
-            0% { transform: scale(0.95); opacity: 0.8; }
-            50% { transform: scale(1.2); opacity: 1; }
-            100% { transform: scale(0.95); opacity: 0.8; }
+        .radar-ring {
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: rgba(34, 197, 94, 0.4);
+            animation: radarPulse 2s ease-out infinite;
         }
+        @keyframes radarPulse {
+            0% { transform: scale(0.5); opacity: 1; }
+            100% { transform: scale(2.2); opacity: 0; }
+        }
+        
         .btn-wa-nav {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: #25d366;
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
             color: white;
-            padding: 8px 18px;
+            padding: 9px 20px;
             border-radius: 30px;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 0.88rem;
-            transition: all 0.2s ease;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.35);
+            transition: all 0.25s ease;
         }
         .btn-wa-nav:hover {
-            background: #1eb757;
-            transform: translateY(-1px);
-            box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.5);
         }
         
         /* Hero Section */
         .hero {
             position: relative;
             padding: 170px 0 100px;
-            background: linear-gradient(180deg, rgba(0,0,0,0.45) 0%, var(--bg) 100%), url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
             min-height: 85vh;
             display: flex;
             align-items: center;
+            overflow: hidden;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(15,23,42,0.65) 0%, rgba(15,23,42,0.85) 60%, var(--bg) 100%), url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            z-index: 0;
+            transform: scale(1.03);
+            animation: heroZoom 20s infinite alternate ease-in-out;
+        }
+        @keyframes heroZoom {
+            from { transform: scale(1); }
+            to { transform: scale(1.08); }
         }
         .hero-inner {
-            max-width: 800px;
+            max-width: 820px;
+            position: relative;
+            z-index: 2;
         }
         .category-badge {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 6px 16px;
+            padding: 7px 18px;
             border-radius: 30px;
             font-size: 0.82rem;
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            background: var(--primary);
+            letter-spacing: 1.2px;
+            background: var(--grad-primary);
             color: #ffffff;
-            margin-bottom: 20px;
+            margin-bottom: 22px;
+            box-shadow: 0 4px 15px var(--glow-primary);
         }
         .hero-title {
             font-family: var(--font-heading);
-            font-size: 3.8rem;
+            font-size: clamp(2.4rem, 5vw, 4.2rem);
             line-height: 1.1;
-            font-weight: 700;
-            margin-bottom: 18px;
-            color: #ffffff;
-            text-shadow: 0 2px 20px rgba(0,0,0,0.6);
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff 30%, #e2e8f0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 4px 25px rgba(0,0,0,0.4);
         }
         .hero-tagline {
-            font-size: 1.25rem;
+            font-size: clamp(1.05rem, 2vw, 1.3rem);
             line-height: 1.6;
-            margin-bottom: 28px;
-            color: #f1f5f9;
+            margin-bottom: 32px;
+            color: #e2e8f0;
             font-weight: 400;
-            text-shadow: 0 1px 10px rgba(0,0,0,0.5);
-            max-width: 650px;
+            max-width: 680px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
         }
         .hero-meta {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 16px;
             flex-wrap: wrap;
-            margin-bottom: 36px;
+            margin-bottom: 38px;
         }
-        .rating-box {
+        .rating-box, .location-chip {
             display: flex;
             align-items: center;
             gap: 8px;
-            background: rgba(255,255,255,0.92);
-            backdrop-filter: blur(8px);
-            padding: 8px 16px;
-            border-radius: 12px;
-            border: 1px solid var(--border);
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(12px);
+            padding: 9px 18px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            font-size: 0.92rem;
+            box-shadow: var(--shadow-sm);
         }
-        .stars-gold { color: #fbbf24; font-size: 1.1rem; }
-        .rating-val { font-weight: 700; font-size: 1.05rem; color: #1f2937; }
-        .review-cnt { color: #6b7280; font-size: 0.85rem; }
-        .location-chip {
+        .stars-svg-row {
             display: flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(255,255,255,0.92);
-            backdrop-filter: blur(8px);
-            padding: 8px 16px;
-            border-radius: 12px;
-            font-size: 0.9rem;
-            color: #1f2937;
-            border: 1px solid var(--border);
+            color: #fbbf24;
+            gap: 2px;
         }
+        
         .hero-ctas {
             display: flex;
             align-items: center;
             gap: 16px;
             flex-wrap: wrap;
         }
-        .btn-primary {
+        .btn-gradient-primary {
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: var(--primary);
+            background: var(--grad-primary);
             color: white;
-            padding: 15px 32px;
+            padding: 15px 34px;
             border-radius: 40px;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 1rem;
-            transition: all 0.25s ease;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 8px 25px var(--glow-primary);
         }
-        .btn-primary:hover {
-            background: var(--primary-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 28px rgba(0,0,0,0.35);
+        .btn-gradient-primary:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 14px 35px var(--glow-primary);
         }
-        .btn-secondary {
+        .btn-gradient-glass {
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: rgba(255,255,255,0.9);
-            color: #111827;
-            border: 1px solid rgba(0,0,0,0.1);
-            backdrop-filter: blur(10px);
+            background: rgba(255,255,255,0.12);
+            color: #ffffff;
+            border: 1px solid rgba(255,255,255,0.25);
+            backdrop-filter: blur(12px);
             padding: 15px 28px;
             border-radius: 40px;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 1rem;
-            transition: all 0.25s ease;
+            transition: all 0.3s ease;
         }
-        .btn-secondary:hover {
-            background: rgba(255,255,255,1);
+        .btn-gradient-glass:hover {
+            background: rgba(255,255,255,0.22);
             transform: translateY(-2px);
+            border-color: rgba(255,255,255,0.4);
         }
         
         /* Floating Highlights Bar */
         .highlights-bar {
-            margin-top: -40px;
+            margin-top: -45px;
             position: relative;
             z-index: 10;
         }
         .highlights-inner {
-            background: var(--surface);
+            background: var(--grad-surface);
             border-radius: var(--radius-lg);
             border: 1px solid var(--border);
             padding: 24px 32px;
-            box-shadow: var(--shadow-lg);
+            box-shadow: var(--shadow-md);
+            backdrop-filter: blur(20px);
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -328,13 +421,20 @@
             flex-wrap: wrap;
         }
         .hl-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             font-size: 0.88rem;
             font-weight: 600;
-            color: var(--primary);
+            color: var(--text);
             background: rgba(0,0,0,0.04);
             padding: 8px 16px;
             border-radius: 20px;
             border: 1px solid var(--border);
+        }
+        .chip-svg {
+            color: var(--primary);
+            display: flex;
         }
         .info-col-phone a {
             font-weight: 700;
@@ -342,13 +442,15 @@
             font-size: 1.05rem;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
         }
         .info-col-phone a:hover { color: var(--primary); }
         
-        /* Section Header */
+        /* Sections */
         .section {
             padding: 90px 0;
+            position: relative;
+            z-index: 1;
         }
         .section-header {
             text-align: center;
@@ -356,18 +458,20 @@
             margin: 0 auto 50px;
         }
         .section-subtitle {
-            font-size: 0.82rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 2px;
             font-weight: 700;
-            color: var(--primary);
+            background: var(--grad-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             margin-bottom: 10px;
         }
         .section-title {
             font-family: var(--font-heading);
-            font-size: 2.6rem;
+            font-size: clamp(2rem, 3.5vw, 2.7rem);
             line-height: 1.2;
-            font-weight: 700;
+            font-weight: 800;
             margin-bottom: 14px;
         }
         .section-desc {
@@ -389,53 +493,63 @@
             align-items: center;
             gap: 10px;
             flex-wrap: wrap;
+            overflow-x: auto;
+            padding-bottom: 4px;
+            -webkit-overflow-scrolling: touch;
         }
         .cat-pill {
-            padding: 10px 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 22px;
             border-radius: 30px;
             background: var(--surface);
             color: var(--text-muted);
             font-size: 0.9rem;
             font-weight: 600;
             border: 1px solid var(--border);
-            transition: all 0.2s ease;
+            transition: all 0.25s ease;
+            white-space: nowrap;
         }
         .cat-pill:hover {
             color: var(--text);
             border-color: var(--primary);
         }
         .cat-pill.active {
-            background: var(--primary);
+            background: var(--grad-primary);
             color: white;
-            border-color: var(--primary);
-            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+            border-color: transparent;
+            box-shadow: 0 4px 18px var(--glow-primary);
         }
+        .pill-icon { display: flex; }
+        
         .menu-search-box {
             position: relative;
             min-width: 280px;
         }
         .menu-search-input {
             width: 100%;
-            padding: 11px 18px 11px 40px;
+            padding: 12px 20px 12px 42px;
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: 30px;
             color: var(--text);
             font-family: inherit;
-            font-size: 0.9rem;
+            font-size: 0.92rem;
             outline: none;
-            transition: border-color 0.2s ease;
+            transition: all 0.2s ease;
         }
         .menu-search-input:focus {
             border-color: var(--primary);
+            box-shadow: 0 0 15px var(--glow-primary);
         }
         .search-icon {
             position: absolute;
-            left: 15px;
+            left: 16px;
             top: 50%;
             transform: translateY(-50%);
             color: var(--text-muted);
-            font-size: 0.95rem;
+            display: flex;
         }
         
         /* Menu Grid */
@@ -445,102 +559,107 @@
             gap: 24px;
         }
         .menu-card {
-            background: var(--surface-card);
+            background: var(--grad-card);
             border: 1px solid var(--border);
             border-radius: var(--radius-md);
             padding: 24px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: all 0.25s ease;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             position: relative;
+            backdrop-filter: blur(12px);
         }
         .menu-card:hover {
-            transform: translateY(-4px);
+            transform: translateY(-6px);
             border-color: var(--primary);
-            box-shadow: var(--shadow-md);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+            background: var(--grad-card-hover);
         }
-        .menu-card-top {
-            margin-bottom: 16px;
-        }
+        .menu-card-top { margin-bottom: 18px; }
         .menu-card-header {
             display: flex;
             align-items: flex-start;
             justify-content: space-between;
             gap: 12px;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
         .item-diet-name {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
         }
         .diet-icon {
-            width: 16px;
-            height: 16px;
-            border-radius: 3px;
+            width: 18px;
+            height: 18px;
+            border-radius: 4px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
-            font-size: 10px;
         }
-        .diet-veg { border: 1.5px solid #22c55e; }
+        .diet-veg { border: 2px solid #22c55e; }
         .diet-veg::after { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #22c55e; }
-        .diet-nonveg { border: 1.5px solid #ef4444; }
+        .diet-nonveg { border: 2px solid #ef4444; }
         .diet-nonveg::after { content: ''; width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-bottom: 8px solid #ef4444; }
+        
         .item-name {
             font-family: var(--font-heading);
-            font-size: 1.22rem;
+            font-size: 1.25rem;
             font-weight: 700;
             color: var(--text);
         }
         .bestseller-tag {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
             font-size: 0.72rem;
             font-weight: 700;
             text-transform: uppercase;
-            padding: 2px 8px;
-            border-radius: 4px;
-            background: #fbbf24;
+            padding: 3px 10px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
             color: #78350f;
-            letter-spacing: 0.5px;
+            box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4);
         }
         .item-desc {
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.92rem;
             line-height: 1.55;
         }
         .menu-card-bottom {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding-top: 14px;
+            padding-top: 16px;
             border-top: 1px solid var(--border);
         }
         .item-price {
-            font-weight: 700;
-            font-size: 1.25rem;
-            color: var(--primary);
+            font-weight: 800;
+            font-size: 1.35rem;
+            background: var(--grad-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         .btn-add-cart {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            padding: 8px 18px;
+            gap: 8px;
+            padding: 9px 20px;
             border-radius: 30px;
             background: rgba(0,0,0,0.05);
             color: var(--text);
-            font-weight: 600;
+            font-weight: 700;
             font-size: 0.88rem;
             border: 1px solid var(--border);
-            transition: all 0.2s ease;
+            transition: all 0.25s ease;
         }
         .btn-add-cart:hover {
-            background: var(--primary);
+            background: var(--grad-primary);
             color: white;
-            border-color: var(--primary);
-            transform: scale(1.03);
+            border-color: transparent;
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px var(--glow-primary);
         }
         
         /* Floating WhatsApp Cart Widget */
@@ -549,19 +668,19 @@
             bottom: 30px;
             right: 30px;
             z-index: 999;
-            background: #25d366;
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
             color: white;
-            padding: 14px 24px;
+            padding: 14px 26px;
             border-radius: 50px;
-            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.45);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.5);
             display: flex;
             align-items: center;
             gap: 12px;
             font-weight: 700;
             font-size: 1rem;
             cursor: pointer;
-            transition: all 0.25s ease;
-            transform: translateY(120px);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translateY(140px);
             opacity: 0;
             pointer-events: none;
         }
@@ -571,14 +690,14 @@
             pointer-events: auto;
         }
         .cart-float:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 12px 36px rgba(37, 211, 102, 0.6);
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 14px 40px rgba(37, 211, 102, 0.65);
         }
         .cart-badge-count {
             background: white;
             color: #128c7e;
-            width: 24px;
-            height: 24px;
+            width: 26px;
+            height: 26px;
             border-radius: 50%;
             display: inline-flex;
             align-items: center;
@@ -591,8 +710,8 @@
         .cart-modal-backdrop {
             position: fixed;
             inset: 0;
-            background: rgba(0,0,0,0.65);
-            backdrop-filter: blur(4px);
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(8px);
             z-index: 2000;
             display: none;
             opacity: 0;
@@ -606,14 +725,14 @@
         }
         .cart-drawer {
             width: 100%;
-            max-width: 460px;
+            max-width: 480px;
             height: 100vh;
             background: var(--surface);
             border-left: 1px solid var(--border);
             display: flex;
             flex-direction: column;
-            box-shadow: -10px 0 40px rgba(0,0,0,0.5);
-            animation: slideLeft 0.3s ease;
+            box-shadow: -10px 0 50px rgba(0,0,0,0.6);
+            animation: slideLeft 0.35s cubic-bezier(0.16, 1, 0.3, 1);
         }
         @keyframes slideLeft {
             from { transform: translateX(100%); }
@@ -630,12 +749,14 @@
             font-family: var(--font-heading);
             font-size: 1.4rem;
             font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         .cart-close-btn {
             background: transparent;
             color: var(--text-muted);
-            font-size: 1.5rem;
-            line-height: 1;
+            display: flex;
         }
         .cart-body {
             padding: 24px;
@@ -646,18 +767,23 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 12px 0;
+            padding: 14px 0;
             border-bottom: 1px solid var(--border);
         }
         .cart-item-info { flex: 1; }
-        .cart-item-title { font-weight: 600; font-size: 0.95rem; }
-        .cart-item-price { color: var(--primary); font-weight: 700; font-size: 0.9rem; }
+        .cart-item-title { font-weight: 600; font-size: 0.98rem; }
+        .cart-item-price {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.92rem;
+            margin-top: 4px;
+        }
         .cart-item-qty {
             display: flex;
             align-items: center;
             gap: 10px;
             background: rgba(0,0,0,0.05);
-            padding: 4px 10px;
+            padding: 6px 12px;
             border-radius: 20px;
             border: 1px solid var(--border);
         }
@@ -666,7 +792,7 @@
             color: var(--text);
             font-size: 1.1rem;
             font-weight: 700;
-            width: 20px;
+            width: 22px;
             text-align: center;
         }
         .cart-footer {
@@ -679,26 +805,26 @@
             align-items: center;
             justify-content: space-between;
             margin-bottom: 16px;
-            font-size: 1.25rem;
-            font-weight: 700;
+            font-size: 1.3rem;
+            font-weight: 800;
         }
         .cart-input {
             width: 100%;
-            padding: 10px 14px;
+            padding: 12px 16px;
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: var(--radius-sm);
             color: var(--text);
             font-family: inherit;
-            font-size: 0.9rem;
+            font-size: 0.92rem;
             margin-bottom: 12px;
             outline: none;
         }
         .cart-input:focus { border-color: var(--primary); }
         .btn-send-whatsapp {
             width: 100%;
-            padding: 14px;
-            background: #25d366;
+            padding: 15px;
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
             color: white;
             border-radius: 30px;
             font-weight: 700;
@@ -707,11 +833,12 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-            transition: all 0.2s ease;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            transition: all 0.25s ease;
         }
         .btn-send-whatsapp:hover {
-            background: #1eb757;
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.55);
         }
         
         /* About & Ambience Gallery */
@@ -730,20 +857,21 @@
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-            margin-top: 40px;
+            gap: 18px;
+            margin-top: 45px;
         }
         .gallery-item {
             border-radius: var(--radius-md);
             overflow: hidden;
             aspect-ratio: 4/3;
             box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
         }
         .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.4s ease;
+            transition: transform 0.5s ease;
         }
         .gallery-item:hover img {
             transform: scale(1.08);
@@ -756,17 +884,21 @@
             gap: 40px;
         }
         .hours-card, .res-card {
-            background: var(--surface-card);
+            background: var(--grad-card);
             border: 1px solid var(--border);
             border-radius: var(--radius-lg);
-            padding: 36px;
+            padding: 38px;
             box-shadow: var(--shadow-sm);
+            backdrop-filter: blur(12px);
         }
         .card-heading {
             font-family: var(--font-heading);
-            font-size: 1.6rem;
-            margin-bottom: 20px;
+            font-size: 1.65rem;
+            margin-bottom: 18px;
             color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         .hours-table {
             width: 100%;
@@ -777,34 +909,36 @@
         }
         .hours-table tr:last-child { border-bottom: none; }
         .hours-table td {
-            padding: 12px 0;
+            padding: 13px 0;
             font-size: 0.95rem;
         }
         .day-col { font-weight: 600; color: var(--text); width: 35%; }
         .time-col { color: var(--text-muted); }
         .today-tag {
             display: none;
-            background: var(--primary);
+            background: var(--grad-primary);
             color: white;
             font-size: 0.72rem;
             font-weight: 700;
-            padding: 2px 8px;
+            padding: 3px 10px;
             border-radius: 20px;
             text-transform: uppercase;
+            align-items: center;
+            gap: 4px;
         }
         tr.active-day {
             color: var(--primary);
             font-weight: 700;
         }
         tr.active-day .today-tag {
-            display: inline-block;
+            display: inline-flex;
         }
         tr.active-day .time-col {
             color: var(--primary);
             font-weight: 700;
         }
         
-        /* Form Inputs */
+        /* Reservation Form */
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -815,13 +949,13 @@
         .form-label {
             display: block;
             font-size: 0.85rem;
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 6px;
             color: var(--text);
         }
         .form-control {
             width: 100%;
-            padding: 12px 16px;
+            padding: 13px 16px;
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: var(--radius-sm);
@@ -829,23 +963,27 @@
             font-family: inherit;
             font-size: 0.95rem;
             outline: none;
-            transition: border-color 0.2s ease;
+            transition: all 0.2s ease;
         }
-        .form-control:focus { border-color: var(--primary); }
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 15px var(--glow-primary);
+        }
         .btn-submit-res {
             width: 100%;
-            padding: 14px;
-            background: var(--primary);
+            padding: 15px;
+            background: var(--grad-primary);
             color: white;
             border-radius: 30px;
             font-weight: 700;
             font-size: 1rem;
+            box-shadow: 0 4px 20px var(--glow-primary);
             transition: all 0.25s ease;
-            margin-top: 8px;
+            margin-top: 10px;
         }
         .btn-submit-res:hover {
-            background: var(--primary-hover);
             transform: translateY(-2px);
+            box-shadow: 0 8px 30px var(--glow-primary);
         }
         
         /* Reviews Section */
@@ -855,11 +993,12 @@
             gap: 24px;
         }
         .review-card {
-            background: var(--surface-card);
+            background: var(--grad-card);
             border: 1px solid var(--border);
             border-radius: var(--radius-md);
             padding: 28px;
             box-shadow: var(--shadow-sm);
+            backdrop-filter: blur(12px);
         }
         .rev-header {
             display: flex;
@@ -871,24 +1010,26 @@
             width: 44px;
             height: 44px;
             border-radius: 50%;
-            background: var(--primary);
+            background: var(--grad-primary);
             color: white;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 700;
-            font-size: 1.1rem;
+            font-weight: 800;
+            font-size: 1.15rem;
         }
-        .rev-author { font-weight: 700; font-size: 1rem; color: var(--text); }
-        .rev-time { font-size: 0.78rem; color: var(--text-muted); }
-        .rev-stars { color: #fbbf24; font-size: 1.1rem; margin-bottom: 12px; }
+        .rev-author { font-weight: 700; font-size: 1.05rem; color: var(--text); }
+        .rev-time { font-size: 0.8rem; color: var(--text-muted); }
+        .rev-stars { display: flex; color: #fbbf24; gap: 3px; margin-bottom: 14px; }
         .rev-text { font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; font-style: italic; }
         
-        /* Map Card */
+        /* Location / Map Section */
         .location-section {
             background: var(--surface);
             border-top: 1px solid var(--border);
-            padding: 80px 0;
+            padding: 85px 0;
+            position: relative;
+            z-index: 1;
         }
         .loc-grid {
             display: grid;
@@ -899,7 +1040,7 @@
         .loc-details {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 22px;
         }
         .loc-item {
             display: flex;
@@ -907,12 +1048,12 @@
             gap: 16px;
         }
         .loc-icon {
-            font-size: 1.4rem;
             color: var(--primary);
-            width: 44px;
-            height: 44px;
+            width: 46px;
+            height: 46px;
             border-radius: 12px;
             background: rgba(0,0,0,0.05);
+            border: 1px solid var(--border);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -938,16 +1079,50 @@
             justify-content: center;
             text-align: center;
             padding: 30px;
-            background: linear-gradient(135deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.05) 100%);
+            background: linear-gradient(135deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.06) 100%);
+        }
+        
+        /* Mobile Sticky Quick Action Bar */
+        .mobile-bar {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 998;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid var(--border);
+            padding: 10px 16px;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .mob-action-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--text-muted);
+        }
+        .mob-action-item:hover, .mob-action-item.active {
+            color: var(--primary);
+        }
+        .mob-action-item svg {
+            width: 20px;
+            height: 20px;
         }
         
         /* Footer */
         .footer {
             background: #0f172a;
             color: #94a3b8;
-            padding: 60px 0 30px;
+            padding: 60px 0 90px;
             border-top: 1px solid var(--border);
             font-size: 0.92rem;
+            position: relative;
+            z-index: 1;
         }
         .footer-grid {
             display: flex;
@@ -967,71 +1142,98 @@
         }
         .footer-hub-link {
             color: var(--primary);
-            font-weight: 600;
+            font-weight: 700;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
         }
         .footer-hub-link:hover { text-decoration: underline; }
         
-        /* Modal Notification */
+        /* Notification Toast */
         .notification-toast {
             position: fixed;
-            top: 20px;
-            right: 20px;
+            top: 24px;
+            right: 24px;
             z-index: 3000;
-            background: #22c55e;
+            background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
             color: white;
             padding: 12px 24px;
             border-radius: 30px;
-            font-weight: 600;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            font-weight: 700;
+            box-shadow: 0 8px 30px rgba(34, 197, 94, 0.4);
             display: none;
-            animation: fadeIn 0.3s ease;
+            align-items: center;
+            gap: 8px;
+            animation: toastIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
+        @keyframes toastIn {
+            from { opacity: 0; transform: translateY(-20px) scale(0.9); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
         }
         
-        /* Mobile Responsive */
+        /* Mobile Breakpoints */
         @media (max-width: 900px) {
-            .hero-title { font-size: 2.8rem; }
+            .hero-title { font-size: 2.7rem; }
             .about-grid, .hours-res-grid, .loc-grid { grid-template-columns: 1fr; gap: 40px; }
             .nav-links { display: none; }
             .menu-grid { grid-template-columns: 1fr; }
             .form-row { grid-template-columns: 1fr; }
             .gallery-grid { grid-template-columns: 1fr; }
+            .cart-drawer {
+                height: 85vh;
+                border-radius: 24px 24px 0 0;
+                animation: slideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+            @keyframes slideUp {
+                from { transform: translateY(100%); }
+                to { transform: translateY(0); }
+            }
+            .mobile-bar { display: flex; }
+            .cart-float { bottom: 85px; right: 20px; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Ambient Gradient Mesh Motion Graphic -->
+    <div class="ambient-mesh">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
     <!-- Notification Toast -->
-    <div id="toast" class="notification-toast">Item added to order!</div>
+    <div id="toast" class="notification-toast">
+        <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+        <span id="toastMsg">Item added to order!</span>
+    </div>
 
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="container nav-content">
             <a href="#top" class="brand-logo">
-                <span class="brand-dot"></span>
+                <span class="logo-icon-svg"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"></path><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"></path><line x1="6" y1="2" x2="6" y2="4"></line><line x1="10" y1="2" x2="10" y2="4"></line><line x1="14" y1="2" x2="14" y2="4"></line></svg></span>
                 <span>Dosofy</span>
             </a>
             <div class="nav-links">
                 <a href="#about" class="nav-link">About</a>
-                <a href="#menu" class="nav-link">Full Menu</a>
-                <a href="#hours" class="nav-link">Timings</a>
+                <a href="#menu" class="nav-link">Menu</a>
+                <a href="#hours" class="nav-link">Hours</a>
                 <a href="#reviews" class="nav-link">Reviews</a>
                 <a href="#location" class="nav-link">Directions</a>
-                <a href="index.html" class="nav-link" style="color: var(--primary); font-weight: 600;">← All Cafes</a>
+                <a href="index.html" class="nav-link" style="color: var(--primary);">← All Cafes</a>
             </div>
             <div class="nav-actions">
                 <div id="liveStatusPill" class="btn-live-status">
-                    <span class="pulse-dot"></span>
+                    <div class="radar-box">
+                        <div class="radar-dot"></div>
+                        <div class="radar-ring"></div>
+                    </div>
                     <span id="liveStatusText">Open Now</span>
                 </div>
                 <a href="https://wa.me/919949278620?text=Hello%20Dosofy,%20I'd%20like%20to%20place%20an%20order" target="_blank" class="btn-wa-nav">
-                    <span>WhatsApp</span>
+                    <span><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.04 7.58C8.88 7.58 8.62 7.64 8.4 7.88C8.18 8.12 7.56 8.7 7.56 9.87C7.56 11.04 8.42 12.16 8.53 12.32C8.65 12.47 10.18 14.83 12.54 15.85C13.1 16.09 13.54 16.24 13.88 16.35C14.44 16.53 14.95 16.5 15.35 16.44C15.8 16.37 16.73 15.87 16.92 15.33C17.11 14.79 17.11 14.33 17.05 14.23C17 14.13 16.84 14.07 16.6 13.95C16.36 13.83 15.17 13.25 14.95 13.17C14.73 13.09 14.57 13.05 14.41 13.29C14.25 13.53 13.79 14.07 13.65 14.23C13.51 14.39 13.37 14.41 13.13 14.29C12.89 14.17 11.88 13.84 10.68 12.77C9.75 11.94 9.12 10.91 8.96 10.63C8.8 10.35 8.94 10.2 9.06 10.08C9.17 9.97 9.31 9.79 9.44 9.64C9.57 9.49 9.61 9.38 9.7 9.21C9.79 9.04 9.74 8.9 9.68 8.78C9.62 8.66 9.16 7.52 8.96 7.05C8.77 6.58 8.58 6.65 8.44 6.64L8.06 6.64C7.9 6.64 7.64 6.7 7.42 6.94C7.2 7.18 6.58 7.76 6.58 8.93C6.58 10.1 7.44 11.22 7.55 11.38L9.04 7.58Z"/></svg></span>
+                    <span>Order</span>
                 </a>
             </div>
         </div>
@@ -1039,32 +1241,40 @@
 
     <!-- Hero Section -->
     <header class="hero" id="top">
+        <div class="hero-bg"></div>
         <div class="container hero-inner">
-            <div class="category-badge">Artisan Specialty Roastery & Dessert Bar</div>
+            <div class="category-badge">
+                <span><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>
+                <span>Artisan Specialty Roastery & Dessert Bar</span>
+            </div>
             <h1 class="hero-title">Dosofy</h1>
             <p class="hero-tagline">Artisanal Specialty Coffee, V60 Pour-Overs & Gourmet Desserts</p>
             
             <div class="hero-meta">
                 <div class="rating-box">
-                    <span class="stars-gold">★★★★★</span>
-                    <span class="rating-val">4.8</span>
-                    <span class="review-cnt">(154 reviews)</span>
+                    <div class="stars-svg-row">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    </div>
+                    <span style="font-weight:700;">4.8</span>
+                    <span style="color:var(--text-muted); font-size:0.85rem;">(154 reviews)</span>
                 </div>
                 <div class="location-chip">
-                    <span>📍</span>
+                    <span style="color:var(--primary); display:flex;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
                     <span>Court Circle, Christian Colony, Karimnagar</span>
                 </div>
             </div>
             
             <div class="hero-ctas">
-                <a href="#menu" class="btn-primary">
+                <a href="#menu" class="btn-gradient-primary">
                     <span>Explore Menu</span>
-                    <span>↓</span>
+                    <span style="display:flex;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
                 </a>
-                <a href="https://wa.me/919949278620?text=Hello%20Dosofy,%20I'd%20like%20to%20order%20food" target="_blank" class="btn-secondary" style="background:#25d366; color:white; border-color:#25d366;">
+                <a href="https://wa.me/919949278620?text=Hello%20Dosofy,%20I'd%20like%20to%20order%20food" target="_blank" class="btn-gradient-glass">
+                    <span style="color:#25d366; display:flex;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.04 7.58C8.88 7.58 8.62 7.64 8.4 7.88C8.18 8.12 7.56 8.7 7.56 9.87C7.56 11.04 8.42 12.16 8.53 12.32C8.65 12.47 10.18 14.83 12.54 15.85C13.1 16.09 13.54 16.24 13.88 16.35C14.44 16.53 14.95 16.5 15.35 16.44C15.8 16.37 16.73 15.87 16.92 15.33C17.11 14.79 17.11 14.33 17.05 14.23C17 14.13 16.84 14.07 16.6 13.95C16.36 13.83 15.17 13.25 14.95 13.17C14.73 13.09 14.57 13.05 14.41 13.29C14.25 13.53 13.79 14.07 13.65 14.23C13.51 14.39 13.37 14.41 13.13 14.29C12.89 14.17 11.88 13.84 10.68 12.77C9.75 11.94 9.12 10.91 8.96 10.63C8.8 10.35 8.94 10.2 9.06 10.08C9.17 9.97 9.31 9.79 9.44 9.64C9.57 9.49 9.61 9.38 9.7 9.21C9.79 9.04 9.74 8.9 9.68 8.78C9.62 8.66 9.16 7.52 8.96 7.05C8.77 6.58 8.58 6.65 8.44 6.64L8.06 6.64C7.9 6.64 7.64 6.7 7.42 6.94C7.2 7.18 6.58 7.76 6.58 8.93C6.58 10.1 7.44 11.22 7.55 11.38L9.04 7.58Z"/></svg></span>
                     <span>Order via WhatsApp</span>
                 </a>
-                <a href="#reserve" class="btn-secondary">
+                <a href="#reserve" class="btn-gradient-glass">
+                    <span style="display:flex;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></span>
                     <span>Reserve a Table</span>
                 </a>
             </div>
@@ -1075,11 +1285,12 @@
     <div class="container highlights-bar">
         <div class="highlights-inner">
             <div class="hl-items">
-                <span class="hl-chip">✦ Third-Wave V60 Pour-Overs</span><span class="hl-chip">✦ Lotus Biscoff Desserts</span><span class="hl-chip">✦ 150+ 4.8-Star Reviews</span><span class="hl-chip">✦ European Aesthetic Interior</span>
+                <span class="hl-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Third-Wave V60 Pour-Overs</span><span class="hl-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>Lotus Biscoff Desserts</span><span class="hl-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>150+ 4.8-Star Reviews</span><span class="hl-chip"><span class="chip-svg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>European Aesthetic Interior</span>
             </div>
             <div class="info-col-phone">
                 <a href="tel:+91 99492 78620">
-                    <span>📞 +91 99492 78620</span>
+                    <span style="color:var(--primary); display:flex;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
+                    <span>+91 99492 78620</span>
                 </a>
             </div>
         </div>
@@ -1090,16 +1301,19 @@
         <div class="container">
             <div class="about-grid">
                 <div class="about-story">
-                    <div class="section-subtitle">Our Heritage & Atmosphere</div>
+                    <div class="section-subtitle">Heritage & Atmosphere</div>
                     <h2 class="section-title">A Welcoming Sanctuary in Christian Colony</h2>
                     <p>Dosofy is Karimnagar's premier specialty third-wave coffee roastery and dessert destination located in Christian Colony near Court Circle. With single-origin V60 manual pour-overs, Cranberry Espresso infusions, and indulgent Lotus Biscoff cheesecakes, Dosofy redefines cafe culture with refined European elegance and continental dining.</p>
-                    <p>Every beverage is meticulously extracted using high-grade beans and ingredients. Whether you come for quiet afternoon contemplation, an evening family feast, or late-night takeout, our warm staff is ready to greet you with genuine hospitality.</p>
-                    <div style="display:flex; gap:16px; margin-top:24px;">
-                        <a href="https://www.google.com/maps/search/?api=1&query=Dosofy+Christian+Colony+Karimnagar" target="_blank" class="btn-primary" style="padding:10px 24px; font-size:0.9rem;">Get Directions on Google Maps ↗</a>
+                    <p>Every beverage is extracted with passion using artisan roasted beans. Whether you arrive for a quiet morning espresso, an afternoon remote work session, or an evening celebration with friends, our team welcomes you with warmth.</p>
+                    <div style="display:flex; gap:16px; margin-top:28px;">
+                        <a href="https://www.google.com/maps/search/?api=1&query=Dosofy+Christian+Colony+Karimnagar" target="_blank" class="btn-gradient-primary" style="padding:12px 26px; font-size:0.92rem;">
+                            <span>Get Directions on Google Maps</span>
+                            <span style="display:flex;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></span>
+                        </a>
                     </div>
                 </div>
                 <div class="about-visual">
-                    <div style="border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); aspect-ratio: 16/10;">
+                    <div style="border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); aspect-ratio: 16/10; border: 1px solid var(--border);">
                         <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLcPLqxq9oAqx7hXEyxm0AevtA37nP97LmtUy2CCvKkZdUTytk6sKbtmpw39OHKr_Mdtn1d4NxjQ0aMUPSLGVV5-Sospu67F9MCsz-abKUEg8OcnN_IDrJFyAIHlGmscPyObaWCin9eJ_XeV=w800-h600-k-no" alt="Dosofy Frontage" style="width:100%; height:100%; object-fit:cover;" onerror="this.src='https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1600&q=80';">
                     </div>
                 </div>
@@ -1128,14 +1342,14 @@
     <section class="section" id="menu" style="background: #fafbfc; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
         <div class="container">
             <div class="section-header">
-                <div class="section-subtitle">Freshly Prepared With Passion</div>
+                <div class="section-subtitle">Freshly Prepared With Precision</div>
                 <h2 class="section-title">The Complete Cafe Menu</h2>
-                <p class="section-desc">Authentic Karimnagar specialties and handcrafted continental favorites, prepared to order with verified pricing.</p>
+                <p class="section-desc">Authentic Karimnagar favorites and handcrafted continental specialties, prepared to order with verified pricing.</p>
             </div>
             
             <div class="menu-controls">
                 <div class="category-pills">
-                    <button class="cat-pill active" onclick="filterCategory('all', this)">All Items</button>
+                    <button class="cat-pill active" onclick="filterCategory('all', this)"><span class="pill-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>All Items</button>
 <button class="cat-pill" onclick="filterCategory('Specialty Pour-Overs & Coffee', this)">Specialty Pour-Overs & Coffee</button>
 <button class="cat-pill" onclick="filterCategory('Artisan Desserts & Cakes', this)">Artisan Desserts & Cakes</button>
 <button class="cat-pill" onclick="filterCategory('Continental Pastas & Toast', this)">Continental Pastas & Toast</button>
@@ -1143,7 +1357,7 @@
 
                 </div>
                 <div class="menu-search-box">
-                    <span class="search-icon">🔍</span>
+                    <span class="search-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></span>
                     <input type="text" id="menuSearch" class="menu-search-input" placeholder="Search menu, e.g. burger, shake..." oninput="handleSearch(this.value)">
                 </div>
             </div>
@@ -1154,68 +1368,75 @@
         </div>
     </section>
 
-    <!-- Hours & Table Reservation -->
+    <!-- Operating Hours & Reservation -->
     <section class="section" id="hours">
         <div class="container">
             <div class="hours-res-grid">
                 <!-- Hours Card -->
                 <div class="hours-card">
-                    <h3 class="card-heading">Operating Hours</h3>
-                    <p style="color:var(--text-muted); margin-bottom:20px; font-size:0.95rem;">11:00 AM – 11:00 PM • Open Daily</p>
+                    <h3 class="card-heading">
+                        <span style="color:var(--primary); display:flex;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></span>
+                        <span>Operating Hours</span>
+                    </h3>
+                    <p style="color:var(--text-muted); margin-bottom:24px; font-size:0.95rem;">11:00 AM – 11:00 PM • Open Daily</p>
                     <table class="hours-table" id="hoursTable">
                         
         <tr data-day="Monday">
             <td class="day-col">Monday</td>
             <td class="time-col">11:00 AM – 11:00 PM</td>
-            <td class="status-col"><span class="today-tag">Today</span></td>
+            <td class="status-col"><span class="today-tag"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Today</span></td>
         </tr>
         
         <tr data-day="Tuesday">
             <td class="day-col">Tuesday</td>
             <td class="time-col">11:00 AM – 11:00 PM</td>
-            <td class="status-col"><span class="today-tag">Today</span></td>
+            <td class="status-col"><span class="today-tag"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Today</span></td>
         </tr>
         
         <tr data-day="Wednesday">
             <td class="day-col">Wednesday</td>
             <td class="time-col">11:00 AM – 11:00 PM</td>
-            <td class="status-col"><span class="today-tag">Today</span></td>
+            <td class="status-col"><span class="today-tag"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Today</span></td>
         </tr>
         
         <tr data-day="Thursday">
             <td class="day-col">Thursday</td>
             <td class="time-col">11:00 AM – 11:00 PM</td>
-            <td class="status-col"><span class="today-tag">Today</span></td>
+            <td class="status-col"><span class="today-tag"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Today</span></td>
         </tr>
         
         <tr data-day="Friday">
             <td class="day-col">Friday</td>
             <td class="time-col">11:00 AM – 11:00 PM</td>
-            <td class="status-col"><span class="today-tag">Today</span></td>
+            <td class="status-col"><span class="today-tag"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Today</span></td>
         </tr>
         
         <tr data-day="Saturday">
             <td class="day-col">Saturday</td>
             <td class="time-col">11:00 AM – 11:00 PM</td>
-            <td class="status-col"><span class="today-tag">Today</span></td>
+            <td class="status-col"><span class="today-tag"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Today</span></td>
         </tr>
         
         <tr data-day="Sunday">
             <td class="day-col">Sunday</td>
             <td class="time-col">11:00 AM – 11:00 PM</td>
-            <td class="status-col"><span class="today-tag">Today</span></td>
+            <td class="status-col"><span class="today-tag"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Today</span></td>
         </tr>
         
                     </table>
-                    <div style="margin-top:24px; padding:16px; border-radius:var(--radius-sm); background:rgba(0,0,0,0.03); border:1px solid var(--border); font-size:0.88rem; color:var(--text-muted);">
-                        ⚡ <strong>Takeaway & Delivery:</strong> Available throughout opening hours via direct call or WhatsApp.
+                    <div style="margin-top:24px; padding:16px; border-radius:var(--radius-sm); background:rgba(0,0,0,0.03); border:1px solid var(--border); font-size:0.88rem; color:var(--text-muted); display:flex; align-items:center; gap:10px;">
+                        <span style="color:var(--primary); display:flex;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg></span>
+                        <span><strong>Takeaway & Delivery:</strong> Order directly via WhatsApp or phone throughout open hours.</span>
                     </div>
                 </div>
                 
                 <!-- Reservation Card -->
                 <div class="res-card" id="reserve">
-                    <h3 class="card-heading">Reserve a Table</h3>
-                    <p style="color:var(--text-muted); margin-bottom:20px; font-size:0.95rem;">Host friends, celebrate birthdays, or guarantee your spot.</p>
+                    <h3 class="card-heading">
+                        <span style="color:var(--primary); display:flex;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></span>
+                        <span>Reserve a Table</span>
+                    </h3>
+                    <p style="color:var(--text-muted); margin-bottom:24px; font-size:0.95rem;">Book ahead for friend reunions, date nights, or family get-togethers.</p>
                     
                     <form onsubmit="handleReservation(event)">
                         <div class="form-row">
@@ -1239,7 +1460,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="form-label">Guests</label>
+                            <label class="form-label">Party Size</label>
                             <select id="resGuests" class="form-control">
                                 <option value="2 Guests">2 Guests (Couples Table)</option>
                                 <option value="4 Guests" selected>4 Guests (Standard Table)</option>
@@ -1260,7 +1481,7 @@
             <div class="section-header">
                 <div class="section-subtitle">Real Words From Karimnagar Diners</div>
                 <h2 class="section-title">Google Customer Reviews</h2>
-                <p class="section-desc">Rated 4.8 out of 5 stars based on 154 verified visitor testimonials.</p>
+                <p class="section-desc">Rated 4.8 out of 5 stars based on 154 verified visitor ratings.</p>
             </div>
             
             <div class="reviews-grid">
@@ -1273,7 +1494,7 @@
                     <div class="rev-time">a month ago • Verified Google Review</div>
                 </div>
             </div>
-            <div class="rev-stars">★★★★★</div>
+            <div class="rev-stars"><span class="star-filled"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></span><span class="star-filled"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></span><span class="star-filled"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></span><span class="star-filled"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></span><span class="star-filled"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></span></div>
             <p class="rev-text">"The Lotus Biscoff cheesecake is out of this world! Real third-wave coffee in Karimnagar is such a blessing."</p>
         </div>
         
@@ -1285,7 +1506,7 @@
                     <div class="rev-time">2 months ago • Verified Google Review</div>
                 </div>
             </div>
-            <div class="rev-stars">★★★★★</div>
+            <div class="rev-stars"><span class="star-filled"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></span><span class="star-filled"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></span><span class="star-filled"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></span><span class="star-filled"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></span><span class="star-filled"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></span></div>
             <p class="rev-text">"Their V60 pour-over and Cranberry Espresso are masterfully made. Elegant lilac interior and very classy."</p>
         </div>
         
@@ -1297,7 +1518,7 @@
                     <div class="rev-time">3 months ago • Verified Google Review</div>
                 </div>
             </div>
-            <div class="rev-stars">★★★★★</div>
+            <div class="rev-stars"><span class="star-filled"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></span><span class="star-filled"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></span><span class="star-filled"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></span><span class="star-filled"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></span><span class="star-filled"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></span></div>
             <p class="rev-text">"A wonderful addition to Court Circle. Loved the Pink Rosey pasta and friendly ambiance."</p>
         </div>
         
@@ -1311,10 +1532,10 @@
             <div class="loc-grid">
                 <div class="loc-details">
                     <div class="section-subtitle">Finding Us</div>
-                    <h2 class="section-title" style="font-size:2.2rem;">Visit Dosofy</h2>
+                    <h2 class="section-title" style="font-size:2.3rem;">Visit Dosofy</h2>
                     
                     <div class="loc-item">
-                        <div class="loc-icon">📍</div>
+                        <div class="loc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
                         <div>
                             <div class="loc-text-title">Street Address</div>
                             <div class="loc-text-val">Court Circle, Christian Colony, Karimnagar, Telangana 505001</div>
@@ -1322,36 +1543,37 @@
                     </div>
                     
                     <div class="loc-item">
-                        <div class="loc-icon">📞</div>
+                        <div class="loc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></div>
                         <div>
-                            <div class="loc-text-title">Direct Contact</div>
+                            <div class="loc-text-title">Direct Phone</div>
                             <div class="loc-text-val"><a href="tel:+91 99492 78620">+91 99492 78620</a></div>
                         </div>
                     </div>
                     
                     <div class="loc-item">
-                        <div class="loc-icon">⏱</div>
+                        <div class="loc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
                         <div>
-                            <div class="loc-text-title">Operating Schedule</div>
+                            <div class="loc-text-title">Schedule</div>
                             <div class="loc-text-val">11:00 AM – 11:00 PM • Open Daily</div>
                         </div>
                     </div>
                     
-                    <div style="margin-top:10px;">
-                        <a href="https://www.google.com/maps/search/?api=1&query=Dosofy+Christian+Colony+Karimnagar" target="_blank" class="btn-primary">
+                    <div style="margin-top:12px;">
+                        <a href="https://www.google.com/maps/search/?api=1&query=Dosofy+Christian+Colony+Karimnagar" target="_blank" class="btn-gradient-primary">
                             <span>Open In Google Maps</span>
-                            <span>↗</span>
+                            <span style="display:flex;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></span>
                         </a>
                     </div>
                 </div>
                 
                 <div class="map-frame-box">
                     <div class="map-interactive-card">
-                        <div style="font-size:3rem; margin-bottom:12px;">🗺️</div>
-                        <h4 style="font-size:1.3rem; margin-bottom:8px; font-family:var(--font-heading);">Dosofy</h4>
-                        <p style="color:var(--text-muted); font-size:0.92rem; margin-bottom:20px; max-width:320px;">Court Circle, Christian Colony, Karimnagar</p>
-                        <a href="https://www.google.com/maps/search/?api=1&query=Dosofy+Christian+Colony+Karimnagar" target="_blank" class="btn-primary" style="padding:10px 24px; font-size:0.9rem;">
-                            Start GPS Navigation ↗
+                        <div style="color:var(--primary); margin-bottom:14px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon><line x1="9" y1="3" x2="9" y2="18"></line><line x1="15" y1="6" x2="15" y2="21"></line></svg></div>
+                        <h4 style="font-size:1.35rem; margin-bottom:8px; font-family:var(--font-heading);">Dosofy</h4>
+                        <p style="color:var(--text-muted); font-size:0.92rem; margin-bottom:22px; max-width:320px;">Court Circle, Christian Colony, Karimnagar</p>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Dosofy+Christian+Colony+Karimnagar" target="_blank" class="btn-gradient-primary" style="padding:11px 26px; font-size:0.9rem;">
+                            <span>Start GPS Navigation</span>
+                            <span style="display:flex;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></span>
                         </a>
                     </div>
                 </div>
@@ -1368,7 +1590,9 @@
                     <p style="margin-top:6px; color:#64748b;">Artisan Specialty Roastery & Dessert Bar • Karimnagar, Telangana</p>
                 </div>
                 <div>
-                    <a href="index.html" class="footer-hub-link">← Return to Karimnagar Cafes Guide</a>
+                    <a href="index.html" class="footer-hub-link">
+                        <span>← Return to Karimnagar Cafes Guide</span>
+                    </a>
                 </div>
             </div>
             <div style="text-align:center; color:#64748b; font-size:0.85rem;">
@@ -1377,7 +1601,27 @@
         </div>
     </footer>
 
-    <!-- Floating WhatsApp Cart Trigger -->
+    <!-- Mobile Bottom Sticky Bar (Phone Friendly) -->
+    <div class="mobile-bar">
+        <a href="#menu" class="mob-action-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"></path><path d="M6 6h10"></path><path d="M6 10h10"></path></svg>
+            <span>Menu</span>
+        </a>
+        <a href="tel:+91 99492 78620" class="mob-action-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <span>Call</span>
+        </a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Dosofy+Christian+Colony+Karimnagar" target="_blank" class="mob-action-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>Map</span>
+        </a>
+        <div class="mob-action-item" onclick="openCart()" style="color:#25d366; cursor:pointer;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            <span>Cart</span>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Cart Trigger (Desktop & Mobile) -->
     <div id="cartFloat" class="cart-float" onclick="openCart()">
         <span class="cart-badge-count" id="cartCount">0</span>
         <span>View Order</span>
@@ -1388,8 +1632,11 @@
     <div id="cartModal" class="cart-modal-backdrop" onclick="if(event.target === this) closeCart()">
         <div class="cart-drawer">
             <div class="cart-header">
-                <div class="cart-title">Your WhatsApp Order</div>
-                <button class="cart-close-btn" onclick="closeCart()">×</button>
+                <div class="cart-title">
+                    <span style="color:#25d366; display:flex;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.04 7.58C8.88 7.58 8.62 7.64 8.4 7.88C8.18 8.12 7.56 8.7 7.56 9.87C7.56 11.04 8.42 12.16 8.53 12.32C8.65 12.47 10.18 14.83 12.54 15.85C13.1 16.09 13.54 16.24 13.88 16.35C14.44 16.53 14.95 16.5 15.35 16.44C15.8 16.37 16.73 15.87 16.92 15.33C17.11 14.79 17.11 14.33 17.05 14.23C17 14.13 16.84 14.07 16.6 13.95C16.36 13.83 15.17 13.25 14.95 13.17C14.73 13.09 14.57 13.05 14.41 13.29C14.25 13.53 13.79 14.07 13.65 14.23C13.51 14.39 13.37 14.41 13.13 14.29C12.89 14.17 11.88 13.84 10.68 12.77C9.75 11.94 9.12 10.91 8.96 10.63C8.8 10.35 8.94 10.2 9.06 10.08C9.17 9.97 9.31 9.79 9.44 9.64C9.57 9.49 9.61 9.38 9.7 9.21C9.79 9.04 9.74 8.9 9.68 8.78C9.62 8.66 9.16 7.52 8.96 7.05C8.77 6.58 8.58 6.65 8.44 6.64L8.06 6.64C7.9 6.64 7.64 6.7 7.42 6.94C7.2 7.18 6.58 7.76 6.58 8.93C6.58 10.1 7.44 11.22 7.55 11.38L9.04 7.58Z"/></svg></span>
+                    <span>Your WhatsApp Order</span>
+                </div>
+                <button class="cart-close-btn" onclick="closeCart()"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
             </div>
             
             <div class="cart-body" id="cartItemsList">
@@ -1404,8 +1651,9 @@
                 <input type="text" id="custName" class="cart-input" placeholder="Your Name (for order)">
                 <input type="text" id="custAddress" class="cart-input" placeholder="Delivery Address / Table Number">
                 <button class="btn-send-whatsapp" onclick="sendWhatsAppOrder()">
+                    <span style="display:flex;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.04 7.58C8.88 7.58 8.62 7.64 8.4 7.88C8.18 8.12 7.56 8.7 7.56 9.87C7.56 11.04 8.42 12.16 8.53 12.32C8.65 12.47 10.18 14.83 12.54 15.85C13.1 16.09 13.54 16.24 13.88 16.35C14.44 16.53 14.95 16.5 15.35 16.44C15.8 16.37 16.73 15.87 16.92 15.33C17.11 14.79 17.11 14.33 17.05 14.23C17 14.13 16.84 14.07 16.6 13.95C16.36 13.83 15.17 13.25 14.95 13.17C14.73 13.09 14.57 13.05 14.41 13.29C14.25 13.53 13.79 14.07 13.65 14.23C13.51 14.39 13.37 14.41 13.13 14.29C12.89 14.17 11.88 13.84 10.68 12.77C9.75 11.94 9.12 10.91 8.96 10.63C8.8 10.35 8.94 10.2 9.06 10.08C9.17 9.97 9.31 9.79 9.44 9.64C9.57 9.49 9.61 9.38 9.7 9.21C9.79 9.04 9.74 8.9 9.68 8.78C9.62 8.66 9.16 7.52 8.96 7.05C8.77 6.58 8.58 6.65 8.44 6.64L8.06 6.64C7.9 6.64 7.64 6.7 7.42 6.94C7.2 7.18 6.58 7.76 6.58 8.93C6.58 10.1 7.44 11.22 7.55 11.38L9.04 7.58Z"/></svg></span>
                     <span>Send Order via WhatsApp</span>
-                    <span>→</span>
+                    <span style="display:flex;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
                 </button>
             </div>
         </div>
@@ -1434,7 +1682,7 @@
             });
 
             if (filtered.length === 0) {
-                container.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 40px; color: var(--text-muted);">No menu items found matching your search.</div>';
+                container.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 50px; color: var(--text-muted); font-size:1.05rem;">No menu items found matching your search.</div>';
                 return;
             }
 
@@ -1543,8 +1791,8 @@
 
         function showToast(msg) {
             const t = document.getElementById('toast');
-            t.textContent = msg;
-            t.style.display = 'block';
+            document.getElementById('toastMsg').textContent = msg;
+            t.style.display = 'flex';
             setTimeout(() => { t.style.display = 'none'; }, 2500);
         }
 
@@ -1585,7 +1833,7 @@
             const msg = `*Table Reservation Request for ${CAFE_NAME}*\nName: ${name}\nPhone: ${phone}\nDate: ${date}\nTime: ${time}\nParty Size: ${guests}\n\nPlease let me know if this table can be reserved.`;
             const encoded = encodeURIComponent(msg);
 
-            alert(`Thank you, ${name}! Your reservation request for ${guests} on ${date} at ${time} has been prepared. We are now opening WhatsApp to confirm directly with ${CAFE_NAME}.`);
+            alert(`Thank you, ${name}! Your reservation request for ${guests} on ${date} at ${time} has been prepared. Opening WhatsApp to confirm with ${CAFE_NAME}.`);
             window.open(`https://wa.me/${CAFE_PHONE}?text=${encoded}`, '_blank');
         }
 
@@ -1611,7 +1859,6 @@
                 return;
             }
 
-            // Default fallback
             pill.style.color = '#22c55e';
             text.textContent = 'Open Today (' + timing + ')';
         }
@@ -1621,7 +1868,6 @@
             renderMenu();
             checkOpenStatus();
             
-            // Set minimum date for reservation to today
             const dateInput = document.getElementById('resDate');
             if (dateInput) {
                 const today = new Date().toISOString().split('T')[0];
