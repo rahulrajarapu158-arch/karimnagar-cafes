@@ -7,7 +7,7 @@
     <meta name="description" content="Discover the best cafes in Karimnagar, Telangana. 20 local cafes with websites, menus, online ordering, and contact details.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: #f8f9fa; color: #1a1a2e; line-height: 1.7; }
@@ -16,16 +16,7 @@
             color: white;
             padding: 80px 20px;
             text-align: center;
-            position: relative;
-            overflow: hidden;
         }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        }
-        .hero-content { max-width: 700px; margin: 0 auto; position: relative; z-index: 1; }
         .hero h1 { font-family: 'Playfair Display', Georgia, serif; font-size: 3rem; margin-bottom: 16px; }
         .hero p { font-size: 1.15rem; opacity: 0.85; max-width: 500px; margin: 0 auto; }
         .hero-stats { display: flex; gap: 40px; justify-content: center; margin-top: 32px; }
@@ -45,8 +36,6 @@
         .card-body { padding: 24px; }
         .card-badge {
             display: inline-block;
-            background: #f0f4ff;
-            color: #0066cc;
             padding: 4px 12px;
             border-radius: 20px;
             font-size: 0.75rem;
@@ -62,16 +51,15 @@
         .card-btn {
             display: block;
             text-align: center;
-            background: #1a1a2e;
             color: white;
             padding: 14px;
             text-decoration: none;
             font-weight: 600;
             font-size: 0.95rem;
-            transition: background 0.3s ease;
+            transition: opacity 0.3s ease;
             margin-top: 16px;
         }
-        .card-btn:hover { background: #0f3460; }
+        .card-btn:hover { opacity: 0.9; }
         .footer {
             background: #1a1a2e;
             color: rgba(255,255,255,0.5);
@@ -88,217 +76,215 @@
 </head>
 <body>
     <div class="hero">
-        <div class="hero-content">
-            <h1>☕ Cafes in Karimnagar</h1>
-            <p>Your complete guide to the best local cafes — with websites, online ordering, and real reviews.</p>
-            <div class="hero-stats">
-                <div class="stat"><div class="stat-num">20</div><div class="stat-label">Cafes</div></div>
-                <div class="stat"><div class="stat-num">16</div><div class="stat-label">With Phone</div></div>
-                <div class="stat"><div class="stat-num">2</div><div class="stat-label">With Website</div></div>
-            </div>
+        <h1>☕ Cafes in Karimnagar</h1>
+        <p>Your complete guide to the best local cafes — with websites, online ordering, and real reviews.</p>
+        <div class="hero-stats">
+            <div class="stat"><div class="stat-num">20</div><div class="stat-label">Cafes</div></div>
+            <div class="stat"><div class="stat-num">16</div><div class="stat-label">With Phone</div></div>
+            <div class="stat"><div class="stat-num">2</div><div class="stat-label">With Website</div></div>
         </div>
     </div>
     <div class="container">
         <div class="grid">
             
-            <div class="card">
+            <div class="card" style="border-top: 4px solid #ff385c">
                 <div class="card-body">
-                    <div class="card-badge">Cafe</div>
+                    <div class="card-badge" style="background: #ff385c15; color: #ff385c">Cafe</div>
                     <h3>The Odd Fellow's Cafe</h3>
                     <div class="card-rating">★★★★☆ <span>4.7 (49)</span></div>
                     <div class="card-location">📍 Islampura, Ashoknagar</div>
                     <div class="card-phone">📞 073370 13142</div>
-                    <a href="the-odd-fellow-s-cafe.html" class="card-btn">Visit Website</a>
+                    <a href="the-odd-fellow-s-cafe.html" class="card-btn" style="background: #ff385c">Visit Website</a>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" style="border-top: 4px solid #533afd">
                 <div class="card-body">
-                    <div class="card-badge">Restaurant</div>
+                    <div class="card-badge" style="background: #533afd15; color: #533afd">Restaurant</div>
                     <h3>Charlie Cafe & Lounge</h3>
                     <div class="card-rating">★★★★☆ <span>4.7 (732)</span></div>
                     <div class="card-location">📍 Jyothinagar</div>
                     <div class="card-phone">📞 063059 75616</div>
-                    <a href="charlie-cafe-lounge.html" class="card-btn">Visit Website</a>
+                    <a href="charlie-cafe-lounge.html" class="card-btn" style="background: #533afd">Visit Website</a>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" style="border-top: 4px solid #0075de">
                 <div class="card-body">
-                    <div class="card-badge">Cafe</div>
+                    <div class="card-badge" style="background: #0075de15; color: #0075de">Cafe</div>
                     <h3>Cafe Yashoda</h3>
                     <div class="card-rating">★★★★☆ <span>4.7 (47)</span></div>
                     <div class="card-location">📍 Vavilalapally</div>
                     <div class="card-phone">📞 099668 18131</div>
-                    <a href="cafe-yashoda.html" class="card-btn">Visit Website</a>
+                    <a href="cafe-yashoda.html" class="card-btn" style="background: #0075de">Visit Website</a>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" style="border-top: 4px solid #5e6ad2">
                 <div class="card-body">
-                    <div class="card-badge">Cafe</div>
+                    <div class="card-badge" style="background: #5e6ad215; color: #5e6ad2">Cafe</div>
                     <h3>Hungry Birds</h3>
                     <div class="card-rating">★★★★☆ <span>4.8 (17)</span></div>
                     <div class="card-location">📍 Mukarampura</div>
                     <div class="card-phone">📞 Contact for phone</div>
-                    <a href="hungry-birds.html" class="card-btn">Visit Website</a>
+                    <a href="hungry-birds.html" class="card-btn" style="background: #5e6ad2">Visit Website</a>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" style="border-top: 4px solid #1e1e1e">
                 <div class="card-body">
-                    <div class="card-badge">Restaurant</div>
+                    <div class="card-badge" style="background: #1e1e1e15; color: #1e1e1e">Restaurant</div>
                     <h3>Cafe Moments</h3>
                     <div class="card-rating">★★★★☆ <span>4.1 (94)</span></div>
                     <div class="card-location">📍 Mukarampura</div>
                     <div class="card-phone">📞 098493 43257</div>
-                    <a href="cafe-moments.html" class="card-btn">Visit Website</a>
+                    <a href="cafe-moments.html" class="card-btn" style="background: #1e1e1e">Visit Website</a>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" style="border-top: 4px solid #ff385c">
                 <div class="card-body">
-                    <div class="card-badge">Cafe</div>
+                    <div class="card-badge" style="background: #ff385c15; color: #ff385c">Cafe</div>
                     <h3>Hangout cafe</h3>
                     <div class="card-rating">★★★★★ <span>5.0 (21)</span></div>
                     <div class="card-location">📍 Ashoknagar</div>
                     <div class="card-phone">📞 086392 61623</div>
-                    <a href="hangout-cafe.html" class="card-btn">Visit Website</a>
+                    <a href="hangout-cafe.html" class="card-btn" style="background: #ff385c">Visit Website</a>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" style="border-top: 4px solid #533afd">
                 <div class="card-body">
-                    <div class="card-badge">Coffee shop</div>
+                    <div class="card-badge" style="background: #533afd15; color: #533afd">Coffee shop</div>
                     <h3>Ostrich The Kafenio</h3>
                     <div class="card-rating">★★★★☆ <span>4.6 (574)</span></div>
                     <div class="card-location">📍 Vavilalapally</div>
                     <div class="card-phone">📞 095050 01099</div>
-                    <a href="ostrich-the-kafenio.html" class="card-btn">Visit Website</a>
+                    <a href="ostrich-the-kafenio.html" class="card-btn" style="background: #533afd">Visit Website</a>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" style="border-top: 4px solid #0075de">
                 <div class="card-body">
-                    <div class="card-badge">Coffee shop</div>
+                    <div class="card-badge" style="background: #0075de15; color: #0075de">Coffee shop</div>
                     <h3>Praneeth cafe</h3>
                     <div class="card-rating">★★★★☆ <span>4.9 (19)</span></div>
                     <div class="card-location">📍 Subhash Nagar</div>
                     <div class="card-phone">📞 096766 49284</div>
-                    <a href="praneeth-cafe.html" class="card-btn">Visit Website</a>
+                    <a href="praneeth-cafe.html" class="card-btn" style="background: #0075de">Visit Website</a>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" style="border-top: 4px solid #5e6ad2">
                 <div class="card-body">
-                    <div class="card-badge">Restaurant</div>
+                    <div class="card-badge" style="background: #5e6ad215; color: #5e6ad2">Restaurant</div>
                     <h3>London Cafe</h3>
                     <div class="card-rating">★★★★☆ <span>4.9 (39)</span></div>
                     <div class="card-location">📍 Kothayaswada, Vidyanagar</div>
                     <div class="card-phone">📞 097050 68072</div>
-                    <a href="london-cafe.html" class="card-btn">Visit Website</a>
+                    <a href="london-cafe.html" class="card-btn" style="background: #5e6ad2">Visit Website</a>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" style="border-top: 4px solid #1e1e1e">
                 <div class="card-body">
-                    <div class="card-badge">Cafe</div>
+                    <div class="card-badge" style="background: #1e1e1e15; color: #1e1e1e">Cafe</div>
                     <h3>Dosofy</h3>
                     <div class="card-rating">★★★★☆ <span>4.8 (154)</span></div>
                     <div class="card-location">📍 Christian Colony</div>
                     <div class="card-phone">📞 099492 78620</div>
-                    <a href="dosofy.html" class="card-btn">Visit Website</a>
+                    <a href="dosofy.html" class="card-btn" style="background: #1e1e1e">Visit Website</a>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" style="border-top: 4px solid #ff385c">
                 <div class="card-body">
-                    <div class="card-badge">Cafe</div>
+                    <div class="card-badge" style="background: #ff385c15; color: #ff385c">Cafe</div>
                     <h3>Yellow Café</h3>
                     <div class="card-rating">★★★★☆ <span>4.4 (86)</span></div>
                     <div class="card-location">📍 Mukarampura</div>
                     <div class="card-phone">📞 085209 81610</div>
-                    <a href="yellow-caf.html" class="card-btn">Visit Website</a>
+                    <a href="yellow-caf.html" class="card-btn" style="background: #ff385c">Visit Website</a>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" style="border-top: 4px solid #533afd">
                 <div class="card-body">
-                    <div class="card-badge">Cafe</div>
+                    <div class="card-badge" style="background: #533afd15; color: #533afd">Cafe</div>
                     <h3>D&B Cafe</h3>
                     <div class="card-rating">★★★★☆ <span>4.9 (41)</span></div>
                     <div class="card-location">📍 </div>
                     <div class="card-phone">📞 099593 12026</div>
-                    <a href="d-b-cafe.html" class="card-btn">Visit Website</a>
+                    <a href="d-b-cafe.html" class="card-btn" style="background: #533afd">Visit Website</a>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" style="border-top: 4px solid #0075de">
                 <div class="card-body">
-                    <div class="card-badge">Cafe</div>
+                    <div class="card-badge" style="background: #0075de15; color: #0075de">Cafe</div>
                     <h3>BITE AND SIP THE CAFE</h3>
                     <div class="card-rating">★★★★★ <span>5.0 (12)</span></div>
                     <div class="card-location">📍 Mukarampura</div>
                     <div class="card-phone">📞 070936 93918</div>
-                    <a href="bite-and-sip-the-cafe.html" class="card-btn">Visit Website</a>
+                    <a href="bite-and-sip-the-cafe.html" class="card-btn" style="background: #0075de">Visit Website</a>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" style="border-top: 4px solid #5e6ad2">
                 <div class="card-body">
-                    <div class="card-badge">Coffee shop</div>
+                    <div class="card-badge" style="background: #5e6ad215; color: #5e6ad2">Coffee shop</div>
                     <h3>KROST CAFE</h3>
                     <div class="card-rating">★★★★☆ <span>4.2 (18)</span></div>
                     <div class="card-location">📍 Mukarampura</div>
                     <div class="card-phone">📞 Contact for phone</div>
-                    <a href="krost-cafe.html" class="card-btn">Visit Website</a>
+                    <a href="krost-cafe.html" class="card-btn" style="background: #5e6ad2">Visit Website</a>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" style="border-top: 4px solid #1e1e1e">
                 <div class="card-body">
-                    <div class="card-badge">Coffee shop</div>
+                    <div class="card-badge" style="background: #1e1e1e15; color: #1e1e1e">Coffee shop</div>
                     <h3>Abhi's cafe</h3>
                     <div class="card-rating">★★★★☆ <span>4.4 (42)</span></div>
                     <div class="card-location">📍 Vavilalapally</div>
                     <div class="card-phone">📞 Contact for phone</div>
-                    <a href="abhi-s-cafe.html" class="card-btn">Visit Website</a>
+                    <a href="abhi-s-cafe.html" class="card-btn" style="background: #1e1e1e">Visit Website</a>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" style="border-top: 4px solid #ff385c">
                 <div class="card-body">
-                    <div class="card-badge">Restaurant</div>
+                    <div class="card-badge" style="background: #ff385c15; color: #ff385c">Restaurant</div>
                     <h3>La'Delicious Bakery and Cafe</h3>
                     <div class="card-rating">★★★★☆ <span>4.2 (2057)</span></div>
                     <div class="card-location">📍 Jyothinagar</div>
                     <div class="card-phone">📞 097043 03881</div>
-                    <a href="la-delicious-bakery-and-cafe.html" class="card-btn">Visit Website</a>
+                    <a href="la-delicious-bakery-and-cafe.html" class="card-btn" style="background: #ff385c">Visit Website</a>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" style="border-top: 4px solid #533afd">
                 <div class="card-body">
-                    <div class="card-badge">Bakery and Cake Shop</div>
+                    <div class="card-badge" style="background: #533afd15; color: #533afd">Bakery and Cake Shop</div>
                     <h3>Amruth Cafe & Lounge</h3>
                     <div class="card-rating">★★★★☆ <span>4.2 (131)</span></div>
                     <div class="card-location">📍 Mankamma Thota</div>
                     <div class="card-phone">📞 098496 16087</div>
-                    <a href="amruth-cafe-lounge.html" class="card-btn">Visit Website</a>
+                    <a href="amruth-cafe-lounge.html" class="card-btn" style="background: #533afd">Visit Website</a>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" style="border-top: 4px solid #0075de">
                 <div class="card-body">
-                    <div class="card-badge">Cafe</div>
+                    <div class="card-badge" style="background: #0075de15; color: #0075de">Cafe</div>
                     <h3>KNRS CAKES AND COFFEE SHOP</h3>
                     <div class="card-rating">★★★★☆ <span>4.3 (367)</span></div>
                     <div class="card-location">📍 Ganesh Nagar</div>
                     <div class="card-phone">📞 073962 35353</div>
-                    <a href="knrs-cakes-and-coffee-shop.html" class="card-btn">Visit Website</a>
+                    <a href="knrs-cakes-and-coffee-shop.html" class="card-btn" style="background: #0075de">Visit Website</a>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" style="border-top: 4px solid #5e6ad2">
                 <div class="card-body">
-                    <div class="card-badge">Cafe</div>
+                    <div class="card-badge" style="background: #5e6ad215; color: #5e6ad2">Cafe</div>
                     <h3>LaRa Cafe</h3>
                     <div class="card-rating">★★★★☆ <span>4.8 (33)</span></div>
                     <div class="card-location">📍 Mukarampura</div>
                     <div class="card-phone">📞 Contact for phone</div>
-                    <a href="lara-cafe.html" class="card-btn">Visit Website</a>
+                    <a href="lara-cafe.html" class="card-btn" style="background: #5e6ad2">Visit Website</a>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" style="border-top: 4px solid #1e1e1e">
                 <div class="card-body">
-                    <div class="card-badge">Cafe</div>
+                    <div class="card-badge" style="background: #1e1e1e15; color: #1e1e1e">Cafe</div>
                     <h3>Delight Cafe</h3>
                     <div class="card-rating">★★★★☆ <span>4.5 (31)</span></div>
                     <div class="card-location">📍 Sapthagiri Colony</div>
                     <div class="card-phone">📞 098498 11373</div>
-                    <a href="delight-cafe.html" class="card-btn">Visit Website</a>
+                    <a href="delight-cafe.html" class="card-btn" style="background: #1e1e1e">Visit Website</a>
                 </div>
             </div>
         </div>

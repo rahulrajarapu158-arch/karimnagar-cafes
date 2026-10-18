@@ -3,28 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amruth Cafe & Lounge | Bakery and Cake Shop in Karimnagar, Telangana</title>
-    <meta name="description" content="Amruth Cafe & Lounge - Bakery and Cake Shop in C4Q7+GRG, opp. to ADEPU JAIRAM HOSPITAL, Mankamma Thota, Karimnagar, Telangana, 505001. Rated 4.2/5 (131 reviews). Call: +91 98496  16087. Visit us today!">
+    <title>Amruth Cafe & Lounge | Bakery and Cake Shop in Karimnagar</title>
+    <meta name="description" content="Amruth Cafe & Lounge - Bakery and Cake Shop in C4Q7+GRG, opp. to ADEPU JAIRAM HOSPITAL, Mankamma Thota, Karimnagar, Telangana, 505001. Rated 4.2/5 (131 reviews). Call: 098496 16087. Visit us today!">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #E91E63;
-            --secondary: #C2185B;
-            --accent: #F06292;
-            --bg: #FCE4EC;
-            --text: #1a1a2e;
-            --text-light: #666;
-            --white: #ffffff;
-            --shadow: 0 4px 24px rgba(0,0,0,0.08);
-            --shadow-lg: 0 8px 40px rgba(0,0,0,0.12);
-            --radius: 16px;
-            --radius-sm: 12px;
+            --primary: #533afd;
+            --secondary: #4434d4;
+            --text: #061b31;
+            --text-light: #64748d;
+            --bg: #ffffff;
+            --border: #e5edf5;
+            --radius: 6px;
+            --radius-sm: 4px;
+            --btn-radius: 4px;
+            --shadow: rgba(50,50,93,0.25) 0px 30px 45px -30px, rgba(0,0,0,0.1) 0px 18px 36px -18px;
+            --shadow-hover: rgba(50,50,93,0.3) 0px 35px 50px -30px;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Source Sans 3', system-ui, -apple-system, sans-serif;
             background: var(--bg);
             color: var(--text);
             line-height: 1.7;
@@ -32,8 +32,8 @@
         }
         .hero {
             background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: var(--white);
-            padding: 60px 20px 80px;
+            color: white;
+            padding: 80px 20px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -57,11 +57,9 @@
             font-size: 0.85rem;
             font-weight: 500;
             margin-bottom: 16px;
-            letter-spacing: 0.5px;
         }
         .hero h1 {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 2.8rem;
+            font-size: 3rem;
             font-weight: 700;
             margin-bottom: 12px;
             line-height: 1.2;
@@ -77,7 +75,7 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
-            margin-bottom: 24px;
+            margin-bottom: 32px;
         }
         .hero-rating .stars { font-size: 1.4rem; }
         .hero-rating .count { opacity: 0.8; font-size: 0.9rem; }
@@ -87,7 +85,7 @@
             align-items: center;
             gap: 8px;
             padding: 14px 28px;
-            border-radius: 50px;
+            border-radius: var(--btn-radius);
             text-decoration: none;
             font-weight: 600;
             font-size: 0.95rem;
@@ -96,14 +94,14 @@
             cursor: pointer;
         }
         .btn-primary {
-            background: var(--white);
+            background: white;
             color: var(--primary);
             box-shadow: 0 4px 16px rgba(0,0,0,0.15);
         }
         .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
         .btn-secondary {
             background: rgba(255,255,255,0.2);
-            color: var(--white);
+            color: white;
             border: 1px solid rgba(255,255,255,0.3);
             backdrop-filter: blur(10px);
         }
@@ -114,24 +112,26 @@
         }
         .btn-whatsapp:hover { background: #128C7E; }
         .info-bar {
-            background: var(--white);
-            padding: 20px;
+            background: var(--bg);
+            padding: 24px;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
             max-width: 900px;
             margin: -40px auto 0;
             border-radius: var(--radius);
-            box-shadow: var(--shadow-lg);
+            box-shadow: var(--shadow);
             position: relative;
             z-index: 2;
+            border: 1px solid var(--border);
         }
         .info-item { display: flex; align-items: flex-start; gap: 12px; }
         .info-icon {
             width: 44px;
             height: 44px;
             background: var(--bg);
-            border-radius: 12px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -146,7 +146,6 @@
             padding: 50px 20px;
         }
         .section h2 {
-            font-family: 'Playfair Display', Georgia, serif;
             font-size: 1.8rem;
             margin-bottom: 20px;
             color: var(--text);
@@ -154,10 +153,11 @@
         .hours-table {
             width: 100%;
             border-collapse: collapse;
-            background: var(--white);
+            background: var(--bg);
             border-radius: var(--radius-sm);
             overflow: hidden;
             box-shadow: var(--shadow);
+            border: 1px solid var(--border);
         }
         .hours-table th {
             background: var(--bg);
@@ -168,14 +168,30 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
             color: var(--text-light);
+            border-bottom: 1px solid var(--border);
         }
         .hours-table td {
             padding: 12px 16px;
-            border-bottom: 1px solid #f0f0f0;
+            border-bottom: 1px solid var(--border);
             font-size: 0.9rem;
         }
         .hours-table tr:last-child td { border-bottom: none; }
-        .hours-table tr:hover { background: var(--bg); }
+        .menu-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--bg);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+        .menu-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.9rem;
+        }
+        .menu-table tr:last-child td { border-bottom: none; }
+        .menu-price { text-align: right; font-weight: 600; color: var(--primary); }
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -185,10 +201,11 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            background: var(--white);
+            background: var(--bg);
             padding: 14px 16px;
             border-radius: var(--radius-sm);
             box-shadow: var(--shadow);
+            border: 1px solid var(--border);
         }
         .feature-icon {
             width: 28px;
@@ -207,26 +224,25 @@
             align-items: center;
             gap: 8px;
             padding: 12px 24px;
-            background: var(--white);
+            background: var(--bg);
             border: 2px solid var(--primary);
             color: var(--primary);
-            border-radius: 50px;
+            border-radius: var(--btn-radius);
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
         }
-        .order-btn:hover { background: var(--primary); color: var(--white); }
+        .order-btn:hover { background: var(--primary); color: white; }
         .cta-section {
             background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: var(--white);
+            color: white;
             padding: 60px 20px;
             text-align: center;
         }
         .cta-section h2 {
-            font-family: 'Playfair Display', Georgia, serif;
             font-size: 2rem;
             margin-bottom: 12px;
-            color: var(--white);
+            color: white;
         }
         .cta-section p { opacity: 0.9; margin-bottom: 24px; font-size: 1.05rem; }
         .cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
@@ -238,7 +254,7 @@
             font-size: 0.85rem;
         }
         .footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
-        .footer a:hover { color: var(--white); }
+        .footer a:hover { color: white; }
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
             .hero { padding: 40px 16px 60px; }
@@ -253,15 +269,12 @@
         <div class="hero-content">
             <span class="badge">Bakery and Cake Shop</span>
             <h1>Amruth Cafe & Lounge</h1>
-            
             <div class="hero-rating">
-                <span class="stars"><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star">☆</span></span>
+                <span class="stars">★★★★☆</span>
                 <span class="count">4.2/5 • 131 reviews</span>
             </div>
             <div class="hero-cta">
-                <a href="https://wa.me/+919849616087?text=Hi%20Amruth%20Cafe%20%26%20Lounge%2C%20I%27d%20like%20to%20place%20an%20order.%20Please%20share%20your%20menu%20and%20prices." class="btn btn-whatsapp">💬 WhatsApp Order</a>
-                <a href="tel:+919849616087" class="btn btn-primary">📞 Call Now</a>
-                
+                <a href="https://wa.me/+919849616087?text=Hi%20Amruth%20Cafe%20%26%20Lounge%2C%20I%27d%20like%20to%20place%20an%20order.%20Please%20share%20your%20menu%20and%20prices." class="btn btn-whatsapp">💬 WhatsApp Order</a><a href="tel:+919849616087" class="btn btn-primary">📞 098496 16087</a>
             </div>
         </div>
     </div>
@@ -278,7 +291,7 @@
             <div class="info-icon">📞</div>
             <div>
                 <div class="info-label">Phone</div>
-                <div class="info-value">+91 98496  16087</div>
+                <div class="info-value">098496 16087</div>
             </div>
         </div>
         <div class="info-item">
@@ -300,16 +313,16 @@
     </section>
 
     
+
     
+
     
 
     <div class="cta-section">
         <h2>Visit Us Today</h2>
         <p>Experience the best bakery and cake shop in Karimnagar. Can't wait to serve you!</p>
         <div class="cta-buttons">
-            <a href="tel:+919849616087" class="btn btn-primary">📞 +91 98496  16087</a>
-            <a href="https://wa.me/+919849616087?text=Hi%20Amruth%20Cafe%20%26%20Lounge%2C%20I%27d%20like%20to%20place%20an%20order.%20Please%20share%20your%20menu%20and%20prices." class="btn btn-whatsapp">💬 WhatsApp Us</a>
-            <a href="https://maps.google.com/?q=Amruth%20Cafe%20%26%20Lounge%20C4Q7%2BGRG%2C%20opp.%20to%20ADEPU%20JAIRAM%20HOSPITAL%2C%20Mankamma%20Thota%2C%20Karimnagar%2C%20Telangana%2C%20505001" target="_blank" class="btn btn-secondary">🗺️ Get Directions</a>
+            <a href="tel:+919849616087" class="btn btn-primary">📞 Call Now</a><a href="https://wa.me/+919849616087?text=Hi%20Amruth%20Cafe%20%26%20Lounge%2C%20I%27d%20like%20to%20place%20an%20order.%20Please%20share%20your%20menu%20and%20prices." class="btn btn-whatsapp">💬 WhatsApp Order</a><a href="https://maps.google.com/?q=Amruth%20Cafe%20%26%20Lounge%20Karimnagar" target="_blank" class="btn btn-secondary">🗺️ Get Directions</a>
         </div>
     </div>
 
