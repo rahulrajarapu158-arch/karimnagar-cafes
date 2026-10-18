@@ -7,33 +7,79 @@
     <meta name="description" content="Praneeth cafe - Coffee shop in C4XM+H6M, Subhash Nagar, Karimnagar, Telangana, 505001. Rated 4.9/5 (19 reviews). Call: 096766 49284. Visit us today!">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #0075de;
-            --secondary: #005bab;
-            --text: rgba(0,0,0,0.95);
-            --text-light: #615d59;
-            --bg: #ffffff;
-            --border: rgba(0,0,0,0.1);
-            --radius: 12px;
-            --radius-sm: 8px;
-            --btn-radius: 4px;
-            --shadow: rgba(0,0,0,0.04) 0px 4px 18px, rgba(0,0,0,0.027) 0px 2px 8px, rgba(0,0,0,0.02) 0px 0.8px 3px;
-            --shadow-hover: rgba(0,0,0,0.06) 0px 6px 24px;
+            --primary: #E74C3C;
+            --secondary: #CB4335;
+            --bg: #FFF5F5;
+            --text: #2A0A0A;
+            --accent: #EC7063;
+            --dark: #1A0505;
+            --white: #ffffff;
+            --text-light: #666;
+            --border: rgba(0,0,0,0.08);
+            --shadow: 0 4px 24px rgba(0,0,0,0.08);
+            --shadow-lg: 0 8px 40px rgba(0,0,0,0.12);
+            --radius: 16px;
+            --radius-sm: 12px;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background: var(--bg);
             color: var(--text);
             line-height: 1.7;
             -webkit-font-smoothing: antialiased;
         }
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+        .nav-brand {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        .nav-links { display: flex; gap: 24px; align-items: center; }
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover { color: var(--primary); }
+        .nav-cta {
+            background: var(--primary);
+            color: white !important;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600 !important;
+        }
+        .nav-cta:hover { background: var(--secondary) !important; color: white !important; }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+        }
+        /* Hero */
         .hero {
             background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             color: white;
-            padding: 80px 20px;
+            padding: 140px 20px 100px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -59,16 +105,20 @@
             margin-bottom: 16px;
         }
         .hero h1 {
-            font-size: 3rem;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 3.2rem;
             font-weight: 700;
             margin-bottom: 12px;
             line-height: 1.2;
         }
-        .hero-tagline {
+        .hero-desc {
             font-size: 1.1rem;
             opacity: 0.95;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             font-weight: 300;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
         }
         .hero-rating {
             display: flex;
@@ -80,12 +130,13 @@
         .hero-rating .stars { font-size: 1.4rem; }
         .hero-rating .count { opacity: 0.8; font-size: 0.9rem; }
         .hero-cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+        /* Buttons */
         .btn {
             display: inline-flex;
             align-items: center;
             gap: 8px;
             padding: 14px 28px;
-            border-radius: var(--btn-radius);
+            border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             font-size: 0.95rem;
@@ -111,16 +162,17 @@
             color: white;
         }
         .btn-whatsapp:hover { background: #128C7E; }
+        /* Info Bar */
         .info-bar {
-            background: var(--bg);
+            background: var(--white);
             padding: 24px;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
             max-width: 900px;
-            margin: -40px auto 0;
+            margin: -50px auto 0;
             border-radius: var(--radius);
-            box-shadow: var(--shadow);
+            box-shadow: var(--shadow-lg);
             position: relative;
             z-index: 2;
             border: 1px solid var(--border);
@@ -130,7 +182,6 @@
             width: 44px;
             height: 44px;
             background: var(--bg);
-            border: 1px solid var(--border);
             border-radius: var(--radius-sm);
             display: flex;
             align-items: center;
@@ -138,22 +189,27 @@
             font-size: 1.2rem;
             flex-shrink: 0;
         }
-        .info-label { font-size: 0.75rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; }
+        .info-label { font-size: 0.7rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; }
         .info-value { font-size: 0.9rem; color: var(--text); font-weight: 500; line-height: 1.4; }
+        .info-value a { color: var(--primary); text-decoration: none; }
+        /* Sections */
         .section {
             max-width: 900px;
             margin: 0 auto;
-            padding: 50px 20px;
+            padding: 60px 20px;
         }
-        .section h2 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
+        .section-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2rem;
+            margin-bottom: 24px;
             color: var(--text);
+            text-align: center;
         }
+        /* Hours */
         .hours-table {
             width: 100%;
             border-collapse: collapse;
-            background: var(--bg);
+            background: var(--white);
             border-radius: var(--radius-sm);
             overflow: hidden;
             box-shadow: var(--shadow);
@@ -161,7 +217,7 @@
         }
         .hours-table th {
             background: var(--bg);
-            padding: 12px 16px;
+            padding: 14px 16px;
             text-align: left;
             font-weight: 600;
             font-size: 0.8rem;
@@ -171,27 +227,33 @@
             border-bottom: 1px solid var(--border);
         }
         .hours-table td {
-            padding: 12px 16px;
+            padding: 14px 16px;
             border-bottom: 1px solid var(--border);
             font-size: 0.9rem;
         }
         .hours-table tr:last-child td { border-bottom: none; }
-        .menu-table {
-            width: 100%;
-            border-collapse: collapse;
-            background: var(--bg);
+        .hours-table tr:hover { background: var(--bg); }
+        /* Menu */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 12px;
+        }
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 14px 16px;
+            background: var(--white);
             border-radius: var(--radius-sm);
-            overflow: hidden;
-            box-shadow: var(--shadow);
             border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
         }
-        .menu-table td {
-            padding: 12px 16px;
-            border-bottom: 1px solid var(--border);
-            font-size: 0.9rem;
-        }
-        .menu-table tr:last-child td { border-bottom: none; }
-        .menu-price { text-align: right; font-weight: 600; color: var(--primary); }
+        .menu-item:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); border-color: var(--primary); }
+        .menu-item-name { font-weight: 500; font-size: 0.95rem; }
+        .menu-item-price { font-weight: 700; color: var(--primary); font-size: 1rem; white-space: nowrap; margin-left: 12px; }
+        /* Features */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -201,8 +263,8 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            background: var(--bg);
             padding: 14px 16px;
+            background: var(--white);
             border-radius: var(--radius-sm);
             box-shadow: var(--shadow);
             border: 1px solid var(--border);
@@ -210,76 +272,98 @@
         .feature-icon {
             width: 28px;
             height: 28px;
-            background: var(--bg);
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 700;
             font-size: 0.9rem;
+            flex-shrink: 0;
         }
-        .order-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+        .feature-yes .feature-icon { background: #d4edda; color: #155724; }
+        .feature-no .feature-icon { background: #f8d7da; color: #721c24; }
+        /* Order */
+        .order-buttons { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
         .order-btn {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 12px 24px;
-            background: var(--bg);
+            padding: 14px 28px;
+            background: var(--white);
             border: 2px solid var(--primary);
             color: var(--primary);
-            border-radius: var(--btn-radius);
+            border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
         }
         .order-btn:hover { background: var(--primary); color: white; }
+        /* CTA */
         .cta-section {
             background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             color: white;
-            padding: 60px 20px;
+            padding: 80px 20px;
             text-align: center;
         }
         .cta-section h2 {
-            font-size: 2rem;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.2rem;
             margin-bottom: 12px;
             color: white;
         }
-        .cta-section p { opacity: 0.9; margin-bottom: 24px; font-size: 1.05rem; }
+        .cta-section p { opacity: 0.9; margin-bottom: 32px; font-size: 1.1rem; max-width: 500px; margin-left: auto; margin-right: auto; }
         .cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+        /* Footer */
         .footer {
-            background: #1a1a2e;
+            background: var(--dark);
             color: rgba(255,255,255,0.6);
             text-align: center;
-            padding: 30px 20px;
+            padding: 40px 20px;
             font-size: 0.85rem;
         }
         .footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
         .footer a:hover { color: white; }
+        .footer-links { display: flex; gap: 20px; justify-content: center; margin-bottom: 16px; flex-wrap: wrap; }
+        /* Responsive */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .hero { padding: 40px 16px 60px; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero { padding: 120px 16px 80px; }
             .info-bar { margin: -30px 16px 0; grid-template-columns: 1fr; }
             .section { padding: 40px 16px; }
             .btn { padding: 12px 20px; font-size: 0.9rem; }
+            .menu-grid { grid-template-columns: 1fr; }
+            .features-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
+    <nav class="nav">
+        <a href="index.html" class="nav-brand">☕ Praneeth cafe</a>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#hours">Hours</a>
+            
+            <a href="#order">Order</a>
+            <a href="#contact" class="nav-cta">Visit Us</a>
+        </div>
+    </nav>
+
     <div class="hero">
         <div class="hero-content">
             <span class="badge">Coffee shop</span>
             <h1>Praneeth cafe</h1>
+            
             <div class="hero-rating">
-                <span class="stars">★★★★☆</span>
+                <span class="stars"><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star">☆</span></span>
                 <span class="count">4.9/5 • 19 reviews</span>
             </div>
             <div class="hero-cta">
-                <a href="https://wa.me/+919676649284?text=Hi%20Praneeth%20cafe%2C%20I%27d%20like%20to%20place%20an%20order.%20Please%20share%20your%20menu%20and%20prices." class="btn btn-whatsapp">💬 WhatsApp Order</a><a href="tel:+919676649284" class="btn btn-primary">📞 096766 49284</a>
+                <a href="https://wa.me/+919676649284?text=Hi%20Praneeth%20cafe%2C%20I%27d%20like%20to%20place%20an%20order.%20Please%20share%20your%20menu%20and%20prices." class="btn btn-whatsapp">💬 WhatsApp Order</a><a href="tel:+919676649284" class="btn btn-primary">📞 Call Now</a>
             </div>
         </div>
     </div>
 
-    <div class="info-bar">
+    <div class="info-bar" id="about">
         <div class="info-item">
             <div class="info-icon">📍</div>
             <div>
@@ -302,10 +386,11 @@
             </div>
         </div>
         
+        
     </div>
 
-    <section class="section">
-        <h2>Opening Hours</h2>
+    <section class="section" id="hours">
+        <h2 class="section-title">Opening Hours</h2>
         <table class="hours-table">
             <tr><th>Day</th><th>Hours</th></tr>
             <tr><td>Monday</td><td>Open 24 hours</td></tr><tr><td>Tuesday</td><td>Open 24 hours</td></tr><tr><td>Wednesday</td><td>Open 24 hours</td></tr><tr><td>Thursday</td><td>Open 24 hours</td></tr><tr><td>Friday</td><td>Open 24 hours</td></tr><tr><td>Saturday</td><td>Open 24 hours</td></tr><tr><td>Sunday</td><td>Open 24 hours</td></tr>
@@ -314,22 +399,28 @@
 
     
 
-    <section class="section"><h2>Features</h2><div class="features-grid"><div class="feature"><span class="feature-icon">✓</span><span>Wheelchair-accessible car park</span></div><div class="feature"><span class="feature-icon">✓</span><span>Wheelchair-accessible toilet</span></div></div></section>
+    <section class="section" id="features"><h2 class="section-title">Features</h2><div class="features-grid"><div class="feature feature-yes"><span class="feature-icon">✓</span><span>Wheelchair-accessible car park</span></div><div class="feature feature-yes"><span class="feature-icon">✓</span><span>Wheelchair-accessible toilet</span></div></div></section>
 
     
 
-    <div class="cta-section">
+    <div class="cta-section" id="contact">
         <h2>Visit Us Today</h2>
         <p>Experience the best coffee shop in Karimnagar. Can't wait to serve you!</p>
         <div class="cta-buttons">
-            <a href="tel:+919676649284" class="btn btn-primary">📞 Call Now</a><a href="https://wa.me/+919676649284?text=Hi%20Praneeth%20cafe%2C%20I%27d%20like%20to%20place%20an%20order.%20Please%20share%20your%20menu%20and%20prices." class="btn btn-whatsapp">💬 WhatsApp Order</a><a href="https://maps.google.com/?q=Praneeth%20cafe%20Karimnagar" target="_blank" class="btn btn-secondary">🗺️ Get Directions</a>
+            <a href="tel:+919676649284" class="btn btn-primary">📞 096766 49284</a><a href="https://wa.me/+919676649284?text=Hi%20Praneeth%20cafe%2C%20I%27d%20like%20to%20place%20an%20order.%20Please%20share%20your%20menu%20and%20prices." class="btn btn-whatsapp">💬 WhatsApp Order</a><a href="https://maps.google.com/?q=Praneeth%20cafe%20Karimnagar" target="_blank" class="btn btn-secondary">🗺️ Get Directions</a>
         </div>
     </div>
 
     <div class="footer">
+        <div class="footer-links">
+            <a href="index.html">All Cafes</a>
+            <a href="#about">About</a>
+            <a href="#hours">Hours</a>
+            <a href="#contact">Contact</a>
+        </div>
         <p>Praneeth cafe • C4XM+H6M, Subhash Nagar, Karimnagar, Telangana, 505001</p>
         <p>•</p>
-        <a href="index.html">View all cafes in Karimnagar</a>
+        <p>Data sourced from Google Maps • October 2026</p>
     </div>
 </body>
 </html>
