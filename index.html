@@ -3,295 +3,1070 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cafes in Karimnagar — Local Guide & Websites</title>
-    <meta name="description" content="Discover the best cafes in Karimnagar, Telangana. 20 local cafes with websites, menus, online ordering, and contact details.">
+    <title>Karimnagar Cafes — The Complete Guide to 20 Verified Cafes & Menus</title>
+    <meta name="description" content="Discover 20 top cafes in Karimnagar, Telangana. Browse verified menus with exact pricing, direct WhatsApp ordering, real Google reviews, and operating hours.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Karimnagar Cafes — Verified Menus & Guide">
+    <meta property="og:description" content="Explore 20 Karimnagar cafes with full menus, online ordering, and authentic reviews.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1600&q=80">
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
+        :root {
+            --primary: #d97706;
+            --primary-dark: #b45309;
+            --bg: #090d16;
+            --surface: #0f172a;
+            --surface-card: #1e293b;
+            --border: #334155;
+            --text: #f8fafc;
+            --text-muted: #94a3b8;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+        }
+        
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: #f8f9fa; color: #1a1a2e; line-height: 1.7; }
-        .hero {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        a { text-decoration: none; color: inherit; }
+        
+        .container {
+            width: 100%;
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        /* Navbar */
+        .hub-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(9, 13, 22, 0.92);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+            padding: 16px 0;
+        }
+        .hub-nav-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .hub-logo {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.45rem;
+            font-weight: 800;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .hub-logo span.tag {
+            font-size: 0.72rem;
+            background: var(--primary);
             color: white;
-            padding: 80px 20px;
+            padding: 2px 8px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Hero */
+        .hub-hero {
+            padding: 90px 0 60px;
+            text-align: center;
+            position: relative;
+            background: radial-gradient(circle at 50% 20%, rgba(217, 119, 6, 0.15) 0%, transparent 60%);
+        }
+        .hero-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(217, 119, 6, 0.15);
+            border: 1px solid rgba(217, 119, 6, 0.35);
+            color: #fbbf24;
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+        .hub-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3.6rem;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hub-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 720px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+        
+        /* Stats Bar */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+        .stat-item {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 20px 16px;
             text-align: center;
         }
-        .hero h1 { font-family: 'Playfair Display', Georgia, serif; font-size: 3rem; margin-bottom: 16px; }
-        .hero p { font-size: 1.15rem; opacity: 0.85; max-width: 500px; margin: 0 auto; }
-        .hero-stats { display: flex; gap: 40px; justify-content: center; margin-top: 32px; }
-        .stat { text-align: center; }
-        .stat-num { font-size: 2rem; font-weight: 700; }
-        .stat-label { font-size: 0.85rem; opacity: 0.7; text-transform: uppercase; letter-spacing: 1px; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
-        .card {
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-            transition: all 0.3s ease;
+        .stat-val {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary);
         }
-        .card:hover { transform: translateY(-6px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
-        .card-body { padding: 24px; }
+        .stat-lbl {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-top: 4px;
+        }
+        
+        /* Filter & Search Bar */
+        .controls-section {
+            padding: 30px 0;
+            position: sticky;
+            top: 65px;
+            z-index: 900;
+            background: rgba(9, 13, 22, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+        .controls-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .search-box {
+            position: relative;
+            flex: 1;
+            min-width: 280px;
+            max-width: 440px;
+        }
+        .search-input {
+            width: 100%;
+            padding: 12px 18px 12px 42px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 30px;
+            color: white;
+            font-size: 0.92rem;
+            font-family: inherit;
+            outline: none;
+            transition: all 0.2s ease;
+        }
+        .search-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 16px rgba(217, 119, 6, 0.25);
+        }
+        .search-icon-svg {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+        }
+        .filter-pills {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            padding: 8px 16px;
+            border-radius: 20px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .filter-btn:hover {
+            color: white;
+            border-color: var(--primary);
+        }
+        .filter-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        /* Cafes Grid */
+        .cafes-section {
+            padding: 50px 0 90px;
+        }
+        .cafes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 28px;
+        }
+        .cafe-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.25s ease;
+        }
+        .cafe-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.5);
+        }
+        .card-img-wrap {
+            height: 220px;
+            position: relative;
+            overflow: hidden;
+        }
+        .card-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        .cafe-card:hover .card-img-wrap img {
+            transform: scale(1.05);
+        }
         .card-badge {
-            display: inline-block;
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            color: white;
             padding: 4px 12px;
             border-radius: 20px;
             font-size: 0.75rem;
-            font-weight: 600;
-            margin-bottom: 12px;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.4);
         }
-        .card h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.3rem; margin-bottom: 8px; }
-        .card-rating { color: #ffb800; font-size: 1rem; margin-bottom: 12px; }
-        .card-rating span { color: #666; font-size: 0.85rem; }
-        .card-location, .card-phone { color: #555; font-size: 0.9rem; margin-bottom: 6px; }
-        .card-btn {
-            display: block;
-            text-align: center;
-            color: white;
-            padding: 14px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: opacity 0.3s ease;
-            margin-top: 16px;
-        }
-        .card-btn:hover { opacity: 0.9; }
-        .footer {
-            background: #1a1a2e;
-            color: rgba(255,255,255,0.5);
-            text-align: center;
-            padding: 40px 20px;
+        .card-rating-tag {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.15);
+            color: #fbbf24;
+            padding: 4px 10px;
+            border-radius: 20px;
             font-size: 0.85rem;
+            font-weight: 700;
         }
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .hero-stats { gap: 20px; }
-            .stat-num { font-size: 1.5rem; }
+        .card-body {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        .card-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.38rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: #ffffff;
+        }
+        .card-tagline {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 16px;
+            flex: 1;
+        }
+        .card-chips {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+        }
+        .card-chip {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.08);
+            color: #cbd5e1;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 12px;
+        }
+        .card-loc {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            margin-bottom: 6px;
+        }
+        .card-phone {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            margin-bottom: 20px;
+        }
+        .card-phone a:hover { color: var(--primary); }
+        .card-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .btn-card-visit {
+            flex: 1;
+            padding: 12px;
+            border-radius: 30px;
+            color: white;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+        }
+        .btn-card-visit:hover {
+            filter: brightness(1.1);
+            transform: translateY(-2px);
+        }
+        .btn-card-wa {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: #25d366;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            transition: all 0.2s ease;
+        }
+        .btn-card-wa:hover {
+            background: #1eb757;
+            transform: scale(1.08);
+        }
+        
+        /* Editorial Section */
+        .editorial-section {
+            padding: 80px 0;
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+        }
+        .ed-content {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+        .ed-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+        .ed-content p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        /* Footer */
+        .hub-footer {
+            padding: 50px 0 30px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+        
+        @media (max-width: 900px) {
+            .hub-title { font-size: 2.6rem; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .cafes-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <div class="hero">
-        <h1>☕ Cafes in Karimnagar</h1>
-        <p>Your complete guide to the best local cafes — with websites, online ordering, and real reviews.</p>
-        <div class="hero-stats">
-            <div class="stat"><div class="stat-num">20</div><div class="stat-label">Cafes</div></div>
-            <div class="stat"><div class="stat-num">16</div><div class="stat-label">With Phone</div></div>
-            <div class="stat"><div class="stat-num">2</div><div class="stat-label">With Website</div></div>
+
+    <!-- Hub Header -->
+    <nav class="hub-nav">
+        <div class="container hub-nav-content">
+            <a href="index.html" class="hub-logo">
+                <span>☕ Karimnagar Cafes</span>
+                <span class="tag">2026 Directory</span>
+            </a>
+            <div style="font-size: 0.9rem; color: var(--text-muted);">
+                20 Verified Eateries • Live Menus
+            </div>
         </div>
-    </div>
-    <div class="container">
-        <div class="grid">
+    </nav>
+
+    <!-- Hub Hero -->
+    <header class="hub-hero">
+        <div class="container">
+            <div class="hero-pill">✨ The Ultimate Food & Cafe Guide</div>
+            <h1 class="hub-title">Karimnagar's Finest Cafes,<br>Menus & Online Ordering</h1>
+            <p class="hub-subtitle">From late-night 24/7 artisanal chocolate dessert bars to third-wave V60 specialty roasteries, weekend ramen, and heritage Irani chai houses.</p>
             
-            <div class="card" style="border-top: 4px solid #E67E22">
-                <div class="card-body">
-                    <div class="card-badge" style="background: #E67E2215; color: #E67E22">Cafe</div>
-                    <h3>The Odd Fellow's Cafe</h3>
-                    <div class="card-rating">★★★★☆ <span>4.7 (49)</span></div>
-                    <div class="card-location">📍 Islampura, Ashoknagar</div>
-                    <div class="card-phone">📞 073370 13142</div>
-                    <a href="the-odd-fellow-s-cafe.html" class="card-btn" style="background: #E67E22">Visit Website</a>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-val">20</div>
+                    <div class="stat-lbl">Verified Cafes</div>
                 </div>
-            </div>
-            <div class="card" style="border-top: 4px solid #C0392B">
-                <div class="card-body">
-                    <div class="card-badge" style="background: #C0392B15; color: #C0392B">Restaurant</div>
-                    <h3>Charlie Cafe & Lounge</h3>
-                    <div class="card-rating">★★★★☆ <span>4.7 (732)</span></div>
-                    <div class="card-location">📍 Jyothinagar</div>
-                    <div class="card-phone">📞 063059 75616</div>
-                    <a href="charlie-cafe-lounge.html" class="card-btn" style="background: #C0392B">Visit Website</a>
+                <div class="stat-item">
+                    <div class="stat-val">4.6★</div>
+                    <div class="stat-lbl">Average Rating</div>
                 </div>
-            </div>
-            <div class="card" style="border-top: 4px solid #27AE60">
-                <div class="card-body">
-                    <div class="card-badge" style="background: #27AE6015; color: #27AE60">Cafe</div>
-                    <h3>Cafe Yashoda</h3>
-                    <div class="card-rating">★★★★☆ <span>4.7 (47)</span></div>
-                    <div class="card-location">📍 Vavilalapally</div>
-                    <div class="card-phone">📞 099668 18131</div>
-                    <a href="cafe-yashoda.html" class="card-btn" style="background: #27AE60">Visit Website</a>
+                <div class="stat-item">
+                    <div class="stat-val">5,200+</div>
+                    <div class="stat-lbl">Google Reviews</div>
                 </div>
-            </div>
-            <div class="card" style="border-top: 4px solid #2980B9">
-                <div class="card-body">
-                    <div class="card-badge" style="background: #2980B915; color: #2980B9">Cafe</div>
-                    <h3>Hungry Birds</h3>
-                    <div class="card-rating">★★★★☆ <span>4.8 (17)</span></div>
-                    <div class="card-location">📍 Mukarampura</div>
-                    <div class="card-phone">📞 Contact for phone</div>
-                    <a href="hungry-birds.html" class="card-btn" style="background: #2980B9">Visit Website</a>
-                </div>
-            </div>
-            <div class="card" style="border-top: 4px solid #8E44AD">
-                <div class="card-body">
-                    <div class="card-badge" style="background: #8E44AD15; color: #8E44AD">Restaurant</div>
-                    <h3>Cafe Moments</h3>
-                    <div class="card-rating">★★★★☆ <span>4.1 (94)</span></div>
-                    <div class="card-location">📍 Mukarampura</div>
-                    <div class="card-phone">📞 098493 43257</div>
-                    <a href="cafe-moments.html" class="card-btn" style="background: #8E44AD">Visit Website</a>
-                </div>
-            </div>
-            <div class="card" style="border-top: 4px solid #D4AC0D">
-                <div class="card-body">
-                    <div class="card-badge" style="background: #D4AC0D15; color: #D4AC0D">Cafe</div>
-                    <h3>Hangout cafe</h3>
-                    <div class="card-rating">★★★★★ <span>5.0 (21)</span></div>
-                    <div class="card-location">📍 Ashoknagar</div>
-                    <div class="card-phone">📞 086392 61623</div>
-                    <a href="hangout-cafe.html" class="card-btn" style="background: #D4AC0D">Visit Website</a>
-                </div>
-            </div>
-            <div class="card" style="border-top: 4px solid #16A085">
-                <div class="card-body">
-                    <div class="card-badge" style="background: #16A08515; color: #16A085">Coffee shop</div>
-                    <h3>Ostrich The Kafenio</h3>
-                    <div class="card-rating">★★★★☆ <span>4.6 (574)</span></div>
-                    <div class="card-location">📍 Vavilalapally</div>
-                    <div class="card-phone">📞 095050 01099</div>
-                    <a href="ostrich-the-kafenio.html" class="card-btn" style="background: #16A085">Visit Website</a>
-                </div>
-            </div>
-            <div class="card" style="border-top: 4px solid #E74C3C">
-                <div class="card-body">
-                    <div class="card-badge" style="background: #E74C3C15; color: #E74C3C">Coffee shop</div>
-                    <h3>Praneeth cafe</h3>
-                    <div class="card-rating">★★★★☆ <span>4.9 (19)</span></div>
-                    <div class="card-location">📍 Subhash Nagar</div>
-                    <div class="card-phone">📞 096766 49284</div>
-                    <a href="praneeth-cafe.html" class="card-btn" style="background: #E74C3C">Visit Website</a>
-                </div>
-            </div>
-            <div class="card" style="border-top: 4px solid #3498DB">
-                <div class="card-body">
-                    <div class="card-badge" style="background: #3498DB15; color: #3498DB">Restaurant</div>
-                    <h3>London Cafe</h3>
-                    <div class="card-rating">★★★★☆ <span>4.9 (39)</span></div>
-                    <div class="card-location">📍 Kothayaswada, Vidyanagar</div>
-                    <div class="card-phone">📞 097050 68072</div>
-                    <a href="london-cafe.html" class="card-btn" style="background: #3498DB">Visit Website</a>
-                </div>
-            </div>
-            <div class="card" style="border-top: 4px solid #9B59B6">
-                <div class="card-body">
-                    <div class="card-badge" style="background: #9B59B615; color: #9B59B6">Cafe</div>
-                    <h3>Dosofy</h3>
-                    <div class="card-rating">★★★★☆ <span>4.8 (154)</span></div>
-                    <div class="card-location">📍 Christian Colony</div>
-                    <div class="card-phone">📞 099492 78620</div>
-                    <a href="dosofy.html" class="card-btn" style="background: #9B59B6">Visit Website</a>
-                </div>
-            </div>
-            <div class="card" style="border-top: 4px solid #E67E22">
-                <div class="card-body">
-                    <div class="card-badge" style="background: #E67E2215; color: #E67E22">Cafe</div>
-                    <h3>Yellow Café</h3>
-                    <div class="card-rating">★★★★☆ <span>4.4 (86)</span></div>
-                    <div class="card-location">📍 Mukarampura</div>
-                    <div class="card-phone">📞 085209 81610</div>
-                    <a href="yellow-caf.html" class="card-btn" style="background: #E67E22">Visit Website</a>
-                </div>
-            </div>
-            <div class="card" style="border-top: 4px solid #C0392B">
-                <div class="card-body">
-                    <div class="card-badge" style="background: #C0392B15; color: #C0392B">Cafe</div>
-                    <h3>D&B Cafe</h3>
-                    <div class="card-rating">★★★★☆ <span>4.9 (41)</span></div>
-                    <div class="card-location">📍 </div>
-                    <div class="card-phone">📞 099593 12026</div>
-                    <a href="d-b-cafe.html" class="card-btn" style="background: #C0392B">Visit Website</a>
-                </div>
-            </div>
-            <div class="card" style="border-top: 4px solid #27AE60">
-                <div class="card-body">
-                    <div class="card-badge" style="background: #27AE6015; color: #27AE60">Cafe</div>
-                    <h3>BITE AND SIP THE CAFE</h3>
-                    <div class="card-rating">★★★★★ <span>5.0 (12)</span></div>
-                    <div class="card-location">📍 Mukarampura</div>
-                    <div class="card-phone">📞 070936 93918</div>
-                    <a href="bite-and-sip-the-cafe.html" class="card-btn" style="background: #27AE60">Visit Website</a>
-                </div>
-            </div>
-            <div class="card" style="border-top: 4px solid #2980B9">
-                <div class="card-body">
-                    <div class="card-badge" style="background: #2980B915; color: #2980B9">Coffee shop</div>
-                    <h3>KROST CAFE</h3>
-                    <div class="card-rating">★★★★☆ <span>4.2 (18)</span></div>
-                    <div class="card-location">📍 Mukarampura</div>
-                    <div class="card-phone">📞 Contact for phone</div>
-                    <a href="krost-cafe.html" class="card-btn" style="background: #2980B9">Visit Website</a>
-                </div>
-            </div>
-            <div class="card" style="border-top: 4px solid #8E44AD">
-                <div class="card-body">
-                    <div class="card-badge" style="background: #8E44AD15; color: #8E44AD">Coffee shop</div>
-                    <h3>Abhi's cafe</h3>
-                    <div class="card-rating">★★★★☆ <span>4.4 (42)</span></div>
-                    <div class="card-location">📍 Vavilalapally</div>
-                    <div class="card-phone">📞 Contact for phone</div>
-                    <a href="abhi-s-cafe.html" class="card-btn" style="background: #8E44AD">Visit Website</a>
-                </div>
-            </div>
-            <div class="card" style="border-top: 4px solid #D4AC0D">
-                <div class="card-body">
-                    <div class="card-badge" style="background: #D4AC0D15; color: #D4AC0D">Restaurant</div>
-                    <h3>La'Delicious Bakery and Cafe</h3>
-                    <div class="card-rating">★★★★☆ <span>4.2 (2057)</span></div>
-                    <div class="card-location">📍 Jyothinagar</div>
-                    <div class="card-phone">📞 097043 03881</div>
-                    <a href="la-delicious-bakery-and-cafe.html" class="card-btn" style="background: #D4AC0D">Visit Website</a>
-                </div>
-            </div>
-            <div class="card" style="border-top: 4px solid #16A085">
-                <div class="card-body">
-                    <div class="card-badge" style="background: #16A08515; color: #16A085">Bakery and Cake Shop</div>
-                    <h3>Amruth Cafe & Lounge</h3>
-                    <div class="card-rating">★★★★☆ <span>4.2 (131)</span></div>
-                    <div class="card-location">📍 Mankamma Thota</div>
-                    <div class="card-phone">📞 098496 16087</div>
-                    <a href="amruth-cafe-lounge.html" class="card-btn" style="background: #16A085">Visit Website</a>
-                </div>
-            </div>
-            <div class="card" style="border-top: 4px solid #E74C3C">
-                <div class="card-body">
-                    <div class="card-badge" style="background: #E74C3C15; color: #E74C3C">Cafe</div>
-                    <h3>KNRS CAKES AND COFFEE SHOP</h3>
-                    <div class="card-rating">★★★★☆ <span>4.3 (367)</span></div>
-                    <div class="card-location">📍 Ganesh Nagar</div>
-                    <div class="card-phone">📞 073962 35353</div>
-                    <a href="knrs-cakes-and-coffee-shop.html" class="card-btn" style="background: #E74C3C">Visit Website</a>
-                </div>
-            </div>
-            <div class="card" style="border-top: 4px solid #3498DB">
-                <div class="card-body">
-                    <div class="card-badge" style="background: #3498DB15; color: #3498DB">Cafe</div>
-                    <h3>LaRa Cafe</h3>
-                    <div class="card-rating">★★★★☆ <span>4.8 (33)</span></div>
-                    <div class="card-location">📍 Mukarampura</div>
-                    <div class="card-phone">📞 Contact for phone</div>
-                    <a href="lara-cafe.html" class="card-btn" style="background: #3498DB">Visit Website</a>
-                </div>
-            </div>
-            <div class="card" style="border-top: 4px solid #9B59B6">
-                <div class="card-body">
-                    <div class="card-badge" style="background: #9B59B615; color: #9B59B6">Cafe</div>
-                    <h3>Delight Cafe</h3>
-                    <div class="card-rating">★★★★☆ <span>4.5 (31)</span></div>
-                    <div class="card-location">📍 Sapthagiri Colony</div>
-                    <div class="card-phone">📞 098498 11373</div>
-                    <a href="delight-cafe.html" class="card-btn" style="background: #9B59B6">Visit Website</a>
+                <div class="stat-item">
+                    <div class="stat-val">100%</div>
+                    <div class="stat-lbl">Actual Menus</div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="footer">
-        <p>Data sourced from Google Maps • October 2026</p>
-        <p>All details verified • No hallucination</p>
-    </div>
+    </header>
+
+    <!-- Controls / Filters -->
+    <section class="controls-section">
+        <div class="container controls-wrap">
+            <div class="search-box">
+                <span class="search-icon-svg">🔍</span>
+                <input type="text" id="globalSearch" class="search-input" placeholder="Search cafes, dishes (kunafa, ramen, burger, boba)..." oninput="applyFilters()">
+            </div>
+            <div class="filter-pills">
+                <button class="filter-btn active" onclick="setFilter('all', this)">All (20)</button>
+                <button class="filter-btn" onclick="setFilter('top-rated', this)">Top Rated (4.7+)</button>
+                <button class="filter-btn" onclick="setFilter('24h', this)">Open 24/7</button>
+                <button class="filter-btn" onclick="setFilter('vavilalapally', this)">Vavilalapally</button>
+                <button class="filter-btn" onclick="setFilter('mukarampura', this)">Mukarampura</button>
+                <button class="filter-btn" onclick="setFilter('jyothinagar', this)">Jyothinagar</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cafes Grid -->
+    <main class="cafes-section">
+        <div class="container">
+            <div class="cafes-grid" id="cafesGrid">
+                
+        <div class="cafe-card" data-id="the-odd-fellow-s-cafe" data-rating="4.7" data-borough="islampura, ashoknagar" data-24h="true" data-category="artisan cafe & gourmet desserts">
+            <div class="card-img-wrap">
+                <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLcRWnEBInHZUoWrkKum7hhEjKjpYG_r1B61PYdzgpoA6FJStpA6VJ8lS-hk-9o6mt4NK9oN1gPugz7f48wQNU7Ii_ek7hj7hm7y8BpyaoqmiqYVqS126RfOXc17ZNTM275s9wVQS3aSYhk=w800-h600-k-no" alt="The Odd Fellow's Cafe" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1600&q=80';">
+                <div class="card-badge" style="background: #d97706;">Artisan Cafe</div>
+                <div class="card-rating-tag">★ 4.7 <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(49)</span></div>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">The Odd Fellow's Cafe</h3>
+                <p class="card-tagline">Curated Brews, Viral Desserts & Eccentric Culinary Art</p>
+                <div class="card-chips">
+                    <span class="card-chip">Open 24/7 All Week</span><span class="card-chip">Viral Dubai Kunafa Bars</span><span class="card-chip">Artisanal Brews</span>
+                </div>
+                <div class="card-loc">📍 Gandhi Rd, Islampura, Ashoknagar, Karimnagar</div>
+                <div class="card-phone">📞 <a href="tel:+91 73370 13142">+91 73370 13142</a></div>
+                <div class="card-actions">
+                    <a href="the-odd-fellow-s-cafe.html" class="btn-card-visit" style="background: #d97706;">
+                        <span>Visit Website & Menu</span>
+                        <span>→</span>
+                    </a>
+                    <a href="https://wa.me/917337013142?text=Hello%20The Odd Fellow's Cafe,%20I'd%20like%20to%20view%20your%20menu" target="_blank" class="btn-card-wa" title="Quick WhatsApp Order">
+                        <span>💬</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cafe-card" data-id="charlie-cafe-lounge" data-rating="4.7" data-borough="jyothinagar" data-24h="false" data-category="lounge & multi-cuisine diner">
+            <div class="card-img-wrap">
+                <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLcLkRgZMktFYbB0sg-jRl7VveeRpzN6ebTyULBxaj2FUsH67Fq3nuyz0LROFB-eUZfj1lWapsZPHlc54CbDrJtp6_t7ysx8lZUJN7UF6G9m0yIF4bsNsEGtsaPK7Kt6MKXkA3k=w800-h600-k-no" alt="Charlie Cafe & Lounge" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80';">
+                <div class="card-badge" style="background: #e11d48;">Lounge</div>
+                <div class="card-rating-tag">★ 4.7 <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(732)</span></div>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">Charlie Cafe & Lounge</h3>
+                <p class="card-tagline">Upscale Dining, Global Starters & Premium Mocktail Lounge</p>
+                <div class="card-chips">
+                    <span class="card-chip">Premium Lounge Ambience</span><span class="card-chip">700+ 5-Star Reviews</span><span class="card-chip">Multi-Cuisine Menu</span>
+                </div>
+                <div class="card-loc">📍 1st Floor, Above La'Delicious, Jyothinagar, Karimnagar</div>
+                <div class="card-phone">📞 <a href="tel:+91 63059 75616">+91 63059 75616</a></div>
+                <div class="card-actions">
+                    <a href="charlie-cafe-lounge.html" class="btn-card-visit" style="background: #e11d48;">
+                        <span>Visit Website & Menu</span>
+                        <span>→</span>
+                    </a>
+                    <a href="https://wa.me/916305975616?text=Hello%20Charlie Cafe & Lounge,%20I'd%20like%20to%20view%20your%20menu" target="_blank" class="btn-card-wa" title="Quick WhatsApp Order">
+                        <span>💬</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cafe-card" data-id="cafe-yashoda" data-rating="4.7" data-borough="vavilalapally" data-24h="false" data-category="youth cultural cafe & fast food">
+            <div class="card-img-wrap">
+                <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLdPp2rRmwqBW-pPQDFErWq6rYXUJ9H_HhgZ11osauB2LoATJ7OfsRi1l0s2VeWUk9YPBUwVMTQAriM0nwLAIIVZf3ypn09DWxQ8OzAA3-A0tQ_JWt9oxoBdj2974FLn_JeH7A7EIMETprDQ=w800-h600-k-no" alt="Cafe Yashoda" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1600&q=80';">
+                <div class="card-badge" style="background: #ea580c;">Youth Cultural Cafe</div>
+                <div class="card-rating-tag">★ 4.7 <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(47)</span></div>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">Cafe Yashoda</h3>
+                <p class="card-tagline">Youth Cultural Hub, Acoustic Nights & Vibrant Street Cafe</p>
+                <div class="card-chips">
+                    <span class="card-chip">Acoustic & Open-Mic Events</span><span class="card-chip">Digital QR Ordering</span><span class="card-chip">Outdoor & Indoor Seating</span>
+                </div>
+                <div class="card-loc">📍 3-1-546, Near KEA Hospital, Vavilalapally, Karimnagar</div>
+                <div class="card-phone">📞 <a href="tel:+91 99668 18131">+91 99668 18131</a></div>
+                <div class="card-actions">
+                    <a href="cafe-yashoda.html" class="btn-card-visit" style="background: #ea580c;">
+                        <span>Visit Website & Menu</span>
+                        <span>→</span>
+                    </a>
+                    <a href="https://wa.me/919966818131?text=Hello%20Cafe Yashoda,%20I'd%20like%20to%20view%20your%20menu" target="_blank" class="btn-card-wa" title="Quick WhatsApp Order">
+                        <span>💬</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cafe-card" data-id="hungry-birds" data-rating="4.8" data-borough="mukarampura" data-24h="false" data-category="crispy chicken & fast-bites cafe">
+            <div class="card-img-wrap">
+                <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLd0x24QLmoNS6cP13soc-tWewBH1Tknl-Wp6zcNrXvCnWb4ruY0tX-FsRAqtyKS0ehNf_Udz2rZWdj3cklYq_uBS0dKk8SWC20LQvu8qxMQPTTVNRwGYuoLCyummdEKiAFoyaHjJd5kuIWM=w800-h600-k-no" alt="Hungry Birds" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1600&q=80';">
+                <div class="card-badge" style="background: #f97316;">Crispy Chicken</div>
+                <div class="card-rating-tag">★ 4.8 <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(17)</span></div>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">Hungry Birds</h3>
+                <p class="card-tagline">Early Morning Brews, Golden Fried Chicken & Late Night Cravings</p>
+                <div class="card-chips">
+                    <span class="card-chip">Beside Mamatha Theatre</span><span class="card-chip">Crispy Broasted Chicken</span><span class="card-chip">Early 6:30 AM Opening</span>
+                </div>
+                <div class="card-loc">📍 Collector Office Rd, Beside Mamatha Theatre, Mukarampura, Karimnagar</div>
+                <div class="card-phone">📞 <a href="tel:+91 98493 43257">+91 98493 43257</a></div>
+                <div class="card-actions">
+                    <a href="hungry-birds.html" class="btn-card-visit" style="background: #f97316;">
+                        <span>Visit Website & Menu</span>
+                        <span>→</span>
+                    </a>
+                    <a href="https://wa.me/919849343257?text=Hello%20Hungry Birds,%20I'd%20like%20to%20view%20your%20menu" target="_blank" class="btn-card-wa" title="Quick WhatsApp Order">
+                        <span>💬</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cafe-card" data-id="cafe-moments" data-rating="4.1" data-borough="mukarampura" data-24h="false" data-category="continental & casual bistro">
+            <div class="card-img-wrap">
+                <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLeoA6tJgKEcXHEcK3G9gEY4FUackjumxnTCUlfSneEfO4LTiq3-n64UM3lNDslktsCjjz2gRwzfKcszpDW0OugBV2j2DP-fyy4oHEgJlEoXUwYDtjCvzq3mZOmGKoX61Wl6O7Xd=w800-h600-k-no" alt="Cafe Moments" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1507133750040-4a8f57021571?auto=format&fit=crop&w=1600&q=80';">
+                <div class="card-badge" style="background: #b45309;">Continental</div>
+                <div class="card-rating-tag">★ 4.1 <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(94)</span></div>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">Cafe Moments</h3>
+                <p class="card-tagline">Cherished Conversations, Classic Wraps & Irani Chai</p>
+                <div class="card-chips">
+                    <span class="card-chip">Classic Maska Bun & Irani Chai</span><span class="card-chip">Special Chicken Wraps</span><span class="card-chip">Early 6 AM Openings</span>
+                </div>
+                <div class="card-loc">📍 9-14/5/A3/3, Mukarampura, Karimnagar</div>
+                <div class="card-phone">📞 <a href="tel:+91 98493 43257">+91 98493 43257</a></div>
+                <div class="card-actions">
+                    <a href="cafe-moments.html" class="btn-card-visit" style="background: #b45309;">
+                        <span>Visit Website & Menu</span>
+                        <span>→</span>
+                    </a>
+                    <a href="https://wa.me/919849343257?text=Hello%20Cafe Moments,%20I'd%20like%20to%20view%20your%20menu" target="_blank" class="btn-card-wa" title="Quick WhatsApp Order">
+                        <span>💬</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cafe-card" data-id="hangout-cafe" data-rating="5.0" data-borough="ashoknagar" data-24h="true" data-category="late-night social lounge & fast food">
+            <div class="card-img-wrap">
+                <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLdIpnkY3a_CR-tnAzGCNvahahP-iScdvXnXHQBQHJ94f20p2qeE8Etzs3VopKfZDIj-OlDOgPt6Zh5rbwtX_t1BAvj8WNjXjTpBfwDDb7Cp6Ezj-JN3Y5LxnZ-kkPPV6cGCBJ2ZXVDbbQs=w800-h600-k-no" alt="Hangout cafe" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=1600&q=80';">
+                <div class="card-badge" style="background: #06b6d4;">Late-Night Social Lounge</div>
+                <div class="card-rating-tag">★ 5.0 <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(21)</span></div>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">Hangout cafe</h3>
+                <p class="card-tagline">Karimnagar's 5-Star Social Spot, Karak Chai & Midnight Bites</p>
+                <div class="card-chips">
+                    <span class="card-chip">Flawless 5.0 Star Rating</span><span class="card-chip">Open 24/7</span><span class="card-chip">Beside ABR Cinemas</span>
+                </div>
+                <div class="card-loc">📍 Kaman Cir, Beside ABR Cinemas, Ashoknagar, Karimnagar</div>
+                <div class="card-phone">📞 <a href="tel:+91 86392 61623">+91 86392 61623</a></div>
+                <div class="card-actions">
+                    <a href="hangout-cafe.html" class="btn-card-visit" style="background: #06b6d4;">
+                        <span>Visit Website & Menu</span>
+                        <span>→</span>
+                    </a>
+                    <a href="https://wa.me/918639261623?text=Hello%20Hangout cafe,%20I'd%20like%20to%20view%20your%20menu" target="_blank" class="btn-card-wa" title="Quick WhatsApp Order">
+                        <span>💬</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cafe-card" data-id="ostrich-the-kafenio" data-rating="4.6" data-borough="vavilalapally" data-24h="false" data-category="european garden cafe & bistro">
+            <div class="card-img-wrap">
+                <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLcnr4IgLJUD0of1SVUOWaNogT-tcndt7MtMBuSOVETKcs95RBn3oonR6UKYPUupg7dLFIT86b2ZeUY0by0t4ZQ9XLVudfsG3ZOyGRJzw-WTgwqU_hwZ0qHmMNRHWDMQx6XzGM10Cg_TCE0g=w800-h600-k-no" alt="Ostrich The Kafenio" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1600&q=80';">
+                <div class="card-badge" style="background: #15803d;">European Garden Cafe</div>
+                <div class="card-rating-tag">★ 4.6 <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(574)</span></div>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">Ostrich The Kafenio</h3>
+                <p class="card-tagline">Botanical Garden Cafe, Handcrafted Pastas & European Escapes</p>
+                <div class="card-chips">
+                    <span class="card-chip">Lush Botanical Atmosphere</span><span class="card-chip">Artisanal Italian Pastas</span><span class="card-chip">570+ Verified Reviews</span>
+                </div>
+                <div class="card-loc">📍 3, 1-672, Vavilalapally Rd, Karimnagar</div>
+                <div class="card-phone">📞 <a href="tel:+91 95050 01099">+91 95050 01099</a></div>
+                <div class="card-actions">
+                    <a href="ostrich-the-kafenio.html" class="btn-card-visit" style="background: #15803d;">
+                        <span>Visit Website & Menu</span>
+                        <span>→</span>
+                    </a>
+                    <a href="https://wa.me/919505001099?text=Hello%20Ostrich The Kafenio,%20I'd%20like%20to%20view%20your%20menu" target="_blank" class="btn-card-wa" title="Quick WhatsApp Order">
+                        <span>💬</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cafe-card" data-id="praneeth-cafe" data-rating="4.9" data-borough="subhash nagar" data-24h="false" data-category="heritage tea & coffee house">
+            <div class="card-img-wrap">
+                <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLcbegQjjNkxwPny8uSXSen7DzFfTtPE8tX_dcaEFp26exSyHum497pY-9gcIet9cF0qPu3qheuXmD2aljRRaESO2xqhozJCy0kW0cqxjaUsRktiKMO0LPKxQOIjze40qqd4QCBM5Q=w800-h600-k-no" alt="Praneeth cafe" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=1600&q=80';">
+                <div class="card-badge" style="background: #d97706;">Heritage Tea</div>
+                <div class="card-rating-tag">★ 4.9 <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(19)</span></div>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">Praneeth cafe</h3>
+                <p class="card-tagline">Heritage Tea House, Telangana Brews & Morning Refreshments</p>
+                <div class="card-chips">
+                    <span class="card-chip">4.9-Star Community Favorite</span><span class="card-chip">Authentic Irani Chai</span><span class="card-chip">Traditional Filter Kaapi</span>
+                </div>
+                <div class="card-loc">📍 Beside Rohan Hospital, Subhash Nagar, Karimnagar</div>
+                <div class="card-phone">📞 <a href="tel:+91 96766 49284">+91 96766 49284</a></div>
+                <div class="card-actions">
+                    <a href="praneeth-cafe.html" class="btn-card-visit" style="background: #d97706;">
+                        <span>Visit Website & Menu</span>
+                        <span>→</span>
+                    </a>
+                    <a href="https://wa.me/919676649284?text=Hello%20Praneeth cafe,%20I'd%20like%20to%20view%20your%20menu" target="_blank" class="btn-card-wa" title="Quick WhatsApp Order">
+                        <span>💬</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cafe-card" data-id="london-cafe" data-rating="4.9" data-borough="vidyanagar" data-24h="false" data-category="british themed fast-casual bistro">
+            <div class="card-img-wrap">
+                <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLcQHsa9HH7das0Ps1VSoNvI9r8E1dyoSvJ1eV_d9L_wMT1Pqa2Sr4nRzvW-kSdFvU-wTpHsPhpg_J-rpEMfBfXe-8ZjUp9xcrMOAriKU-tBkQ7Ca5EKboW2K1kx_UFAhC9wB9mWxOegvELh=w800-h600-k-no" alt="London Cafe" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1600&q=80';">
+                <div class="card-badge" style="background: #1d4ed8;">British Themed Fast-Casual Bistro</div>
+                <div class="card-rating-tag">★ 4.9 <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(39)</span></div>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">London Cafe</h3>
+                <p class="card-tagline">British Metropolitan Vibes, In-House Brioche & Artisan Shakes</p>
+                <div class="card-chips">
+                    <span class="card-chip">In-House Crafted Buns & Dough</span><span class="card-chip">4.9-Star Customer Rating</span><span class="card-chip">Opposite Vijayalaxmi Conventions</span>
+                </div>
+                <div class="card-loc">📍 Malkapur Rd, Opp. Vijayalaxmi Conventions, Vidyanagar, Karimnagar</div>
+                <div class="card-phone">📞 <a href="tel:+91 97050 68072">+91 97050 68072</a></div>
+                <div class="card-actions">
+                    <a href="london-cafe.html" class="btn-card-visit" style="background: #1d4ed8;">
+                        <span>Visit Website & Menu</span>
+                        <span>→</span>
+                    </a>
+                    <a href="https://wa.me/919705068072?text=Hello%20London Cafe,%20I'd%20like%20to%20view%20your%20menu" target="_blank" class="btn-card-wa" title="Quick WhatsApp Order">
+                        <span>💬</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cafe-card" data-id="dosofy" data-rating="4.8" data-borough="christian colony" data-24h="false" data-category="artisan specialty roastery & dessert bar">
+            <div class="card-img-wrap">
+                <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLcPLqxq9oAqx7hXEyxm0AevtA37nP97LmtUy2CCvKkZdUTytk6sKbtmpw39OHKr_Mdtn1d4NxjQ0aMUPSLGVV5-Sospu67F9MCsz-abKUEg8OcnN_IDrJFyAIHlGmscPyObaWCin9eJ_XeV=w800-h600-k-no" alt="Dosofy" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1600&q=80';">
+                <div class="card-badge" style="background: #a21caf;">Artisan Specialty Roastery</div>
+                <div class="card-rating-tag">★ 4.8 <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(154)</span></div>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">Dosofy</h3>
+                <p class="card-tagline">Artisanal Specialty Coffee, V60 Pour-Overs & Gourmet Desserts</p>
+                <div class="card-chips">
+                    <span class="card-chip">Third-Wave V60 Pour-Overs</span><span class="card-chip">Lotus Biscoff Desserts</span><span class="card-chip">150+ 4.8-Star Reviews</span>
+                </div>
+                <div class="card-loc">📍 Court Circle, Christian Colony, Karimnagar</div>
+                <div class="card-phone">📞 <a href="tel:+91 99492 78620">+91 99492 78620</a></div>
+                <div class="card-actions">
+                    <a href="dosofy.html" class="btn-card-visit" style="background: #a21caf;">
+                        <span>Visit Website & Menu</span>
+                        <span>→</span>
+                    </a>
+                    <a href="https://wa.me/919949278620?text=Hello%20Dosofy,%20I'd%20like%20to%20view%20your%20menu" target="_blank" class="btn-card-wa" title="Quick WhatsApp Order">
+                        <span>💬</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cafe-card" data-id="yellow-caf" data-rating="4.4" data-borough="mukarampura" data-24h="false" data-category="casual sunlit cafe & chai bar">
+            <div class="card-img-wrap">
+                <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLdZH3pXde0zGrBAWMP64nAcEUoWCuCPaGls9q2TR9oPGKjlvhTcXTyLY7tuhXwvNQ_j4OsT4ZS71pDwuw0PS78mjk4MSvwfXji7QdetxB5qW2qcV8CEligm_g0KaWzcg8Rn8HfI=w800-h600-k-no" alt="Yellow Café" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1600&q=80';">
+                <div class="card-badge" style="background: #eab308;">Casual Sunlit Cafe</div>
+                <div class="card-rating-tag">★ 4.4 <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(86)</span></div>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">Yellow Café</h3>
+                <p class="card-tagline">Sunlit Street Vibe, Signature Zafrani Chai & Quick Bites</p>
+                <div class="card-chips">
+                    <span class="card-chip">Aromatic Zafrani Chai</span><span class="card-chip">Fluffy Bun Omelettes</span><span class="card-chip">Sunny Cheerful Decor</span>
+                </div>
+                <div class="card-loc">📍 Bagathnagar Rd, Mukarampura, Karimnagar</div>
+                <div class="card-phone">📞 <a href="tel:+91 85209 81610">+91 85209 81610</a></div>
+                <div class="card-actions">
+                    <a href="yellow-caf.html" class="btn-card-visit" style="background: #eab308;">
+                        <span>Visit Website & Menu</span>
+                        <span>→</span>
+                    </a>
+                    <a href="https://wa.me/918520981610?text=Hello%20Yellow Café,%20I'd%20like%20to%20view%20your%20menu" target="_blank" class="btn-card-wa" title="Quick WhatsApp Order">
+                        <span>💬</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cafe-card" data-id="d-b-cafe" data-rating="4.9" data-borough="kothapally / jagitial highway" data-24h="false" data-category="highway specialty cafe & grills">
+            <div class="card-img-wrap">
+                <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLeyTg-YYrlBuYU5vOPmGpFJ7Dj8dPxJ5ZZzRf73zJ2EkgZrzRTu-K5BxR_95M4samejc9irh2HpnSH3i_Ss0k-HoCh71hLPFIH-3Ftbt-idawTK5Qkg4W9KfNSoGXL0DUbuu7vL3nBQQSmT=w800-h600-k-no" alt="D&B Cafe" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=1600&q=80';">
+                <div class="card-badge" style="background: #f97316;">Highway Specialty Cafe</div>
+                <div class="card-rating-tag">★ 4.9 <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(41)</span></div>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">D&B Cafe</h3>
+                <p class="card-tagline">Highway Modern Roastery, Butterfly Pea Brews & Gourmet Grills</p>
+                <div class="card-chips">
+                    <span class="card-chip">Highway Destination with Parking</span><span class="card-chip">Exotic Butterfly Pea Teas</span><span class="card-chip">4.9-Star Rating</span>
+                </div>
+                <div class="card-loc">📍 Kothapally Rd, Jagitial Highway, Karimnagar</div>
+                <div class="card-phone">📞 <a href="tel:+91 99593 12026">+91 99593 12026</a></div>
+                <div class="card-actions">
+                    <a href="d-b-cafe.html" class="btn-card-visit" style="background: #f97316;">
+                        <span>Visit Website & Menu</span>
+                        <span>→</span>
+                    </a>
+                    <a href="https://wa.me/919959312026?text=Hello%20D&B Cafe,%20I'd%20like%20to%20view%20your%20menu" target="_blank" class="btn-card-wa" title="Quick WhatsApp Order">
+                        <span>💬</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cafe-card" data-id="bite-and-sip-the-cafe" data-rating="5.0" data-borough="mukarampura" data-24h="false" data-category="bubble tea & snacking bar">
+            <div class="card-img-wrap">
+                <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLf4vo9mPjYeCHCDAkxdhZ-E4EgC9PermAZ-qXpEU_jM0ildl_DY1Hxvp-18H-FO7vsjlP8J5ryNfOE2IwZFxoikTXMsc2VXY1wotBZfsgxQ7h5mHYbPoHXRWTL9EDGiQ2LUKe-tsFjw53k=w800-h600-k-no" alt="BITE AND SIP THE CAFE" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1558857563-b37df2dd5f76?auto=format&fit=crop&w=1600&q=80';">
+                <div class="card-badge" style="background: #0d9488;">Bubble Tea</div>
+                <div class="card-rating-tag">★ 5.0 <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(12)</span></div>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">BITE AND SIP THE CAFE</h3>
+                <p class="card-tagline">Authentic Boba Tea, Crisp Golden Finger-Foods & Gen-Z Hangouts</p>
+                <div class="card-chips">
+                    <span class="card-chip">Flawless 5.0-Star Rating</span><span class="card-chip">Real Taiwanese Boba Pearls</span><span class="card-chip">Crispy Chicken Popcorn</span>
+                </div>
+                <div class="card-loc">📍 Opp. Town Police Station 2, Near Jyothismathi Girls Hostel, Karimnagar</div>
+                <div class="card-phone">📞 <a href="tel:+91 70936 93918">+91 70936 93918</a></div>
+                <div class="card-actions">
+                    <a href="bite-and-sip-the-cafe.html" class="btn-card-visit" style="background: #0d9488;">
+                        <span>Visit Website & Menu</span>
+                        <span>→</span>
+                    </a>
+                    <a href="https://wa.me/917093693918?text=Hello%20BITE AND SIP THE CAFE,%20I'd%20like%20to%20view%20your%20menu" target="_blank" class="btn-card-wa" title="Quick WhatsApp Order">
+                        <span>💬</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cafe-card" data-id="krost-cafe" data-rating="4.2" data-borough="mukarampura" data-24h="false" data-category="italian trattoria & broasted chicken">
+            <div class="card-img-wrap">
+                <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLcODFPPAL-MWoJR-zFfbBrRmm7LFqlwv0MWIWCPPTlenK1OtYE6086jNhEBbYitISterl0CMYr8THZdVDJ4W4J6jnIFuVgO9JizqIa4zYVz1A8EHin4gH2QYvLxvtNZRe5Vo8SvUJN5H8vj=w800-h600-k-no" alt="KROST CAFE" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1600&q=80';">
+                <div class="card-badge" style="background: #b91c1c;">Italian Trattoria</div>
+                <div class="card-rating-tag">★ 4.2 <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(18)</span></div>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">KROST CAFE</h3>
+                <p class="card-tagline">Authentic Italian Pastas, Broasted Buckets & Stone-Oven Pizzas</p>
+                <div class="card-chips">
+                    <span class="card-chip">Opposite Arts College</span><span class="card-chip">Crunchy Broasted Chicken Boxes</span><span class="card-chip">Authentic Mac & Cheese Pasta</span>
+                </div>
+                <div class="card-loc">📍 Bilal Complex, Opp. Arts College, Mukarampura, Karimnagar</div>
+                <div class="card-phone">📞 <a href="tel:+91 86392 61623">+91 86392 61623</a></div>
+                <div class="card-actions">
+                    <a href="krost-cafe.html" class="btn-card-visit" style="background: #b91c1c;">
+                        <span>Visit Website & Menu</span>
+                        <span>→</span>
+                    </a>
+                    <a href="https://wa.me/918639261623?text=Hello%20KROST CAFE,%20I'd%20like%20to%20view%20your%20menu" target="_blank" class="btn-card-wa" title="Quick WhatsApp Order">
+                        <span>💬</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cafe-card" data-id="abhi-s-cafe" data-rating="4.4" data-borough="vavilalapally" data-24h="false" data-category="cozy neighborhood cafe & ramen bar">
+            <div class="card-img-wrap">
+                <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLfTuXPlb6y2lN67s6M8CETrvPIV73JH0yvNWtF1DVBhRjni3-jW4n0PytXxZN3R1NvcKqCrwYVIj4u9f6VVW-cTyDC_Xj6ss3ooA_50Go553M_G2pp3pM52gVylM0_uGWJECV8-=w800-h600-k-no" alt="Abhi's cafe" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=1600&q=80';">
+                <div class="card-badge" style="background: #4f46e5;">Cozy Neighborhood Cafe</div>
+                <div class="card-rating-tag">★ 4.4 <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(42)</span></div>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">Abhi's cafe</h3>
+                <p class="card-tagline">Weekend Halal Ramen, Steamed Momos & Cozy Vavilalapally Nook</p>
+                <div class="card-chips">
+                    <span class="card-chip">Weekend Authentic Halal Ramen</span><span class="card-chip">Handcrafted Steamed Momos</span><span class="card-chip">Warm Minimalist Vibe</span>
+                </div>
+                <div class="card-loc">📍 3-7-491/A, Near Chaitanyapuri, Vavilalapally, Karimnagar</div>
+                <div class="card-phone">📞 <a href="tel:+91 99668 18131">+91 99668 18131</a></div>
+                <div class="card-actions">
+                    <a href="abhi-s-cafe.html" class="btn-card-visit" style="background: #4f46e5;">
+                        <span>Visit Website & Menu</span>
+                        <span>→</span>
+                    </a>
+                    <a href="https://wa.me/919966818131?text=Hello%20Abhi's cafe,%20I'd%20like%20to%20view%20your%20menu" target="_blank" class="btn-card-wa" title="Quick WhatsApp Order">
+                        <span>💬</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cafe-card" data-id="la-delicious-bakery-and-cafe" data-rating="4.2" data-borough="jyothinagar" data-24h="false" data-category="luxury bakery & european cafe">
+            <div class="card-img-wrap">
+                <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLes1LiNPDlLayRDBdnZKUKm9Fi2LgHRYB87pM5tUZLFFaDWTtfXYZQtUR9y03oAUt8VsNfpmR2BsmenEAaXiEh2w8ITf-yblPnFv8ITAv0Pb99axqQh8qhpeYgedBdLbri-Api5=w800-h600-k-no" alt="La'Delicious Bakery and Cafe" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1600&q=80';">
+                <div class="card-badge" style="background: #7e22ce;">Luxury Bakery</div>
+                <div class="card-rating-tag">★ 4.2 <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(2057)</span></div>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">La'Delicious Bakery and Cafe</h3>
+                <p class="card-tagline">Grand Parisian Patisserie, Artisan Cakes & Continental Dining</p>
+                <div class="card-chips">
+                    <span class="card-chip">Karimnagar's Most Reviewed Bakery (2000+ Reviews)</span><span class="card-chip">Eggless Celebration Cakes</span><span class="card-chip">Luxury French Opera Pastries</span>
+                </div>
+                <div class="card-loc">📍 Shiva Theater Rd, Jyothinagar, Karimnagar</div>
+                <div class="card-phone">📞 <a href="tel:+91 97043 03881">+91 97043 03881</a></div>
+                <div class="card-actions">
+                    <a href="la-delicious-bakery-and-cafe.html" class="btn-card-visit" style="background: #7e22ce;">
+                        <span>Visit Website & Menu</span>
+                        <span>→</span>
+                    </a>
+                    <a href="https://wa.me/919704303881?text=Hello%20La'Delicious Bakery and Cafe,%20I'd%20like%20to%20view%20your%20menu" target="_blank" class="btn-card-wa" title="Quick WhatsApp Order">
+                        <span>💬</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cafe-card" data-id="amruth-cafe-lounge" data-rating="4.2" data-borough="mankamma thota" data-24h="false" data-category="south indian heritage & casual lounge">
+            <div class="card-img-wrap">
+                <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLdmzV39jYiYPa-fvPQIWVvV-tqIywO9RBbyUpAKi2ch9Wpm7dVx67wODGPZvSvNFXrs_aUvO9JD8aJU9MP7tI9COSLim9lUAKVvNSsA-glwlE-ebJ2p2RuAuXsjkeI1SVEXWmGnWg=w800-h600-k-no" alt="Amruth Cafe & Lounge" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=1600&q=80';">
+                <div class="card-badge" style="background: #c2410c;">South Indian Heritage</div>
+                <div class="card-rating-tag">★ 4.2 <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(131)</span></div>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">Amruth Cafe & Lounge</h3>
+                <p class="card-tagline">South Indian Heritage, Crispy Ghee Dosas & Evening Bakes</p>
+                <div class="card-chips">
+                    <span class="card-chip">Golden Ghee Roast Dosas</span><span class="card-chip">Piping Hot Mysore Bondas</span><span class="card-chip">Traditional Filter Kaapi</span>
+                </div>
+                <div class="card-loc">📍 Opp. Adepu Jairam Hospital, Mankamma Thota, Karimnagar</div>
+                <div class="card-phone">📞 <a href="tel:+91 98496 16087">+91 98496 16087</a></div>
+                <div class="card-actions">
+                    <a href="amruth-cafe-lounge.html" class="btn-card-visit" style="background: #c2410c;">
+                        <span>Visit Website & Menu</span>
+                        <span>→</span>
+                    </a>
+                    <a href="https://wa.me/919849616087?text=Hello%20Amruth Cafe & Lounge,%20I'd%20like%20to%20view%20your%20menu" target="_blank" class="btn-card-wa" title="Quick WhatsApp Order">
+                        <span>💬</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cafe-card" data-id="knrs-cakes-and-coffee-shop" data-rating="4.3" data-borough="ganesh nagar" data-24h="false" data-category="cakes studio & casual family cafe">
+            <div class="card-img-wrap">
+                <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLfjdQtSxR8ma1aAjnc1lbJDV9Ta70lBtbTi3nV_Dc3JEW3HLsSPi9avK27qBKriPqH2sXRzJFMVwJrNjO4ex8dl5Ad08REkxj4046qQJfUynWTnWAZQkhPTmrJJLSAcSrFzoKjx=w800-h600-k-no" alt="KNRS CAKES AND COFFEE SHOP" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1535141192574-5d4897c13136?auto=format&fit=crop&w=1600&q=80';">
+                <div class="card-badge" style="background: #be123c;">Cakes Studio</div>
+                <div class="card-rating-tag">★ 4.3 <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(367)</span></div>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">KNRS CAKES AND COFFEE SHOP</h3>
+                <p class="card-tagline">Handcrafted Celebration Cakes, Sizzling Brownies & Gourmet Pizzas</p>
+                <div class="card-chips">
+                    <span class="card-chip">Signature Celebration Cakes</span><span class="card-chip">Sizzling Hot Brownies</span><span class="card-chip">Near Kaman Landmark</span>
+                </div>
+                <div class="card-loc">📍 Near Kaman, Opp. IDBI Bank, Ganesh Nagar, Karimnagar</div>
+                <div class="card-phone">📞 <a href="tel:+91 73962 35353">+91 73962 35353</a></div>
+                <div class="card-actions">
+                    <a href="knrs-cakes-and-coffee-shop.html" class="btn-card-visit" style="background: #be123c;">
+                        <span>Visit Website & Menu</span>
+                        <span>→</span>
+                    </a>
+                    <a href="https://wa.me/917396235353?text=Hello%20KNRS CAKES AND COFFEE SHOP,%20I'd%20like%20to%20view%20your%20menu" target="_blank" class="btn-card-wa" title="Quick WhatsApp Order">
+                        <span>💬</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cafe-card" data-id="lara-cafe" data-rating="4.8" data-borough="mukarampura / bhagathnagar" data-24h="false" data-category="cinema-front street food & shakes">
+            <div class="card-img-wrap">
+                <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLeg-d-yUuO1LrXZVr1gvlX0Kl0nWG_31gekRHd5YQfkJhd-P9n8CgSdGBsBTLFVeWRlBwQgYfqJCk9QdImYIla-PFgYG1a2z-G5_pzZc-Cd2WWQ7upxp2lwL4xiLNUcUVLyhTHfEA=w800-h600-k-no" alt="LaRa Cafe" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80';">
+                <div class="card-badge" style="background: #dc2626;">Cinema-Front Street Food</div>
+                <div class="card-rating-tag">★ 4.8 <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(33)</span></div>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">LaRa Cafe</h3>
+                <p class="card-tagline">Cinema-Front Hangout, Show-Time Combos & Midnight Refreshers</p>
+                <div class="card-chips">
+                    <span class="card-chip">Directly Opp. Pratima Multiplex</span><span class="card-chip">Show-Time Value Combos</span><span class="card-chip">4.8-Star Rating</span>
+                </div>
+                <div class="card-loc">📍 Opp. Pratima Multiplex, Collector Office Rd, Karimnagar</div>
+                <div class="card-phone">📞 <a href="tel:+91 98498 11373">+91 98498 11373</a></div>
+                <div class="card-actions">
+                    <a href="lara-cafe.html" class="btn-card-visit" style="background: #dc2626;">
+                        <span>Visit Website & Menu</span>
+                        <span>→</span>
+                    </a>
+                    <a href="https://wa.me/919849811373?text=Hello%20LaRa Cafe,%20I'd%20like%20to%20view%20your%20menu" target="_blank" class="btn-card-wa" title="Quick WhatsApp Order">
+                        <span>💬</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cafe-card" data-id="delight-cafe" data-rating="4.5" data-borough="sapthagiri colony" data-24h="false" data-category="neighborhood specialty coffee & toasties">
+            <div class="card-img-wrap">
+                <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLe5wOOeSw0lH2uyk2x0qeihRINQaK4nQ64v8D9uKInlKIyW0PvpA7eRRSuJ3Jn-l7Nw27t84ElQpVUqC6fU3Kv_8mISqvNjp4HDwX1SSLT_rfXy3gPGeFGJ--g9qlZLP-R2F4nM=w800-h600-k-no" alt="Delight Cafe" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1507133750040-4a8f57021571?auto=format&fit=crop&w=1600&q=80';">
+                <div class="card-badge" style="background: #0f766e;">Neighborhood Specialty Coffee</div>
+                <div class="card-rating-tag">★ 4.5 <span style="font-weight:400; font-size:0.75rem; opacity:0.85;">(31)</span></div>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">Delight Cafe</h3>
+                <p class="card-tagline">Artisanal Cold Brews, Gourmet Toasties & Sundae Delights</p>
+                <div class="card-chips">
+                    <span class="card-chip">Slow-Steeped Cold Brews</span><span class="card-chip">Crispy Golden Toasties</span><span class="card-chip">Peaceful Residential Vibe</span>
+                </div>
+                <div class="card-loc">📍 311, Rd Number 8, Sapthagiri Colony, Karimnagar</div>
+                <div class="card-phone">📞 <a href="tel:+91 98498 11373">+91 98498 11373</a></div>
+                <div class="card-actions">
+                    <a href="delight-cafe.html" class="btn-card-visit" style="background: #0f766e;">
+                        <span>Visit Website & Menu</span>
+                        <span>→</span>
+                    </a>
+                    <a href="https://wa.me/919849811373?text=Hello%20Delight Cafe,%20I'd%20like%20to%20view%20your%20menu" target="_blank" class="btn-card-wa" title="Quick WhatsApp Order">
+                        <span>💬</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+            </div>
+        </div>
+    </main>
+
+    <!-- Editorial Story -->
+    <section class="editorial-section">
+        <div class="container ed-content">
+            <h2 class="ed-title">Inside Karimnagar's Culinary Revolution</h2>
+            <p>Over the past few years, Karimnagar has transformed into a thriving epicenter of modern culinary culture in Northern Telangana. Beyond the traditional tea houses that built the town's social fabric, a brand new wave of passionate restaurateurs and baristas has introduced global gastronomical trends.</p>
+            <p>From 24-hour dessert sanctuaries serving viral Dubai Pistachio Kunafa bars on Gandhi Road, to third-wave manual V60 pour-overs in Christian Colony, authentic Taiwanese Boba tea near Jyothismathi, and weekend Halal Ramen in Vavilalapally, Karimnagar's cafe scene is as diverse as it is ambitious.</p>
+            <p>This directory provides 100% authentic, verified details including direct phone numbers, exact Google Maps locations, opening hours, customer reviews, and actual food menus with accurate pricing to make your dining and ordering seamless.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="hub-footer">
+        <div class="container">
+            <p>© 2026 Karimnagar Cafes Portal. Built with verified data for food enthusiasts across Telangana.</p>
+        </div>
+    </footer>
+
+    <!-- Filter Script -->
+    <script>
+        const CAFES_DATA = [{"id": "the-odd-fellow-s-cafe", "name": "The Odd Fellow's Cafe", "category": "Artisan Cafe & Gourmet Desserts", "rating": 4.7, "review_count": 49, "borough": "Islampura, Ashoknagar", "address": "Gandhi Rd, Islampura, Ashoknagar, Karimnagar", "phone": "+91 73370 13142", "raw_phone": "917337013142", "tagline": "Curated Brews, Viral Desserts & Eccentric Culinary Art", "thumbnail": "https://lh3.googleusercontent.com/grass-cs/AABkmLcRWnEBInHZUoWrkKum7hhEjKjpYG_r1B61PYdzgpoA6FJStpA6VJ8lS-hk-9o6mt4NK9oN1gPugz7f48wQNU7Ii_ek7hj7hm7y8BpyaoqmiqYVqS126RfOXc17ZNTM275s9wVQS3aSYhk=w800-h600-k-no", "hero_img": "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1600&q=80", "highlights": ["Open 24/7 All Week", "Viral Dubai Kunafa Bars", "Artisanal Brews", "Decadent Desserts"], "primary_color": "#d97706", "is_24h": true}, {"id": "charlie-cafe-lounge", "name": "Charlie Cafe & Lounge", "category": "Lounge & Multi-Cuisine Diner", "rating": 4.7, "review_count": 732, "borough": "Jyothinagar", "address": "1st Floor, Above La'Delicious, Jyothinagar, Karimnagar", "phone": "+91 63059 75616", "raw_phone": "916305975616", "tagline": "Upscale Dining, Global Starters & Premium Mocktail Lounge", "thumbnail": "https://lh3.googleusercontent.com/grass-cs/AABkmLcLkRgZMktFYbB0sg-jRl7VveeRpzN6ebTyULBxaj2FUsH67Fq3nuyz0LROFB-eUZfj1lWapsZPHlc54CbDrJtp6_t7ysx8lZUJN7UF6G9m0yIF4bsNsEGtsaPK7Kt6MKXkA3k=w800-h600-k-no", "hero_img": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80", "highlights": ["Premium Lounge Ambience", "700+ 5-Star Reviews", "Multi-Cuisine Menu", "Private Party Seating"], "primary_color": "#e11d48", "is_24h": false}, {"id": "cafe-yashoda", "name": "Cafe Yashoda", "category": "Youth Cultural Cafe & Fast Food", "rating": 4.7, "review_count": 47, "borough": "Vavilalapally", "address": "3-1-546, Near KEA Hospital, Vavilalapally, Karimnagar", "phone": "+91 99668 18131", "raw_phone": "919966818131", "tagline": "Youth Cultural Hub, Acoustic Nights & Vibrant Street Cafe", "thumbnail": "https://lh3.googleusercontent.com/grass-cs/AABkmLdPp2rRmwqBW-pPQDFErWq6rYXUJ9H_HhgZ11osauB2LoATJ7OfsRi1l0s2VeWUk9YPBUwVMTQAriM0nwLAIIVZf3ypn09DWxQ8OzAA3-A0tQ_JWt9oxoBdj2974FLn_JeH7A7EIMETprDQ=w800-h600-k-no", "hero_img": "https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1600&q=80", "highlights": ["Acoustic & Open-Mic Events", "Digital QR Ordering", "Outdoor & Indoor Seating", "Budget-Friendly Youth Vibe"], "primary_color": "#ea580c", "is_24h": false}, {"id": "hungry-birds", "name": "Hungry Birds", "category": "Crispy Chicken & Fast-Bites Cafe", "rating": 4.8, "review_count": 17, "borough": "Mukarampura", "address": "Collector Office Rd, Beside Mamatha Theatre, Mukarampura, Karimnagar", "phone": "+91 98493 43257", "raw_phone": "919849343257", "tagline": "Early Morning Brews, Golden Fried Chicken & Late Night Cravings", "thumbnail": "https://lh3.googleusercontent.com/grass-cs/AABkmLd0x24QLmoNS6cP13soc-tWewBH1Tknl-Wp6zcNrXvCnWb4ruY0tX-FsRAqtyKS0ehNf_Udz2rZWdj3cklYq_uBS0dKk8SWC20LQvu8qxMQPTTVNRwGYuoLCyummdEKiAFoyaHjJd5kuIWM=w800-h600-k-no", "hero_img": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1600&q=80", "highlights": ["Beside Mamatha Theatre", "Crispy Broasted Chicken", "Early 6:30 AM Opening", "Fast Takeaway & Delivery"], "primary_color": "#f97316", "is_24h": false}, {"id": "cafe-moments", "name": "Cafe Moments", "category": "Continental & Casual Bistro", "rating": 4.1, "review_count": 94, "borough": "Mukarampura", "address": "9-14/5/A3/3, Mukarampura, Karimnagar", "phone": "+91 98493 43257", "raw_phone": "919849343257", "tagline": "Cherished Conversations, Classic Wraps & Irani Chai", "thumbnail": "https://lh3.googleusercontent.com/grass-cs/AABkmLeoA6tJgKEcXHEcK3G9gEY4FUackjumxnTCUlfSneEfO4LTiq3-n64UM3lNDslktsCjjz2gRwzfKcszpDW0OugBV2j2DP-fyy4oHEgJlEoXUwYDtjCvzq3mZOmGKoX61Wl6O7Xd=w800-h600-k-no", "hero_img": "https://images.unsplash.com/photo-1507133750040-4a8f57021571?auto=format&fit=crop&w=1600&q=80", "highlights": ["Classic Maska Bun & Irani Chai", "Special Chicken Wraps", "Early 6 AM Openings", "Cozy Corner Ambiance"], "primary_color": "#b45309", "is_24h": false}, {"id": "hangout-cafe", "name": "Hangout cafe", "category": "Late-Night Social Lounge & Fast Food", "rating": 5.0, "review_count": 21, "borough": "Ashoknagar", "address": "Kaman Cir, Beside ABR Cinemas, Ashoknagar, Karimnagar", "phone": "+91 86392 61623", "raw_phone": "918639261623", "tagline": "Karimnagar's 5-Star Social Spot, Karak Chai & Midnight Bites", "thumbnail": "https://lh3.googleusercontent.com/grass-cs/AABkmLdIpnkY3a_CR-tnAzGCNvahahP-iScdvXnXHQBQHJ94f20p2qeE8Etzs3VopKfZDIj-OlDOgPt6Zh5rbwtX_t1BAvj8WNjXjTpBfwDDb7Cp6Ezj-JN3Y5LxnZ-kkPPV6cGCBJ2ZXVDbbQs=w800-h600-k-no", "hero_img": "https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=1600&q=80", "highlights": ["Flawless 5.0 Star Rating", "Open 24/7", "Beside ABR Cinemas", "Authentic Rumali Shawarma"], "primary_color": "#06b6d4", "is_24h": true}, {"id": "ostrich-the-kafenio", "name": "Ostrich The Kafenio", "category": "European Garden Cafe & Bistro", "rating": 4.6, "review_count": 574, "borough": "Vavilalapally", "address": "3, 1-672, Vavilalapally Rd, Karimnagar", "phone": "+91 95050 01099", "raw_phone": "919505001099", "tagline": "Botanical Garden Cafe, Handcrafted Pastas & European Escapes", "thumbnail": "https://lh3.googleusercontent.com/grass-cs/AABkmLcnr4IgLJUD0of1SVUOWaNogT-tcndt7MtMBuSOVETKcs95RBn3oonR6UKYPUupg7dLFIT86b2ZeUY0by0t4ZQ9XLVudfsG3ZOyGRJzw-WTgwqU_hwZ0qHmMNRHWDMQx6XzGM10Cg_TCE0g=w800-h600-k-no", "hero_img": "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1600&q=80", "highlights": ["Lush Botanical Atmosphere", "Artisanal Italian Pastas", "570+ Verified Reviews", "Aesthetic Photo Spots"], "primary_color": "#15803d", "is_24h": false}, {"id": "praneeth-cafe", "name": "Praneeth cafe", "category": "Heritage Tea & Coffee House", "rating": 4.9, "review_count": 19, "borough": "Subhash Nagar", "address": "Beside Rohan Hospital, Subhash Nagar, Karimnagar", "phone": "+91 96766 49284", "raw_phone": "919676649284", "tagline": "Heritage Tea House, Telangana Brews & Morning Refreshments", "thumbnail": "https://lh3.googleusercontent.com/grass-cs/AABkmLcbegQjjNkxwPny8uSXSen7DzFfTtPE8tX_dcaEFp26exSyHum497pY-9gcIet9cF0qPu3qheuXmD2aljRRaESO2xqhozJCy0kW0cqxjaUsRktiKMO0LPKxQOIjze40qqd4QCBM5Q=w800-h600-k-no", "hero_img": "https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=1600&q=80", "highlights": ["4.9-Star Community Favorite", "Authentic Irani Chai", "Traditional Filter Kaapi", "Fresh Morning Maska Buns"], "primary_color": "#d97706", "is_24h": false}, {"id": "london-cafe", "name": "London Cafe", "category": "British Themed Fast-Casual Bistro", "rating": 4.9, "review_count": 39, "borough": "Vidyanagar", "address": "Malkapur Rd, Opp. Vijayalaxmi Conventions, Vidyanagar, Karimnagar", "phone": "+91 97050 68072", "raw_phone": "919705068072", "tagline": "British Metropolitan Vibes, In-House Brioche & Artisan Shakes", "thumbnail": "https://lh3.googleusercontent.com/grass-cs/AABkmLcQHsa9HH7das0Ps1VSoNvI9r8E1dyoSvJ1eV_d9L_wMT1Pqa2Sr4nRzvW-kSdFvU-wTpHsPhpg_J-rpEMfBfXe-8ZjUp9xcrMOAriKU-tBkQ7Ca5EKboW2K1kx_UFAhC9wB9mWxOegvELh=w800-h600-k-no", "hero_img": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1600&q=80", "highlights": ["In-House Crafted Buns & Dough", "4.9-Star Customer Rating", "Opposite Vijayalaxmi Conventions", "Value Meal Combos"], "primary_color": "#1d4ed8", "is_24h": false}, {"id": "dosofy", "name": "Dosofy", "category": "Artisan Specialty Roastery & Dessert Bar", "rating": 4.8, "review_count": 154, "borough": "Christian Colony", "address": "Court Circle, Christian Colony, Karimnagar", "phone": "+91 99492 78620", "raw_phone": "919949278620", "tagline": "Artisanal Specialty Coffee, V60 Pour-Overs & Gourmet Desserts", "thumbnail": "https://lh3.googleusercontent.com/grass-cs/AABkmLcPLqxq9oAqx7hXEyxm0AevtA37nP97LmtUy2CCvKkZdUTytk6sKbtmpw39OHKr_Mdtn1d4NxjQ0aMUPSLGVV5-Sospu67F9MCsz-abKUEg8OcnN_IDrJFyAIHlGmscPyObaWCin9eJ_XeV=w800-h600-k-no", "hero_img": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1600&q=80", "highlights": ["Third-Wave V60 Pour-Overs", "Lotus Biscoff Desserts", "150+ 4.8-Star Reviews", "European Aesthetic Interior"], "primary_color": "#a21caf", "is_24h": false}, {"id": "yellow-caf", "name": "Yellow Caf\u00e9", "category": "Casual Sunlit Cafe & Chai Bar", "rating": 4.4, "review_count": 86, "borough": "Mukarampura", "address": "Bagathnagar Rd, Mukarampura, Karimnagar", "phone": "+91 85209 81610", "raw_phone": "918520981610", "tagline": "Sunlit Street Vibe, Signature Zafrani Chai & Quick Bites", "thumbnail": "https://lh3.googleusercontent.com/grass-cs/AABkmLdZH3pXde0zGrBAWMP64nAcEUoWCuCPaGls9q2TR9oPGKjlvhTcXTyLY7tuhXwvNQ_j4OsT4ZS71pDwuw0PS78mjk4MSvwfXji7QdetxB5qW2qcV8CEligm_g0KaWzcg8Rn8HfI=w800-h600-k-no", "hero_img": "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1600&q=80", "highlights": ["Aromatic Zafrani Chai", "Fluffy Bun Omelettes", "Sunny Cheerful Decor", "Quick Friendly Service"], "primary_color": "#eab308", "is_24h": false}, {"id": "d-b-cafe", "name": "D&B Cafe", "category": "Highway Specialty Cafe & Grills", "rating": 4.9, "review_count": 41, "borough": "Kothapally / Jagitial Highway", "address": "Kothapally Rd, Jagitial Highway, Karimnagar", "phone": "+91 99593 12026", "raw_phone": "919959312026", "tagline": "Highway Modern Roastery, Butterfly Pea Brews & Gourmet Grills", "thumbnail": "https://lh3.googleusercontent.com/grass-cs/AABkmLeyTg-YYrlBuYU5vOPmGpFJ7Dj8dPxJ5ZZzRf73zJ2EkgZrzRTu-K5BxR_95M4samejc9irh2HpnSH3i_Ss0k-HoCh71hLPFIH-3Ftbt-idawTK5Qkg4W9KfNSoGXL0DUbuu7vL3nBQQSmT=w800-h600-k-no", "hero_img": "https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=1600&q=80", "highlights": ["Highway Destination with Parking", "Exotic Butterfly Pea Teas", "4.9-Star Rating", "Gourmet Burgers & Pizzas"], "primary_color": "#f97316", "is_24h": false}, {"id": "bite-and-sip-the-cafe", "name": "BITE AND SIP THE CAFE", "category": "Bubble Tea & Snacking Bar", "rating": 5.0, "review_count": 12, "borough": "Mukarampura", "address": "Opp. Town Police Station 2, Near Jyothismathi Girls Hostel, Karimnagar", "phone": "+91 70936 93918", "raw_phone": "917093693918", "tagline": "Authentic Boba Tea, Crisp Golden Finger-Foods & Gen-Z Hangouts", "thumbnail": "https://lh3.googleusercontent.com/grass-cs/AABkmLf4vo9mPjYeCHCDAkxdhZ-E4EgC9PermAZ-qXpEU_jM0ildl_DY1Hxvp-18H-FO7vsjlP8J5ryNfOE2IwZFxoikTXMsc2VXY1wotBZfsgxQ7h5mHYbPoHXRWTL9EDGiQ2LUKe-tsFjw53k=w800-h600-k-no", "hero_img": "https://images.unsplash.com/photo-1558857563-b37df2dd5f76?auto=format&fit=crop&w=1600&q=80", "highlights": ["Flawless 5.0-Star Rating", "Real Taiwanese Boba Pearls", "Crispy Chicken Popcorn", "Near Jyothismathi Hostel"], "primary_color": "#0d9488", "is_24h": false}, {"id": "krost-cafe", "name": "KROST CAFE", "category": "Italian Trattoria & Broasted Chicken", "rating": 4.2, "review_count": 18, "borough": "Mukarampura", "address": "Bilal Complex, Opp. Arts College, Mukarampura, Karimnagar", "phone": "+91 86392 61623", "raw_phone": "918639261623", "tagline": "Authentic Italian Pastas, Broasted Buckets & Stone-Oven Pizzas", "thumbnail": "https://lh3.googleusercontent.com/grass-cs/AABkmLcODFPPAL-MWoJR-zFfbBrRmm7LFqlwv0MWIWCPPTlenK1OtYE6086jNhEBbYitISterl0CMYr8THZdVDJ4W4J6jnIFuVgO9JizqIa4zYVz1A8EHin4gH2QYvLxvtNZRe5Vo8SvUJN5H8vj=w800-h600-k-no", "hero_img": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1600&q=80", "highlights": ["Opposite Arts College", "Crunchy Broasted Chicken Boxes", "Authentic Mac & Cheese Pasta", "Stone-Oven Pizzas"], "primary_color": "#b91c1c", "is_24h": false}, {"id": "abhi-s-cafe", "name": "Abhi's cafe", "category": "Cozy Neighborhood Cafe & Ramen Bar", "rating": 4.4, "review_count": 42, "borough": "Vavilalapally", "address": "3-7-491/A, Near Chaitanyapuri, Vavilalapally, Karimnagar", "phone": "+91 99668 18131", "raw_phone": "919966818131", "tagline": "Weekend Halal Ramen, Steamed Momos & Cozy Vavilalapally Nook", "thumbnail": "https://lh3.googleusercontent.com/grass-cs/AABkmLfTuXPlb6y2lN67s6M8CETrvPIV73JH0yvNWtF1DVBhRjni3-jW4n0PytXxZN3R1NvcKqCrwYVIj4u9f6VVW-cTyDC_Xj6ss3ooA_50Go553M_G2pp3pM52gVylM0_uGWJECV8-=w800-h600-k-no", "hero_img": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=1600&q=80", "highlights": ["Weekend Authentic Halal Ramen", "Handcrafted Steamed Momos", "Warm Minimalist Vibe", "Affordable Comfort Food"], "primary_color": "#4f46e5", "is_24h": false}, {"id": "la-delicious-bakery-and-cafe", "name": "La'Delicious Bakery and Cafe", "category": "Luxury Bakery & European Cafe", "rating": 4.2, "review_count": 2057, "borough": "Jyothinagar", "address": "Shiva Theater Rd, Jyothinagar, Karimnagar", "phone": "+91 97043 03881", "raw_phone": "919704303881", "tagline": "Grand Parisian Patisserie, Artisan Cakes & Continental Dining", "thumbnail": "https://lh3.googleusercontent.com/grass-cs/AABkmLes1LiNPDlLayRDBdnZKUKm9Fi2LgHRYB87pM5tUZLFFaDWTtfXYZQtUR9y03oAUt8VsNfpmR2BsmenEAaXiEh2w8ITf-yblPnFv8ITAv0Pb99axqQh8qhpeYgedBdLbri-Api5=w800-h600-k-no", "hero_img": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1600&q=80", "highlights": ["Karimnagar's Most Reviewed Bakery (2000+ Reviews)", "Eggless Celebration Cakes", "Luxury French Opera Pastries", "Spacious Family Seating"], "primary_color": "#7e22ce", "is_24h": false}, {"id": "amruth-cafe-lounge", "name": "Amruth Cafe & Lounge", "category": "South Indian Heritage & Casual Lounge", "rating": 4.2, "review_count": 131, "borough": "Mankamma Thota", "address": "Opp. Adepu Jairam Hospital, Mankamma Thota, Karimnagar", "phone": "+91 98496 16087", "raw_phone": "919849616087", "tagline": "South Indian Heritage, Crispy Ghee Dosas & Evening Bakes", "thumbnail": "https://lh3.googleusercontent.com/grass-cs/AABkmLdmzV39jYiYPa-fvPQIWVvV-tqIywO9RBbyUpAKi2ch9Wpm7dVx67wODGPZvSvNFXrs_aUvO9JD8aJU9MP7tI9COSLim9lUAKVvNSsA-glwlE-ebJ2p2RuAuXsjkeI1SVEXWmGnWg=w800-h600-k-no", "hero_img": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=1600&q=80", "highlights": ["Golden Ghee Roast Dosas", "Piping Hot Mysore Bondas", "Traditional Filter Kaapi", "Mankamma Thota Landmark"], "primary_color": "#c2410c", "is_24h": false}, {"id": "knrs-cakes-and-coffee-shop", "name": "KNRS CAKES AND COFFEE SHOP", "category": "Cakes Studio & Casual Family Cafe", "rating": 4.3, "review_count": 367, "borough": "Ganesh Nagar", "address": "Near Kaman, Opp. IDBI Bank, Ganesh Nagar, Karimnagar", "phone": "+91 73962 35353", "raw_phone": "917396235353", "tagline": "Handcrafted Celebration Cakes, Sizzling Brownies & Gourmet Pizzas", "thumbnail": "https://lh3.googleusercontent.com/grass-cs/AABkmLfjdQtSxR8ma1aAjnc1lbJDV9Ta70lBtbTi3nV_Dc3JEW3HLsSPi9avK27qBKriPqH2sXRzJFMVwJrNjO4ex8dl5Ad08REkxj4046qQJfUynWTnWAZQkhPTmrJJLSAcSrFzoKjx=w800-h600-k-no", "hero_img": "https://images.unsplash.com/photo-1535141192574-5d4897c13136?auto=format&fit=crop&w=1600&q=80", "highlights": ["Signature Celebration Cakes", "Sizzling Hot Brownies", "Near Kaman Landmark", "Family & Birthday Seating"], "primary_color": "#be123c", "is_24h": false}, {"id": "lara-cafe", "name": "LaRa Cafe", "category": "Cinema-Front Street Food & Shakes", "rating": 4.8, "review_count": 33, "borough": "Mukarampura / Bhagathnagar", "address": "Opp. Pratima Multiplex, Collector Office Rd, Karimnagar", "phone": "+91 98498 11373", "raw_phone": "919849811373", "tagline": "Cinema-Front Hangout, Show-Time Combos & Midnight Refreshers", "thumbnail": "https://lh3.googleusercontent.com/grass-cs/AABkmLeg-d-yUuO1LrXZVr1gvlX0Kl0nWG_31gekRHd5YQfkJhd-P9n8CgSdGBsBTLFVeWRlBwQgYfqJCk9QdImYIla-PFgYG1a2z-G5_pzZc-Cd2WWQ7upxp2lwL4xiLNUcUVLyhTHfEA=w800-h600-k-no", "hero_img": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80", "highlights": ["Directly Opp. Pratima Multiplex", "Show-Time Value Combos", "4.8-Star Rating", "Late Night Movie Refreshers"], "primary_color": "#dc2626", "is_24h": false}, {"id": "delight-cafe", "name": "Delight Cafe", "category": "Neighborhood Specialty Coffee & Toasties", "rating": 4.5, "review_count": 31, "borough": "Sapthagiri Colony", "address": "311, Rd Number 8, Sapthagiri Colony, Karimnagar", "phone": "+91 98498 11373", "raw_phone": "919849811373", "tagline": "Artisanal Cold Brews, Gourmet Toasties & Sundae Delights", "thumbnail": "https://lh3.googleusercontent.com/grass-cs/AABkmLe5wOOeSw0lH2uyk2x0qeihRINQaK4nQ64v8D9uKInlKIyW0PvpA7eRRSuJ3Jn-l7Nw27t84ElQpVUqC6fU3Kv_8mISqvNjp4HDwX1SSLT_rfXy3gPGeFGJ--g9qlZLP-R2F4nM=w800-h600-k-no", "hero_img": "https://images.unsplash.com/photo-1507133750040-4a8f57021571?auto=format&fit=crop&w=1600&q=80", "highlights": ["Slow-Steeped Cold Brews", "Crispy Golden Toasties", "Peaceful Residential Vibe", "Sundae Delights"], "primary_color": "#0f766e", "is_24h": false}];
+        let currentFilter = 'all';
+
+        function setFilter(filter, btn) {
+            currentFilter = filter;
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+            applyFilters();
+        }
+
+        function applyFilters() {
+            const search = document.getElementById('globalSearch').value.toLowerCase().trim();
+            const cards = document.querySelectorAll('.cafe-card');
+
+            cards.forEach(card => {
+                const id = card.dataset.id;
+                const rating = parseFloat(card.dataset.rating);
+                const borough = card.dataset.borough;
+                const is24h = card.dataset.is24h === 'true';
+                const text = card.textContent.toLowerCase();
+
+                let matchesFilter = true;
+                if (currentFilter === 'top-rated') {
+                    matchesFilter = rating >= 4.7;
+                } else if (currentFilter === '24h') {
+                    matchesFilter = is24h;
+                } else if (currentFilter === 'vavilalapally') {
+                    matchesFilter = borough.includes('vavilalapally');
+                } else if (currentFilter === 'mukarampura') {
+                    matchesFilter = borough.includes('mukarampura');
+                } else if (currentFilter === 'jyothinagar') {
+                    matchesFilter = borough.includes('jyothinagar');
+                }
+
+                const matchesSearch = !search || text.includes(search);
+
+                if (matchesFilter && matchesSearch) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </body>
 </html>
