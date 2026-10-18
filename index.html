@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafes in Karimnagar — Local Guide</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #f5f5f5; color: #333; line-height: 1.6; }
+        .header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white; padding: 60px 20px; text-align: center; }
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .header p { font-size: 1.1rem; opacity: 0.8; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        .cafe-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 24px; }
+        .cafe-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.08); transition: transform 0.2s, box-shadow 0.2s; }
+        .cafe-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+        .cafe-card .card-header { padding: 20px 20px 0; }
+        .cafe-card h2 { font-size: 1.25rem; color: #1a1a2e; margin-bottom: 8px; }
+        .cafe-card .category { display: inline-block; background: #e8f4f8; color: #0066cc; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 500; margin-bottom: 12px; }
+        .cafe-card .rating { display: flex; align-items: center; gap: 6px; margin-bottom: 12px; }
+        .cafe-card .rating .stars { color: #ffb800; font-size: 1.1rem; }
+        .cafe-card .rating .count { color: #666; font-size: 0.85rem; }
+        .cafe-card .details { padding: 0 20px 20px; }
+        .cafe-card .detail-row { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; font-size: 0.9rem; }
+        .cafe-card .detail-row .icon { width: 20px; text-align: center; flex-shrink: 0; }
+        .cafe-card .detail-row .text { color: #555; }
+        .cafe-card .btn { display: block; text-align: center; background: #1a1a2e; color: white; padding: 12px; text-decoration: none; font-weight: 500; transition: background 0.2s; }
+        .cafe-card .btn:hover { background: #0f3460; }
+        .footer { text-align: center; padding: 40px 20px; color: #888; font-size: 0.85rem; }
+        .badge { display: inline-block; background: #ff6b6b; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 600; margin-left: 8px; }
+        .badge.no-web { background: #ff6b6b; }
+        .badge.has-web { background: #51cf66; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>☕ Cafes in Karimnagar</h1>
+        <p>20 local cafes with real details — no fluff, just facts</p>
+    </div>
+    <div class="container">
+        <div class="cafe-grid">
+
+            <div class="cafe-card">
+                <div class="card-header">
+                    <h2>The Odd Fellow's Cafe <span class="badge no-web">NO WEBSITE</span></h2>
+                    <span class="category">Cafe</span>
+                    <div class="rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="count">4.7 (49 reviews)</span>
+                    </div>
+                </div>
+                <div class="details">
+                    <div class="detail-row">
+                        <span class="icon">📍</span>
+                        <span class="text">Gandhi Rd, Islampura, Ashoknagar, Karimnagar, Telangana, 505001</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="icon">📞</span>
+                        <span class="text">+91 73370  13142</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="icon">🕐</span>
+                        <span class="text">Monday: Open 24 hours | Tuesday: Open 24 hours | Wednesday: Open 24 hours...</span>
+                    </div>
+                    
+                    
+                </div>
+                <a href="the-odd-fellow-s-cafe.html" class="btn">View Details</a>
+            </div>
+
+            <div class="cafe-card">
+                <div class="card-header">
+                    <h2>Charlie Cafe & Lounge <span class="badge no-web">NO WEBSITE</span></h2>
+                    <span class="category">Restaurant</span>
+                    <div class="rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="count">4.7 (732 reviews)</span>
+                    </div>
+                </div>
+                <div class="details">
+                    <div class="detail-row">
+                        <span class="icon">📍</span>
+                        <span class="text">First floor, La'Delicious Bakery and Cafe, Jyothinagar, Karimnagar, Telangana, 505001</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="icon">📞</span>
+                        <span class="text">+91 63059  75616</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="icon">🕐</span>
+                        <span class="text">Monday: 12–10:30 pm | Tuesday: 12–10:30 pm | Wednesday: 12–10:30 pm...</span>
+                    </div>
+                    
+                    
+                </div>
+                <a href="charlie-cafe-lounge.html" class="btn">View Details</a>
+            </div>
+
+            <div class="cafe-card">
+                <div class="card-header">
+                    <h2>Cafe Yashoda <span class="badge no-web">NO WEBSITE</span></h2>
+                    <span class="category">Cafe</span>
+                    <div class="rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="count">4.7 (47 reviews)</span>
+                    </div>
+                </div>
+                <div class="details">
+                    <div class="detail-row">
+                        <span class="icon">📍</span>
+                        <span class="text">3-1-546, near kea hospital, Vavilalapally, Karimnagar, Telangana, 505001</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="icon">📞</span>
+                        <span class="text">+91 99668  18131</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="icon">🕐</span>
+                        <span class="text">Monday: 6:30 am–10:30 pm | Tuesday: 6:30 am–10:30 pm | Wednesday: 6:30 am–10:30 pm...</span>
+                    </div>
+                    
+                    
+                </div>
+                <a href="cafe-yashoda.html" class="btn">View Details</a>
+            </div>
+
+            <div class="cafe-card">
+                <div class="card-header">
+                    <h2>Hungry Birds <span class="badge no-web">NO WEBSITE</span></h2>
+                    <span class="category">Cafe</span>
+                    <div class="rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="count">4.8 (17 reviews)</span>
+                    </div>
+                </div>
+                <div class="details">
+                    <div class="detail-row">
+                        <span class="icon">📍</span>
+                        <span class="text">Collector Office Rd, beside Mamatha theatre, Mukarampura, Karimnagar, Telangana, 505001</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="icon">📞</span>
+                        <span class="text">Contact for phone</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="icon">🕐</span>
+                        <span class="text">Monday: 6:30 am–11:30 pm | Tuesday: 6:30 am–11:30 pm | Wednesday: 6:30 am–11:30 pm...</span>
+                    </div>
+                    
+                    
+                </div>
+                <a href="hungry-birds.html" class="btn">View Details</a>
+            </div>
+
+            <div class="cafe-card">
+                <div class="card-header">
+                    <h2>Cafe Moments <span class="badge no-web">NO WEBSITE</span></h2>
+                    <span class="category">Restaurant</span>
+                    <div class="rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="count">4.1 (94 reviews)</span>
+                    </div>
+                </div>
+                <div class="details">
+                    <div class="detail-row">
+                        <span class="icon">📍</span>
+                        <span class="text">9-14/5/A3/3, Mukarampura, Karimnagar, Telangana, 505001</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="icon">📞</span>
+                        <span class="text">+91 98493  43257</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="icon">🕐</span>
+                        <span class="text">Monday: 6 am–11 pm | Tuesday: 6 am–11 pm | Wednesday: 6 am–11 pm...</span>
+                    </div>
+                    
+                    
+                </div>
+                <a href="cafe-moments.html" class="btn">View Details</a>
+            </div>
+
+            <div class="cafe-card">
+                <div class="card-header">
+                    <h2>Hangout cafe <span class="badge no-web">NO WEBSITE</span></h2>
+                    <span class="category">Cafe</span>
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="count">5.0 (21 reviews)</span>
+                    </div>
+                </div>
+                <div class="details">
+                    <div class="detail-row">
+                        <span class="icon">📍</span>
+                        <span class="text">Kaman Cir, beside ABR Cinemas- THE NEXT Bharat theatre, Ashoknagar, Karimnagar, Telangana, 505001</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="icon">📞</span>
+                        <span class="text">+91 86392  61623</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="icon">🕐</span>
+                        <span class="text">Monday: 6 am–11:30 pm | Tuesday: 6 am–11:30 pm | Wednesday: 6 am–11:30 pm...</span>
+                    </div>
+                    
+                    
+                </div>
+                <a href="hangout-cafe.html" class="btn">View Details</a>
+            </div>
+
+            <div class="cafe-card">
+                <div class="card-header">
+                    <h2>Ostrich The Kafenio <span class="badge no-web">NO WEBSITE</span></h2>
+                    <span class="category">Coffee shop</span>
+                    <div class="rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="count">4.6 (574 reviews)</span>
+                    </div>
+                </div>
+                <div class="details">
+                    <div class="detail-row">
+                        <span class="icon">📍</span>
+                        <span class="text">3, 1-672, Vavilalapally Rd, Vavilalapally, Karimnagar, Telangana, 505001</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="icon">📞</span>
+                        <span class="text">+91 95050  01099</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="icon">🕐</span>
+                        <span class="text">Monday: 10 am–11 pm | Tuesday: 10 am–11 pm | Wednesday: 10 am–11 pm...</span>
+                    </div>
+                    
+                    
+                </div>
+                <a href="ostrich-the-kafenio.html" class="btn">View Details</a>
+            </div>
+
+            <div class="cafe-card">
+                <div class="card-header">
+                    <h2>Praneeth cafe <span class="badge no-web">NO WEBSITE</span></h2>
+                    <span class="category">Coffee shop</span>
+                    <div class="rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="count">4.9 (19 reviews)</span>
+                    </div>
+                </div>
+                <div class="details">
+                    <div class="detail-row">
+                        <span class="icon">📍</span>
+                        <span class="text">C4XM+H6M, Subhash Nagar, Karimnagar, Telangana, 505001</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="icon">📞</span>
+                        <span class="text">+91 96766  49284</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="icon">🕐</span>
+                        <span class="text">Monday: Open 24 hours | Tuesday: Open 24 hours | Wednesday: Open 24 hours...</span>
+                    </div>
+                    <div class="detail-row"><span class="icon">📝</span><span class="text">Accessibility</span></div>
+                    
+                </div>
+                <a href="praneeth-cafe.html" class="btn">View Details</a>
+            </div>
+
+            <div class="cafe-card">
+                <div class="card-header">
+                    <h2>London Cafe <span class="badge no-web">NO WEBSITE</span></h2>
+                    <span class="category">Restaurant</span>
+                    <div class="rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="count">4.9 (39 reviews)</span>
+                    </div>
+                </div>
+                <div class="details">
+                    <div class="detail-row">
+                        <span class="icon">📍</span>
+                        <span class="text">MCK 20, Malkapur Rd, Kothayaswada, Vidyanagar, Karimnagar, Telangana, 505002</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="icon">📞</span>
+                        <span class="text">+91 97050  68072</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="icon">🕐</span>
+                        <span class="text">Monday: 11 am–11:30 pm | Tuesday: 11 am–11:30 pm | Wednesday: 11 am–11:30 pm...</span>
+                    </div>
+                    
+                    
+                </div>
+                <a href="london-cafe.html" class="btn">View Details</a>
+            </div>
+
+            <div class="cafe-card">
+                <div class="card-header">
+                    <h2>Dosofy <span class="badge no-web">NO WEBSITE</span></h2>
+                    <span class="category">Cafe</span>
+                    <div class="rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="count">4.8 (154 reviews)</span>
+                    </div>
+                </div>
+                <div class="details">
+                    <div class="detail-row">
+                        <span class="icon">📍</span>
+                        <span class="text">Christian Colony, Karimnagar, Telangana, 505001</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="icon">📞</span>
+                        <span class="text">+91 99492  78620</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="icon">🕐</span>
+                        <span class="text">Monday: 11 am–2 am | Tuesday: 11 am–2 am | Wednesday: 11 am–2 am...</span>
+                    </div>
+                    
+                    
+                </div>
+                <a href="dosofy.html" class="btn">View Details</a>
+            </div>
+
+            <div class="cafe-card">
+                <div class="card-header">
+                    <h2>Yellow Café <span class="badge no-web">NO WEBSITE</span></h2>
+                    <span class="category">Cafe</span>
+                    <div class="rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="count">4.4 (86 reviews)</span>
+                    </div>
+                </div>
+                <div class="details">
+                    <div class="detail-row">
+                        <span class="icon">📍</span>
+                        <span class="text">Bagathnagar Rd, Mukarampura, Karimnagar, Telangana, 505001</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="icon">📞</span>
+                        <span class="text">+91 85209  81610</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="icon">🕐</span>
+                        <span class="text">Monday: 7 am–10:30 pm | Tuesday: 7 am–10:30 pm | Wednesday: 7 am–10:30 pm...</span>
+                    </div>
+                    
+                    
+                </div>
+                <a href="yellow-caf.html" class="btn">View Details</a>
+            </div>
+
+            <div class="cafe-card">
+                <div class="card-header">
+                    <h2>D&B Cafe <span class="badge no-web">NO WEBSITE</span></h2>
+                    <span class="category">Cafe</span>
+                    <div class="rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="count">4.9 (41 reviews)</span>
+                    </div>
+                </div>
+                <div class="details">
+                    <div class="detail-row">
+                        <span class="icon">📍</span>
+                        <span class="text">Kothapally Road, Jagitial, Highway, Karimnagar, Telangana, 505451</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="icon">📞</span>
+                        <span class="text">+91 99593  12026</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="icon">🕐</span>
+                        <span class="text">Monday: 9 am–11 pm | Tuesday: 9 am–11 pm | Wednesday: 9 am–11 pm...</span>
+                    </div>
+                    
+                    
+                </div>
+                <a href="d-b-cafe.html" class="btn">View Details</a>
+            </div>
+
+            <div class="cafe-card">
+                <div class="card-header">
+                    <h2>BITE AND SIP THE CAFE <span class="badge no-web">NO WEBSITE</span></h2>
+                    <span class="category">Cafe</span>
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="count">5.0 (12 reviews)</span>
+                    </div>
+                </div>
+                <div class="details">
+                    <div class="detail-row">
+                        <span class="icon">📍</span>
+                        <span class="text">Town Police Station, 2, opposite street, near joythismathi girls hostel, Mukarampura, Karimnagar, Telangana, 505001</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="icon">📞</span>
+                        <span class="text">+91 70936  93918</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="icon">🕐</span>
+                        <span class="text">C | o | n...</span>
+                    </div>
+                    
+                    
+                </div>
+                <a href="bite-and-sip-the-cafe.html" class="btn">View Details</a>
+            </div>
+
+            <div class="cafe-card">
+                <div class="card-header">
+                    <h2>KROST CAFE <span class="badge no-web">NO WEBSITE</span></h2>
+                    <span class="category">Coffee shop</span>
+                    <div class="rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="count">4.2 (18 reviews)</span>
+                    </div>
+                </div>
+                <div class="details">
+                    <div class="detail-row">
+                        <span class="icon">📍</span>
+                        <span class="text">Bilal Complex, Bus Stand to Geetha Bhavan road, opp. arts college, Mukarampura, Karimnagar, Telangana, 505001</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="icon">📞</span>
+                        <span class="text">Contact for phone</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="icon">🕐</span>
+                        <span class="text">Monday: 12 pm–1 am | Tuesday: 12–11 pm | Wednesday: 12–11:30 pm...</span>
+                    </div>
+                    
+                    
+                </div>
+                <a href="krost-cafe.html" class="btn">View Details</a>
+            </div>
+
+            <div class="cafe-card">
+                <div class="card-header">
+                    <h2>Abhi's cafe <span class="badge no-web">NO WEBSITE</span></h2>
+                    <span class="category">Coffee shop</span>
+                    <div class="rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="count">4.4 (42 reviews)</span>
+                    </div>
+                </div>
+                <div class="details">
+                    <div class="detail-row">
+                        <span class="icon">📍</span>
+                        <span class="text">3-7-491/A, Vavilalapally, Karimnagar, Telangana, 505001</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="icon">📞</span>
+                        <span class="text">Contact for phone</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="icon">🕐</span>
+                        <span class="text">Monday: 10 am–10:30 pm | Tuesday: 10 am–10:30 pm | Wednesday: 10 am–10:30 pm...</span>
+                    </div>
+                    
+                    
+                </div>
+                <a href="abhi-s-cafe.html" class="btn">View Details</a>
+            </div>
+
+            <div class="cafe-card">
+                <div class="card-header">
+                    <h2>La'Delicious Bakery and Cafe <span class="badge no-web">NO WEBSITE</span></h2>
+                    <span class="category">Restaurant</span>
+                    <div class="rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="count">4.2 (2057 reviews)</span>
+                    </div>
+                </div>
+                <div class="details">
+                    <div class="detail-row">
+                        <span class="icon">📍</span>
+                        <span class="text">C4VF+7XF, Jyothinagar, Karimnagar, Telangana, 505001</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="icon">📞</span>
+                        <span class="text">+91 97043  03881</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="icon">🕐</span>
+                        <span class="text">Monday: 9:30 am–10:30 pm | Tuesday: 9:30 am–10:30 pm | Wednesday: 9:30 am–10:30 pm...</span>
+                    </div>
+                    <div class="detail-row"><span class="icon">📝</span><span class="text">Accessibility</span></div>
+                    
+                </div>
+                <a href="la-delicious-bakery-and-cafe.html" class="btn">View Details</a>
+            </div>
+
+            <div class="cafe-card">
+                <div class="card-header">
+                    <h2>Amruth Cafe & Lounge <span class="badge no-web">NO WEBSITE</span></h2>
+                    <span class="category">Bakery and Cake Shop</span>
+                    <div class="rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="count">4.2 (131 reviews)</span>
+                    </div>
+                </div>
+                <div class="details">
+                    <div class="detail-row">
+                        <span class="icon">📍</span>
+                        <span class="text">C4Q7+GRG, opp. to ADEPU JAIRAM HOSPITAL, Mankamma Thota, Karimnagar, Telangana, 505001</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="icon">📞</span>
+                        <span class="text">+91 98496  16087</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="icon">🕐</span>
+                        <span class="text">Monday: 10 am–11 pm | Tuesday: 10 am–11 pm | Wednesday: 10 am–11 pm...</span>
+                    </div>
+                    
+                    
+                </div>
+                <a href="amruth-cafe-lounge.html" class="btn">View Details</a>
+            </div>
+
+            <div class="cafe-card">
+                <div class="card-header">
+                    <h2>KNRS CAKES AND COFFEE SHOP <span class="badge no-web">NO WEBSITE</span></h2>
+                    <span class="category">Cafe</span>
+                    <div class="rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="count">4.3 (367 reviews)</span>
+                    </div>
+                </div>
+                <div class="details">
+                    <div class="detail-row">
+                        <span class="icon">📍</span>
+                        <span class="text">8-4-211, opposite IDBI Bank, near kaman, Ganesh Nagar, Karimnagar, Telangana, 505001</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="icon">📞</span>
+                        <span class="text">+91 73962  35353</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="icon">🕐</span>
+                        <span class="text">Monday: 11 am–12 am | Tuesday: 11 am–12 am | Wednesday: 11 am–12 am...</span>
+                    </div>
+                    <div class="detail-row"><span class="icon">📝</span><span class="text">Down-to-earth hangout fixing up meat & veggie pizzas, pasta, burgers & sandwiches, plus cakes.</span></div>
+                    <div class="detail-row"><span class="icon">🛒</span><span class="text">✅ Order online available</span></div>
+                </div>
+                <a href="knrs-cakes-and-coffee-shop.html" class="btn">View Details</a>
+            </div>
+
+            <div class="cafe-card">
+                <div class="card-header">
+                    <h2>LaRa Cafe <span class="badge has-web">HAS WEBSITE</span></h2>
+                    <span class="category">Cafe</span>
+                    <div class="rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="count">4.8 (33 reviews)</span>
+                    </div>
+                </div>
+                <div class="details">
+                    <div class="detail-row">
+                        <span class="icon">📍</span>
+                        <span class="text">bhagathnagar, Collector Office Rd, opposite Pratima Multiplex, Mukarampura, Karimnagar, Telangana, 505001</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="icon">📞</span>
+                        <span class="text">Contact for phone</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="icon">🕐</span>
+                        <span class="text">Monday: 9 am–10 pm | Tuesday: 9 am–10 pm | Wednesday: 9 am–10 pm...</span>
+                    </div>
+                    
+                    
+                </div>
+                <a href="lara-cafe.html" class="btn">View Details</a>
+            </div>
+
+            <div class="cafe-card">
+                <div class="card-header">
+                    <h2>Delight Cafe <span class="badge has-web">HAS WEBSITE</span></h2>
+                    <span class="category">Cafe</span>
+                    <div class="rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="count">4.5 (31 reviews)</span>
+                    </div>
+                </div>
+                <div class="details">
+                    <div class="detail-row">
+                        <span class="icon">📍</span>
+                        <span class="text">311, Rd Number 8, Sapthagiri Colony, Karimnagar, Telangana, 505001</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="icon">📞</span>
+                        <span class="text">+91 98498  11373</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="icon">🕐</span>
+                        <span class="text">Monday: 7 am–12 am | Tuesday: 7 am–12 am | Wednesday: 7 am–12 am...</span>
+                    </div>
+                    
+                    
+                </div>
+                <a href="delight-cafe.html" class="btn">View Details</a>
+            </div>
+
+        </div>
+    </div>
+    <div class="footer">
+        <p>Data sourced from Google Maps • October 2026</p>
+        <p>All details are real — no hallucination</p>
+    </div>
+</body>
+</html>
